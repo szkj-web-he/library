@@ -1,0 +1,206 @@
+/**
+* @file notice styles
+* @date 2021-06-25
+* @author xuejie.he
+* @lastModify xuejie.he 2021-06-25
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin container {
+    padding: 1.5rem;
+    background-color: $background;
+    border-radius: 4px;
+    box-shadow: $shadow_04dp;
+    position: relative;
+    min-height: 9.2rem;
+    width: 33.1rem;
+    display: inline-block;
+    pointer-events: auto;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+}
+
+@mixin icon {
+    margin-right: 0.8rem;
+    flex: 0 0 auto;
+    font-size: 2.3rem;
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.notice_container__success {
+    &Left {
+        @include container();
+    }
+    &Right {
+        @include container();
+    }
+}
+
+.notice_container__info {
+    &Left {
+        @include container();
+    }
+    &Right {
+        @include container();
+    }
+}
+
+.notice_container__warning {
+    &Left {
+        @include container();
+    }
+    &Right {
+        @include container();
+    }
+}
+
+.notice_container__error {
+    &Left {
+        @include container();
+    }
+    &Right {
+        @include container();
+    }
+}
+
+.notice_closeIcon {
+    font-size: 1.2rem;
+    color: $line_dark;
+    position: absolute;
+    top: 1.1rem;
+    right: 1.2rem;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.notice_title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.notice_titleIcon {
+    @include icon();
+}
+
+.notice_titleContent {
+    color: $gray_1;
+    font: $fs_r_14;
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.notice_context {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+}
+
+.notice_contextIcon {
+    @include icon();
+    visibility: hidden;
+    opacity: 0;
+}
+
+.notice_contextContent {
+    flex: 1 1 auto;
+    color: $gray_2;
+    font: $fs_r_12;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.notice_btnList {
+    margin-top: 0.5rem;
+}
+
+@mixin popContainer {
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    z-index: 101;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+}
+
+.pop_container__left {
+    text-align: left;
+    @include popContainer();
+}
+
+.pop_container__right {
+    text-align: right;
+    @include popContainer();
+}
+
+.notice_container__error {
+    &Left {
+        .notice_titleIcon {
+            color: #dc0000;
+        }
+    }
+    &Right {
+        .notice_titleIcon {
+            color: #dc0000;
+        }
+    }
+}
+
+.notice_container__success {
+    &Left {
+        .notice_titleIcon {
+            color: #52c41a;
+        }
+    }
+    &Right {
+        .notice_titleIcon {
+            color: #52c41a;
+        }
+    }
+}
+
+.notice_container__info {
+    &Left {
+        .notice_titleIcon {
+            color: #1890ff;
+        }
+    }
+    &Right {
+        .notice_titleIcon {
+            color: #1890ff;
+        }
+    }
+}
+
+.notice_container__warning {
+    &Left {
+        .notice_titleIcon {
+            color: #ff8b03;
+        }
+    }
+    &Right {
+        .notice_titleIcon {
+            color: #ff8b03;
+        }
+    }
+}

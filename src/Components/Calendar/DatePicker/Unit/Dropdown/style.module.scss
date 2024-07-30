@@ -1,0 +1,117 @@
+/**
+* @file  *** styles
+* @date 2021-12-15
+* @author xuejie.he
+* @lastModify xuejie.he 2021-12-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.datePicker_dropdownWrapper {
+    position: relative;
+    border: 1px solid $line_light;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: inline-flex;
+    transition: all 0.2s ease;
+    width: 7.4rem;
+    height: 3rem;
+    z-index: 0;
+    outline: none;
+    &:hover {
+        border-color: rgba($primary_variant, 0.5);
+    }
+    &:focus {
+        border-color: rgba($primary_variant, 1);
+        .datePicker_dropdownIcon {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.datePicker_dropdownIpt {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.datePicker_dropdownIptContent {
+    font: $fs_r_12;
+    color: $gray_2;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1 1 auto;
+    position: relative;
+    background-color: #fff;
+}
+
+.datePicker_dropdownIcon {
+    transition: all 0.2s ease;
+    color: $line_light;
+    font-size: 1rem;
+    flex: 0 0 auto;
+}
+
+.datePicker_dropdownListContainer {
+    width: 100%;
+    height: 22.4rem;
+    background-color: $background;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12),
+        0px 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    z-index: 0;
+}
+
+.datePicker_dropdownList {
+    background-color: $background;
+    box-shadow: $shadow_06dp;
+    border-radius: 4px;
+    [class*="scroll_scrollBody"] {
+        padding: 1rem 1.2rem;
+    }
+    box-sizing: border-box;
+    [class*="scroll_scrollBar__vertical"] {
+        right: 1.5px;
+    }
+}
+
+.datePicker_dropdownItem {
+    font: $fs_r_12;
+    color: $gray_1;
+    line-height: 2rem;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &.datePicker_dropdownItem__active {
+        color: $primary_variant;
+    }
+}
+
+.datePicker_readonly {
+    .datePicker_dropdownItem {
+        cursor: auto;
+    }
+    .datePicker_dropdownIpt {
+        cursor: auto;
+    }
+}

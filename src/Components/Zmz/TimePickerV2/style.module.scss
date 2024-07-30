@@ -1,0 +1,55 @@
+/**
+* @file
+* @date 2022-08-24
+* @author
+* @lastModify  2022-08-24
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin demo {
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.picker_time_container {
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 0.2rem;
+    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+    background-color: $background;
+}
+
+.picker_time_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 1.2rem;
+    height: 3.4rem;
+    border-top: 0.1rem solid $gray_4;
+}
+
+.picker_time_footer_current {
+    display: inline-block;
+    color: $primary_600;
+    cursor: pointer;
+}
+
+.picker_time_footer_confirm {
+    border: none;
+    border-radius: 0.6rem;
+    background-color: $primary_600;
+    color: $background;
+    height: 2.4rem;
+    cursor: pointer;
+}
+
+.picker_time_footer_extra {
+    border-top: 0.1rem solid $gray_4;
+    padding: 0.4rem 1.2rem;
+}

@@ -1,0 +1,35 @@
+/**
+* @file 
+* @date 2023-12-13
+* @author xuejie.he
+* @lastModify xuejie.he 2023-12-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.coverCore_wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    pointer-events: none;
+}
+
+.coverCore_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: auto;
+    z-index: 0;
+}

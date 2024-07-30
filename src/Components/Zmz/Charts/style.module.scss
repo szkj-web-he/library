@@ -1,0 +1,21 @@
+/**
+* @file
+* @date 2022-10-27
+* @author
+* @lastModify  2022-10-27
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.charts_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/* <--------------------------- * SECTION1 * --------------------------- */

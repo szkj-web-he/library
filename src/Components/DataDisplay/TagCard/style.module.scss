@@ -1,0 +1,78 @@
+/**
+* @file tag card style sheet
+* @date 2020-10-26
+* @author Andy Jiang
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/*
+/*
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.tagCard_tagWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin tag {
+    font: $fs_m_14;
+    display: inline-block;
+    flex: 1;
+    height: 3.8rem;
+    line-height: 3.8rem;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    border-right: 0.1rem solid $line_light;
+}
+
+.tagCard_tag__selected {
+    @include tag();
+    color: $type;
+}
+
+.tagCard_tag__notSelected {
+    @include tag();
+    color: $line_light;
+    border-bottom: 0.1rem solid $line_light;
+}
+
+@mixin tag2 {
+    font: $fs_m_14;
+    display: inline-block;
+    width: 11.6rem;
+    height: 2.7rem;
+    line-height: 2.7rem;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 11px 11px 0px 0px;
+    transition: 0.1s;
+}
+
+.tagCard_tag2__selected {
+    @include tag2();
+    color: $background;
+    background: $primary_variant;
+}
+
+.tagCard_tag2__notSelected {
+    @include tag2();
+    color: $type;
+    background: $not_activated;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

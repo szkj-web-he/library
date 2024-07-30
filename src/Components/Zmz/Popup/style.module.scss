@@ -1,0 +1,140 @@
+/**
+* @file
+* @date 2022-11-14
+* @author mingzhou.zhang
+* @lastModify  2022-11-14
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+// top
+.popup_wrap_top_form_enter,
+.popup_wrap_top_to_leave {
+    transform: translateY(-100%);
+}
+
+.popup_wrap_top_form_leave,
+.popup_wrap_top_to_enter {
+    transform: translateY(0);
+}
+
+.popup_wrap_top_form_active,
+.popup_wrap_top_to_active {
+    transition: all 0.4s cubic-bezier(0.57, 0.01, 0.02, 0.99), box-shadow 0s;
+}
+// right
+.popup_wrap_right_form_enter,
+.popup_wrap_right_to_leave {
+    transform: translateX(100%);
+}
+
+.popup_wrap_right_form_leave,
+.popup_wrap_right_to_enter {
+    transform: translateX(0);
+}
+
+.popup_wrap_right_form_active,
+.popup_wrap_right_to_active {
+    transition: all 0.4s cubic-bezier(0.57, 0.01, 0.02, 0.99), box-shadow 0s;
+}
+// bottom
+.popup_wrap_bottom_form_enter,
+.popup_wrap_bottom_to_leave {
+    transform: translateY(100%);
+}
+
+.popup_wrap_bottom_form_leave,
+.popup_wrap_bottom_to_enter {
+    transform: translateY(0);
+}
+
+.popup_wrap_bottom_form_active,
+.popup_wrap_bottom_to_active {
+    transition: all 0.4s cubic-bezier(0.57, 0.01, 0.02, 0.99), box-shadow 0s;
+}
+// left
+.popup_wrap_left_form_enter,
+.popup_wrap_left_to_leave {
+    transform: translateX(-100%);
+}
+
+.popup_wrap_left_form_leave,
+.popup_wrap_left_to_enter {
+    transform: translateX(0);
+}
+
+.popup_wrap_left_form_active,
+.popup_wrap_left_to_active {
+    transition: all 0.4s cubic-bezier(0.57, 0.01, 0.02, 0.99), box-shadow 0s;
+}
+// mask
+.popup_mask_form_enter,
+.popup_mask_to_leave {
+    opacity: 0;
+}
+
+.popup_mask_form_to,
+.popup_mask_to_leave {
+    opacity: 0.4;
+}
+
+.popup_mask_form_active,
+.popup_mask_to_leave {
+    transition: all 0.4s linear;
+}
+/* <--------------------------- * SECTION1 * --------------------------- */
+.popup_wrap {
+    padding: 2.4rem;
+    background: $white;
+    position: fixed;
+    z-index: 109;
+    box-sizing: border-box;
+}
+
+.popup_wrap_position_top {
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+.popup_wrap_position_right {
+    height: 100vh;
+    top: 0;
+    right: 0;
+}
+
+.popup_wrap_position_bottom {
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+}
+
+.popup_wrap_position_left {
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.popup_wrap_close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    cursor: pointer;
+}
+
+.popup_mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $black;
+    z-index: 99;
+    opacity: 0.4;
+}

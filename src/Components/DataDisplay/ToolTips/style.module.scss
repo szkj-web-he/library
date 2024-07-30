@@ -1,0 +1,168 @@
+/**
+* @file
+* @date 2021-03-12
+* @author Andy Jiang
+* @lastModify Andy Jiang 2021-03-12
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/*
+/*
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+/** The demo mixin is ..........*/
+
+@mixin demo {
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.ToolTips_container {
+    border-radius: 0.4rem;
+    font: $fs_r_12;
+    position: relative;
+    padding: 1rem;
+    box-shadow: $shadow_06dp;
+    > span {
+        line-height: 2rem !important;
+    }
+    z-index: 1;
+}
+
+.ToolTips_buttonContainer {
+    padding-bottom: 5rem;
+}
+
+.ToolTips_container__black {
+    background: rgba($color: $type, $alpha: 0.7);
+    color: $background;
+}
+
+.ToolTips_container__white {
+    background: $background;
+    color: $type;
+}
+
+.ToolTips_arrow {
+    position: absolute;
+    border: 0.5rem solid;
+    z-index: 2;
+}
+
+.ToolTips_arrow__black {
+    border-color: rgba($color: $type, $alpha: 0.7);
+}
+
+.ToolTips_arrow__white {
+    border-color: $background;
+}
+
+@mixin leftArrow {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    right: -1rem;
+}
+
+.ToolTips_arrow__LT {
+    top: 1.2rem;
+    @include leftArrow();
+}
+
+.ToolTips_arrow__LM {
+    top: 50%;
+    transform: translateY(-50%);
+    @include leftArrow();
+}
+
+.ToolTips_arrow__LB {
+    bottom: 1.2rem;
+    @include leftArrow();
+}
+
+@mixin topArrow {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    bottom: -1rem;
+}
+
+.ToolTips_arrow__TL {
+    right: 1.2rem;
+    @include topArrow();
+}
+
+.ToolTips_arrow__TM {
+    left: 50%;
+    transform: translateX(-50%);
+    @include topArrow();
+}
+
+.ToolTips_arrow__TR {
+    left: 1.2rem;
+    @include topArrow();
+}
+
+@mixin rightArrow {
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    left: -1rem;
+}
+
+.ToolTips_arrow__RT {
+    top: 1.2rem;
+    @include rightArrow();
+}
+
+.ToolTips_arrow__RM {
+    top: 50%;
+    transform: translateY(-50%);
+    @include rightArrow();
+}
+
+.ToolTips_arrow__RB {
+    bottom: 1.2rem;
+    @include rightArrow();
+}
+
+@mixin bottomArrow {
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    top: -1rem;
+}
+
+.ToolTips_arrow__BL {
+    right: 1.2rem;
+    @include bottomArrow();
+}
+
+.ToolTips_arrow__BM {
+    left: 50%;
+    transform: translateX(-50%);
+    @include bottomArrow();
+}
+
+.ToolTips_arrow__BR {
+    left: 1.2rem;
+    @include bottomArrow();
+}
+
+.ToolTips_button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

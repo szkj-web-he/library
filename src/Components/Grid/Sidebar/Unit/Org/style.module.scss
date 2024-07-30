@@ -1,0 +1,87 @@
+/**
+* @file 
+* @date 2023-08-21
+* @author xuejie.he
+* @lastModify xuejie.he 2023-08-21
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+@mixin Transition {
+    transition: all 0.15s linear;
+}
+
+.sidebarOrg_wrapper {
+    outline: none;
+    appearance: none;
+}
+
+.sidebarOrg_selectedOrg {
+    border-bottom: 1px solid $neutral_100;
+    padding: 1rem 0 1.6rem 0;
+    box-sizing: border-box;
+}
+
+.sidebarOrg_managementOrg {
+    padding: 0 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    margin-top: 1.2rem;
+    cursor: pointer;
+    &:hover {
+        .sidebarOrg_managementOrgText {
+            color: $primary_400;
+        }
+        .sidebarOrg_managementOrgIcon {
+            color: $primary_400;
+        }
+    }
+}
+
+.sidebarOrg_managementOrgView {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.8rem;
+}
+
+.sidebarOrg_managementOrgText {
+    width: calc(100% - 2rem - 0.8rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $display_font;
+    @include body_2();
+    letter-spacing: 0.2px;
+    @include Transition();
+}
+
+.sidebarOrg_managementOrgIcon {
+    font-size: 1.5rem;
+    color: $display_font;
+    @include Transition();
+}
+
+.sidebarOrg_orgList {
+    background-color: $neutral_50;
+    padding-bottom: 1.2rem;
+}
+
+.sidebarOrg_orgList__scrollBody {
+    padding-top: 1.2rem;
+    max-height: 2.4rem * 5 + 1.2rem + 1.6rem * 4 + 1.6rem;
+}
+
+.sidebarOrg_hr {
+    width: calc(100% - 1.6rem * 2);
+    margin: 0 auto;
+    background-color: $neutral_200;
+    height: 1px;
+}

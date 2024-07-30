@@ -1,0 +1,209 @@
+/**
+* @file 
+* @date 2023-01-31
+* @author xuejie.he
+* @lastModify xuejie.he 2023-01-31
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+@use "../Unit/common.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+@mixin Big() {
+    .commonDialog_iconContainer {
+        height: 3.6rem;
+    }
+    .commonDialog_body {
+        padding: 3.2rem 3.2rem 2.4rem 3.2rem;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+    }
+    .commonDialog_bodyCn {
+        .commonDialog_title {
+            @include c_h_4();
+        }
+        .commonDialog_description {
+            @include c_body_1();
+        }
+    }
+
+    .commonDialog_top {
+        margin-bottom: 3.2rem;
+    }
+
+    .commonDialog_title {
+        @include h_2();
+        color: $neutral_600;
+    }
+
+    .commonDialog_description {
+        color: $gray_4;
+        margin-top: 4px;
+        @include body_1();
+    }
+
+    .commonDialog_backBtn {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-left: 2.4rem - 3.2rem;
+        margin-top: 2.4rem - 3.2rem;
+    }
+
+    .commonDialog_backIcon {
+        font-size: 1.6rem;
+    }
+}
+
+@mixin Small() {
+    .commonDialog_body {
+        padding: 2.4rem;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+    }
+    .commonDialog_bodyCn {
+        .commonDialog_title {
+            @include c_h_5();
+        }
+
+        .commonDialog_description {
+            @include c_body_3();
+        }
+    }
+
+    .commonDialog_title {
+        @include h_3();
+        color: $neutral_600;
+    }
+
+    .commonDialog_description {
+        color: $gray_4;
+        @include body_2();
+        margin-top: 4px;
+    }
+
+    .commonDialog_top {
+        margin-bottom: 2.4rem;
+    }
+
+    .commonDialog_iconContainer {
+        height: 3rem;
+    }
+
+    .commonDialog_backBtn {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .commonDialog_backIcon {
+        font-size: 1.3rem;
+    }
+}
+
+.commonDialog_body {
+    background-color: $white;
+    transform: none;
+}
+
+.commonDialog_wrapper {
+    &Small {
+        @include SmallDialog();
+        height: auto;
+        @include Small();
+    }
+    &Regular {
+        @include RegularDialog();
+        height: auto;
+        @include Big();
+    }
+    &Large {
+        @include LargeDialog();
+        height: auto;
+        @include Big();
+    }
+}
+
+@mixin Icon {
+    font-size: 2.4rem;
+}
+
+.commonDialog_errorIcon {
+    font-size: 1.8rem;
+    color: $danger_600;
+}
+
+.commonDialog_infoIcon {
+    @include Icon();
+    color: #1890ff;
+}
+
+.commonDialog_warnIcon {
+    @include Icon();
+    color: $warning_500;
+}
+
+.commonDialog_iconContainer {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.commonDialog_closeBtn {
+    position: absolute;
+    top: 2.4rem;
+    right: 2.4rem;
+    cursor: pointer;
+    width: 1.4rem;
+    height: 1.4rem;
+    box-sizing: content-box;
+    z-index: 50;
+    &:hover {
+        .commonDialog_closeIcon {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.commonDialog_closeIcon {
+    transition: all 0.2s linear;
+    color: #757575;
+    font-size: 1.4rem;
+}
+
+.commonDialog_backBlock {
+    margin-bottom: 2.4rem;
+}
+
+.commonDialog_top {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.commonDialog_footerButtons {
+    margin-top: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-flow: row nowrap;
+}
+
+.commonDialog_backBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    cursor: pointer;
+    margin-bottom: 2.4rem;
+}
+
+.commonDialog_backIcon {
+    transform: rotate(180deg);
+    color: $neutral_500;
+}

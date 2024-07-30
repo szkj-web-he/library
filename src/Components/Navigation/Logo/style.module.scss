@@ -1,0 +1,25 @@
+/**
+* @file  *** styles
+* @date 2022-04-11
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-11
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.navigationLogo_wrap {
+    font: $fs_n_25;
+    color: $primary_700;
+    cursor: pointer;
+    line-height: 2.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+}

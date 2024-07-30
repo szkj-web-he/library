@@ -1,0 +1,26 @@
+export const languageConfig = {
+    CN: {
+        "File Not Found": "文件未找到",
+        "Sorry, we can't find that file": "抱歉，我们找不到那个文件！",
+        "It might be eliminate or maybe it moved": "它可能被消除了，也可能移动了。",
+        "Page Not Found": "页面未找到",
+        "Sorry, we can't find that page": "抱歉，我们找不到那一页了！",
+        "It might be an old link or maybe it moved": "这可能是旧的链接，或者页面被移动过。",
+        "Unexpected Error": "意外错误",
+        "We are working on fixing the problem": "我们正在努力解决这个问题。",
+        "Be back soon": "很快会回来。",
+        "Go To Main Page": "进入主页面",
+    },
+    EN: {
+        "File Not Found": "File Not Found",
+        "Sorry, we can't find that file": "Sorry, we can't find that file!",
+        "It might be eliminate or maybe it moved": "It might be eliminate or maybe it moved.",
+        "Page Not Found": "Page Not Found",
+        "Sorry, we can't find that page": "Sorry, we can't find that page!",
+        "It might be an old link or maybe it moved": "It might be an old link or maybe it moved.",
+        "Unexpected Error": "Unexpected Error",
+        "We are working on fixing the problem": "We are working on fixing the problem.",
+        "Be back soon": "Be back soon.",
+        "Go To Main Page": "Go To Main Page",
+    },
+};

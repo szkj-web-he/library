@@ -1,0 +1,58 @@
+/**
+* @file style file of Password Input component
+* @date 2020-09-04
+* @author Andy Jiang
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.passwordInput_inputContainer {
+    border: 1px solid $line_light;
+    border-radius: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 1.1rem;
+    transition: all 0.2s linear;
+    &:hover {
+        border-color: rgba($color: $primary_variant, $alpha: 0.5);
+    }
+}
+
+.passwordInput_input {
+    font: $fs_r_14;
+    border: 0;
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+    width: calc(100% - 2.4rem - 1rem);
+    height: 100%;
+    outline: none;
+    &::placeholder {
+        color: $not_activated;
+    }
+
+    &[disabled]:hover {
+        border-color: $line_light;
+    }
+}
+
+.passwordInput_inputShowPwdIcon {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: $line_light;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

@@ -1,0 +1,131 @@
+/**
+* @file
+* @date 2020-09-04
+* @author Mark
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+@use "../../../Constant/color.scss" as *;
+@use "../../../Constant/font.scss" as *;
+
+@mixin Button {
+    text-align: center;
+    letter-spacing: 0.0105rem;
+    line-height: 2.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    user-select: none;
+    display: table-cell;
+    vertical-align: middle;
+    outline: none;
+    transition: 0.2s linear;
+    > span {
+        margin-left: 0.5rem;
+    }
+    > span:first-child {
+        margin-left: 0;
+    }
+}
+
+.button_button__normal {
+    font: $fs_m_14;
+}
+
+.button_button__small {
+    font: $fs_r_12;
+}
+
+.button_button__big {
+    font: $fs_r_12;
+    color: $primary_variant !important;
+    background: $background !important;
+}
+
+.button_secondaryButton__big {
+    font: $fs_r_12 !important;
+    color: $background !important;
+    border: 0.1rem solid $background !important;
+    background: none !important;
+    &:hover {
+        color: $white !important;
+        border: 0.1rem solid $white !important;
+    }
+}
+
+.button_button__primary {
+    @include Button;
+    color: $background;
+    .button_loadingDot {
+        border-color: $background transparent transparent transparent;
+    }
+    background: $primary_variant;
+    border: 0.05rem solid transparent;
+}
+
+.button_button__secondary {
+    @include Button;
+    color: $primary_variant;
+    .button_loadingDot {
+        border-color: $primary_variant transparent transparent transparent;
+    }
+    border: 0.05rem solid $primary_variant;
+    background: none;
+}
+
+.button_button__secondary__disabled {
+    background: none !important;
+    border: 0.1rem solid $neutral_200 !important;
+    color: $neutral_300 !important;
+}
+
+.button__primaryButton__hover {
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+.button__secondaryButton__hover {
+    &:hover {
+        background-color: rgba($background, 0.5);
+    }
+}
+
+.button__button__pressed {
+    box-shadow: $shadow_small;
+}
+
+.button_button__danger {
+    @include Button;
+    color: $background;
+    .button_loadingDot {
+        border-color: $background transparent transparent transparent;
+    }
+    background: $error;
+    border: 0.05rem solid $error;
+    &:hover {
+        background-color: $background;
+        .button_loadingDot {
+            border-color: $error transparent transparent transparent;
+        }
+        color: $error;
+    }
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.button_loadingDot {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    border: 0.2rem solid;
+    animation: loading 1s infinite linear;
+    margin-right: 0.5rem;
+}

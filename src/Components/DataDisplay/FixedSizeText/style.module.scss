@@ -1,0 +1,20 @@
+/**
+* @file  FixedSizeText styles
+* @date 2021-09-24
+* @author xuejie.he
+* @lastModify xuejie.he 2021-09-24
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+.fixedSizeText_wrap {
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}

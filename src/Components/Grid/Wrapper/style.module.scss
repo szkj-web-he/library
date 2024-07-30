@@ -1,0 +1,41 @@
+/**
+* @file  *** styles
+* @date 2022-01-05
+* @author xuejie.he
+* @lastModify xuejie.he 2022-01-05
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+@use "../../../Constant/breakPoint.scss" as breakPoint;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+.wrapper_wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $bg;
+    font-family: $commonFamily;
+    min-width: 1024px;
+}
+
+.wrapper_main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    margin-top: 1.6rem;
+    height: calc(100% - 6.334rem - 1.6rem - 0.5rem);
+}
+
+.wrapper_container {
+    width: calc(100% - 26.6rem - 3.2rem);
+    flex: 0 0 auto;
+    height: 100%;
+    @media screen and (max-width: breakPoint.$mobile) {
+        width: calc(100% - 26.6rem - 1.2rem);
+    }
+}

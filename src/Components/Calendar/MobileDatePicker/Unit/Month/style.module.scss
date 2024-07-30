@@ -1,0 +1,15 @@
+/**
+* @file 月
+* @date 2023-06-13
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.mobileDatePicker_month {
+    width: 8.4rem;
+}

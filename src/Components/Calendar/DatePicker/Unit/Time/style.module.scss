@@ -1,0 +1,129 @@
+/**
+* @file  *** styles
+* @date 2021-12-17
+* @author xuejie.he
+* @lastModify xuejie.he 2021-12-17
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin iptWrap {
+    height: 2.6rem;
+
+    border: 1px solid $line_light;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.timePicker_content {
+    margin: 1.4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    font: $fs_r_14;
+    color: $gray_1;
+    box-sizing: border-box;
+    padding-left: calc((100% / 7) / 2 - 1.1rem);
+    height: 2.6rem;
+}
+
+.timePicker_Btn {
+    height: 5.4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    box-sizing: border-box;
+    border-top: 1px solid $not_activated;
+}
+
+.timePicker_apply {
+    line-height: 2.2rem;
+    margin-right: 0.7rem;
+    font: $fs_r_12;
+}
+
+.timePicker_cancel {
+    line-height: 2.2rem;
+}
+
+.timePicker_timeVal {
+    @include iptWrap();
+    width: 6rem;
+    margin: 0 1rem;
+}
+
+.timePicker_unit {
+    @include iptWrap();
+    width: 5.8rem;
+
+    .timePicker_unitContent {
+        font: $fs_r_12;
+        color: $gray_1;
+        flex: 1 1 auto;
+    }
+}
+
+.timePicker_arrow {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.timePicker_upIcon {
+    font-size: 1.2rem;
+    color: $gray_2;
+    cursor: pointer;
+    user-select: none;
+    path {
+        transform: translate(0, 40rem);
+    }
+}
+
+.timePicker_downIcon {
+    font-size: 1.2rem;
+    color: $gray_2;
+    cursor: pointer;
+    user-select: none;
+    path {
+        transform: translate(0, -40rem);
+    }
+}
+
+.timePicker_timeIpt {
+    outline: none;
+    background-color: transparent;
+    flex: 1 1 auto;
+    display: inline-flex;
+    width: calc(100% - 1.2rem);
+    border: 0;
+    padding: 0;
+}
+
+@media (max-width: $md) {
+    .timePicker_content {
+        padding-left: 1.3rem;
+    }
+
+    .timePicker_Btn {
+        padding-right: 1.3rem;
+    }
+}

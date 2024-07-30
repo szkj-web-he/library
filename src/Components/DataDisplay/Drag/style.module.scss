@@ -1,0 +1,98 @@
+/**
+* @file  *** styles
+* @date 2022-05-30
+* @author xuejie.he
+* @lastModify xuejie.he 2022-05-30
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin resize {
+    position: absolute;
+    z-index: 99;
+    outline: none;
+    &:hover {
+        background-color: rgba($color: $primary_variant, $alpha: 0.25);
+    }
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+.drag_wrap {
+    position: absolute;
+}
+
+.drag_topBar {
+    cursor: n-resize;
+    @include resize();
+    width: 100%;
+    height: 3px;
+    left: 0;
+    top: 0;
+}
+
+.drag_rightBar {
+    cursor: e-resize;
+    @include resize();
+    width: 3px;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+
+.drag_bottomBar {
+    cursor: s-resize;
+    @include resize();
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+}
+
+.drag_leftBar {
+    cursor: w-resize;
+    @include resize();
+    width: 3px;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.drag_tlBar {
+    cursor: nw-resize;
+    @include resize();
+    width: 6px;
+    height: 6px;
+    top: 0;
+    left: 0;
+}
+
+.drag_trBar {
+    cursor: ne-resize;
+    @include resize();
+    width: 6px;
+    height: 6px;
+    top: 0;
+    right: 0;
+}
+
+.drag_brBar {
+    cursor: se-resize;
+    @include resize();
+    width: 6px;
+    height: 6px;
+    bottom: 0;
+    right: 0;
+}
+
+.drag_blBar {
+    cursor: sw-resize;
+    @include resize();
+    width: 6px;
+    height: 6px;
+    bottom: 0;
+    left: 0;
+}

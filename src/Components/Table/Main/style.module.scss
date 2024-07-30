@@ -1,0 +1,123 @@
+/**
+* @file  *** styles
+* @date 2022-03-25
+* @author xuejie.he
+* @lastModify xuejie.he 2022-03-25
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+.tableBody_loading {
+    width: 100%;
+    height: 100%;
+}
+
+.tableBody_defaultLoading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 6.4rem;
+    min-height: 6.4rem;
+}
+
+.tableBody_loadingIcon {
+    flex: 0 0 auto;
+}
+
+.tableBody_null {
+    width: 100%;
+    height: 100%;
+}
+
+.tableBody_defaultNull {
+    font: $fs_r_14;
+    color: $line_dark;
+    padding: 2.1rem 0 0 4rem;
+}
+
+.tableComponent_nullIcon {
+    color: #ff8b03;
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+
+.tableBody_rowItem {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.tableBody_col {
+    list-style: none;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    height: 100%;
+    flex: 0 0 auto;
+    background-color: $background;
+}
+
+.tableBody_colContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.tableBody_sticky {
+    position: sticky !important;
+    z-index: 2;
+}
+
+.tableBody_border {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $not_activated;
+        z-index: 3;
+        box-sizing: border-box;
+        pointer-events: none;
+    }
+    .tableBody_col {
+        .tableBody_colContainer {
+            border-width: 1px;
+            border-style: solid;
+            border-color: $not_activated transparent transparent $not_activated;
+        }
+        &:first-child {
+            .tableBody_colContainer {
+                border-left-color: transparent;
+            }
+        }
+    }
+    .tableBody_rowItem:first-of-type {
+        .tableBody_colContainer {
+            border-top-color: transparent;
+        }
+    }
+}

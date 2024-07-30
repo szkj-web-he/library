@@ -1,0 +1,87 @@
+/**
+* @file
+* @date 2021-04-15
+* @author zhoubin
+* @lastModify  2021-04-15
+*/
+
+@use "../../Constant/color.scss" as *;
+@use "../../Constant/font.scss" as *;
+@use "../../Constant/breakPoint.scss" as *;
+
+h2 {
+    margin: 0;
+    padding: 0 !important;
+}
+.error_container .error_serverError {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-top: 10.8rem;
+    min-height: calc(100vh - 8.5rem);
+    box-sizing: border-box;
+    @media screen and (min-width: $md) {
+        padding-top: 23rem;
+    }
+    @media screen and (min-width: $desktop) {
+        padding-top: 2.5rem;
+    }
+}
+.error_container .error_notFond {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 2rem);
+    box-sizing: border-box;
+}
+
+.error_container > div:last-child > img {
+    width: 32.5rem;
+    height: 24rem;
+    margin-bottom: 2.995rem;
+    @media screen and (min-width: $md) {
+        width: 46rem;
+        height: 34rem;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 31.8rem;
+        height: 23.5rem;
+    }
+}
+.error_container > div:last-child > h2 {
+    margin-bottom: 1rem;
+    font: $fs_r_30;
+    color: $gray_1;
+    @media screen and (min-width: $md) {
+        font: $fs_r_48;
+    }
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 0.691rem;
+        font-size: 3.31826rem;
+    }
+}
+.error_container > div:last-child > span {
+    width: 27.8rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font: $fs_r_14;
+    line-height: 2.2rem;
+    color: $line_dark;
+    @media screen and (min-width: $md) {
+        width: 30.5rem;
+        font: $fs_r_16;
+        line-height: 2.4rem;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 21.085rem;
+        font-size: 1.10609rem;
+        line-height: 1.7rem;
+    }
+}
+.error_container > div:last-child > button {
+    margin-bottom: 2.1rem;
+}

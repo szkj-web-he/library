@@ -1,0 +1,150 @@
+/**
+* @file  *** styles
+* @date 2022-03-01
+* @author xuejie.he
+* @lastModify xuejie.he 2022-03-01
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin activeIcon {
+    color: $primary_400;
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.textEditTool_wrap {
+    border: 1px solid $neutral_200;
+    box-sizing: border-box;
+    background-color: $background;
+    box-shadow: 0px 2px 6px rgba(26, 26, 26, 0.06), 0px 3px 15px rgba(26, 26, 26, 0.1);
+    border-radius: 2px;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    height: 3rem;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+
+    &.textEditTool_wrap__active {
+        opacity: 1;
+        pointer-events: initial;
+        visibility: visible;
+    }
+}
+
+.textEditTool_fontSizeIcon {
+    font-size: 1.55rem;
+    color: $neutral_400;
+}
+
+.textEditTool_boldIcon {
+    font-size: 1.6rem;
+    color: $neutral_400;
+}
+
+.textEditTool_inclineIcon {
+    font-size: 1.6rem;
+    color: $neutral_400;
+}
+
+.textEditTool_underlineIcon {
+    font-size: 1.6rem;
+    color: $neutral_400;
+}
+
+.textEditTool_lineThroughIcon {
+    font-size: 1.6rem;
+    color: $neutral_400;
+}
+
+.textEditTool_colorIcon {
+    font-size: 1.54rem;
+    color: $neutral_400;
+}
+
+.textEditTool_backgroundIcon {
+    font-size: 1.6rem;
+    color: $neutral_400;
+}
+
+.textEditTool_leftIcon {
+    font-size: 1.2rem;
+    color: $neutral_400;
+}
+
+.textEditTool_centerIcon {
+    font-size: 1.2rem;
+    color: $neutral_400;
+}
+
+.textEditTool_rightIcon {
+    font-size: 1.2rem;
+    color: $neutral_400;
+}
+
+.textEditTool_copyIcon {
+    font-size: 1.38rem;
+    color: $neutral_400;
+}
+
+.textEditTool_pIcon {
+    font-size: 1.2rem;
+    color: $neutral_400;
+}
+
+.textEditTool_split {
+    height: 100%;
+    width: 1px;
+    background-color: $neutral_200;
+    margin: 0 0.8rem;
+    flex: 0 0 auto;
+}
+
+.textEditTool_active {
+    .textEditTool_boldIcon {
+        @include activeIcon();
+    }
+    .textEditTool_inclineIcon {
+        @include activeIcon();
+    }
+    .textEditTool_underlineIcon {
+        @include activeIcon();
+    }
+    .textEditTool_lineThroughIcon {
+        @include activeIcon();
+    }
+    .textEditTool_leftIcon {
+        @include activeIcon();
+    }
+    .textEditTool_centerIcon {
+        @include activeIcon();
+    }
+    .textEditTool_rightIcon {
+        @include activeIcon();
+    }
+    .textEditTool_fontSize {
+        @include activeIcon();
+        font: $fs_r_14;
+    }
+    .textEditTool_colorIcon {
+        @include activeIcon();
+    }
+    .textEditTool_backgroundIcon {
+        @include activeIcon();
+    }
+
+    .textEditTool_pIcon {
+        @include activeIcon();
+    }
+}

@@ -1,0 +1,295 @@
+/**
+* @file
+* @date 2022-06-15
+* @author mingzhou.zhang
+* @lastModify  2022-06-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+@use "../../../Constant/mixin.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+@mixin wrap {
+    width: 120rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @media (max-width: ($desktop )) {
+        width: calc(100% - 8rem);
+    }
+
+    @media (max-width: $md) {
+        width: calc(100% - 6rem);
+    }
+
+    @media (max-width: $mobile) {
+        width: calc(100% - 4.8rem);
+    }
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.footer_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $background;
+    box-sizing: border-box;
+}
+
+.footer_wrapper_top {
+    @include wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 3.2rem;
+}
+
+.footer_hr {
+    width: 100%;
+    height: 0.06rem;
+    background-color: $neutral_300;
+}
+
+.footer_wrapper_bottom {
+    @include wrap;
+    padding: 2.4rem 0;
+}
+
+.footer_leftWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_linkGroup {
+    margin-right: 7rem;
+    margin-bottom: 3.2rem;
+}
+
+.footer_linkTitle {
+    @include h_4;
+    color: $neutral_500;
+    margin-bottom: 1.6rem;
+}
+
+.footer_linkList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .footer_linkItem:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.footer_linkItem {
+    @include body_2;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.2rem;
+    color: $neutral_400;
+    &:hover {
+        cursor: pointer;
+        color: $primary_400;
+    }
+}
+
+.footer_language {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    .footer_language_icon {
+        width: 2rem;
+        margin-right: 0.8rem;
+    }
+    .footer_language_content {
+        @include body_2;
+        color: $neutral_500;
+    }
+}
+
+.footer_linkRight {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 2.4rem;
+}
+
+.footer_linkRightItem {
+    @include body_3;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    margin-bottom: 1.2rem;
+    color: $neutral_500;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    &:hover {
+        cursor: pointer;
+        color: $primary_400;
+    }
+}
+
+.footer_info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    > span {
+        margin-right: 1.6rem;
+        color: $neutral_500;
+        vertical-align: middle;
+        a {
+            text-decoration: none;
+            color: $neutral_500;
+            &:hover {
+                cursor: pointer;
+                color: $primary_400;
+            }
+        }
+    }
+    .footer_copyright {
+        @include body_3;
+    }
+    .footer_filing {
+        @include c_body_4;
+    }
+    .footer_security_record {
+        @include c_body_4;
+        margin-right: 0;
+        > img {
+            vertical-align: middle;
+            margin-right: 0.4rem;
+        }
+    }
+}
+
+/* <--------------------------- * media screen start * --------------------------- */
+
+@media (max-width: ($desktop )) {
+    .footer_linkGroup {
+        margin-bottom: 2.4rem;
+    }
+}
+
+@media (max-width: ($mobile )) {
+    .footer_wrapper_top {
+        padding-bottom: 0;
+    }
+
+    .footer_leftWrap {
+        flex-direction: column;
+    }
+
+    .footer_linkGroup {
+        margin-bottom: 2.4rem;
+    }
+
+    .footer_linkTitle,
+    .footer_language {
+        margin-bottom: 1.2rem;
+    }
+
+    .footer_info {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 3rem;
+        > span {
+            margin-bottom: 0.8rem;
+        }
+        .footer_security_record {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* <--------------------------- * media screen end * --------------------------- */
+
+// cn style
+.footer_cn {
+    .footer_linkTitle {
+        @include c_h_6;
+    }
+    .footer_linkItem {
+        @include c_body_3;
+    }
+    .footer_linkRightItem {
+        @include c_body_4;
+    }
+    .footer_copyright {
+        @include c_body_4;
+    }
+    .footer_language_content {
+        @include c_body_3;
+    }
+}
+
+/******* 增值信息start **********/
+.footer_idCard {
+    margin-left: 1.6rem;
+    @include c_body_4();
+    color: $neutral_500;
+    @include Transition();
+    cursor: pointer;
+    &:hover {
+        color: #67cdd6;
+    }
+}
+
+/******* 增值信息end **********/
+
+.footer_colourful {
+    background-color: $primary_600;
+
+    .footer_linkTitle {
+        color: $white;
+    }
+
+    .footer_linkItem {
+        color: $white;
+    }
+
+    .footer_hr {
+        background-color: $white;
+    }
+
+    .footer_language_content {
+        color: $white;
+    }
+
+    .footer_linkRightItem {
+        color: $white;
+    }
+
+    .footer_copyright {
+        color: $white;
+    }
+
+    .footer_filing {
+        a {
+            color: $white;
+        }
+    }
+
+    .footer_security_record {
+        a {
+            color: $white;
+        }
+    }
+
+    .footer_idCard {
+        color: $white;
+        &:hover {
+            color: #a9e5eb;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+/**
+* @file  *** styles
+* @date 2022-04-13
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.navigationLanguageMobile_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.5px;
+    color: $neutral_600;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.navigationLanguageMobile_content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    color: $neutral_600;
+    font: $fs_r_14;
+    letter-spacing: 0.25px;
+}
+
+.navigationLanguageMobile_icon {
+    width: 2rem;
+    margin-right: 0.8rem;
+    flex: 0 0 auto;
+}
+
+.navigationLanguageMobile_dropdownIcon {
+    font-size: 1.2rem;
+    color: $neutral_600;
+    margin-left: 1.5rem;
+    flex: 0 0 auto;
+}
+
+.navigationLanguageMobile_subItem {
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    width: 100%;
+    list-style: none;
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.navigationLanguageMobile_subItemName {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    font: $fs_r_16;
+    letter-spacing: 0.5px;
+    line-height: 2.4rem;
+}
+
+.navigationLanguageMobile_type {
+    margin-left: 0.8rem;
+}
+
+.navigationLanguageMobile_rightIcon {
+    font-size: 1.43rem;
+    color: $primary_600;
+    display: none;
+}
+
+.navigationLanguageMobile_subItemActive {
+    .navigationLanguageMobile_rightIcon {
+        display: inline-block;
+    }
+
+    .navigationLanguageMobile_subItemName {
+        color: $primary_600;
+    }
+}
+
+.navigationLanguageMobile_list {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+}

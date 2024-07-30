@@ -1,0 +1,98 @@
+/**
+* @file  *** styles
+* @date 2021-07-19
+* @author xuejie.he
+* @lastModify xuejie.he 2021-07-19
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.counter_container {
+    border: 1px solid $not_activated;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.6rem;
+}
+
+.counter_container.counter_container_vertical {
+    .counter_inputContainer {
+        text-align: left;
+    }
+    .counter_operation_button {
+        display: flex;
+        flex-direction: column;
+        .counter_subtractBtnIcon,
+        .counter_addBtnIcon {
+            font-size: 1rem;
+        }
+        .counter_subtractBtnIcon {
+            transform: rotate(-90deg);
+        }
+        .counter_addBtnIcon {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.counter_inputContainer {
+    @include body_1;
+    outline: none;
+    color: $gray_2;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 3rem);
+    text-align: center;
+    display: inline-block;
+}
+
+.counter_inputContainer__disabled {
+    color: $line_light;
+    background: transparent;
+    pointer-events: none;
+}
+
+.counter_addBtn,
+.counter_subtractBtn {
+    width: 1.3rem;
+    height: 1.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    &__disabled {
+        cursor: not-allowed;
+    }
+    > svg {
+        font-size: 1.6rem;
+    }
+}
+
+.counter_subtractBtnIcon,
+.counter_addBtnIcon {
+    color: $neutral_400;
+}
+
+.counter_subtractBtnIcon:hover,
+.counter_addBtnIcon:hover {
+    color: $primary_400;
+}
+
+.counter_addBtn__disabled .counter_addBtnIcon,
+.counter_subtractBtn__disabled .counter_subtractBtnIcon {
+    color: $neutral_300;
+}

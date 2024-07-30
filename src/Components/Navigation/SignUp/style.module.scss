@@ -1,0 +1,46 @@
+/**
+* @file  *** styles
+* @date 2022-04-11
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-11
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.navigationSignUp_wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    color: $primary_700;
+    box-sizing: border-box;
+    margin-right: 2.4rem;
+    margin-left: 1.7rem;
+    @include body_2();
+}
+
+@media screen and (max-width: 1441px) and (min-width: $desktop) {
+    .navigationSignUp_wrapper {
+        margin-left: 3rem;
+    }
+}
+
+@media screen and (max-width: $desktop) {
+    .navigationSignUp_wrapper {
+        width: 15.8rem;
+        height: 3.6rem;
+        border-radius: 6px;
+        background-color: $primary_600;
+        font: $fs_r_16;
+        line-height: 2.4rem;
+        letter-spacing: 0.5px;
+        color: $background;
+        margin: 0 auto;
+        display: flex;
+    }
+}

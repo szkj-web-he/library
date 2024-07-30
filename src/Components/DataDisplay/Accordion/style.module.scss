@@ -1,0 +1,74 @@
+/**
+* @file  *** styles
+* @date 2021-08-19
+* @author xuejie.he
+* @lastModify xuejie.he 2021-08-19
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/color.scss" as *;
+
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+$name: "accordion_";
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.#{$name}wrap {
+    display: inline-flex;
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.#{$name}container {
+    width: 100%;
+}
+
+.#{$name}item {
+    width: 100%;
+}
+
+.#{$name}itemContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    height: 3.6rem;
+    user-select: none;
+    cursor: pointer;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+}
+
+.#{$name}itemContent__active {
+    background-color: rgba($color: $primary_variant, $alpha: 0.1);
+    .#{$name}itemIcon {
+        transform: rotate(90deg);
+    }
+}
+
+.#{$name}itemContent__hasChild {
+    .accordion_itemContext {
+        width: calc(100% - 1.5rem);
+    }
+}
+
+.#{$name}itemIcon {
+    font-size: 1rem;
+    color: $gray_2;
+    transition: all 0.2s ease;
+}
+
+.#{$name}subContainer {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

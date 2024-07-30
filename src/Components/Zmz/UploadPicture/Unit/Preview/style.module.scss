@@ -1,0 +1,50 @@
+/**
+* @file 头像预览
+* @date 2023-01-09
+* @author xuejie.he
+* @lastModify xuejie.he 2023-01-09
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.previewAvatar_wrapper {
+    margin-left: 6rem;
+    flex: 0 0 auto;
+    &.previewAvatar_cn {
+        .previewAvatar_des {
+            @include c_body_3();
+        }
+    }
+}
+
+.previewAvatar_main {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.previewAvatar_des {
+    @include c_body_3(true);
+    color: $gray_4;
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+.previewAvatar_null {
+    width: 100%;
+    height: 100%;
+    background: $primary_600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $ENCommonFamily;
+    font-size: 3.7rem;
+    line-height: 5.3rem;
+    letter-spacing: 0.666667px;
+    color: $white;
+}

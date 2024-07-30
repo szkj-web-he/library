@@ -1,0 +1,296 @@
+/**
+* @file 
+* @date 2023-08-16
+* @author xuejie.he
+* @lastModify xuejie.he 2023-08-16
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.iconBtn_wrapper {
+    transition: all 0.15s linear;
+
+    &:not(.iconBtn_disabled):not(.iconBtn_loading) {
+        cursor: pointer;
+    }
+}
+
+.iconBtn_ {
+    &small {
+        font-size: 1.2rem;
+        border-radius: 4px;
+    }
+
+    &default {
+        font-size: 1.6rem;
+        border-radius: 6px;
+    }
+
+    &large {
+        font-size: 1.8rem;
+        border-radius: 6px;
+    }
+}
+
+:not(.iconBtn_disabled) {
+    &.iconBtn_ {
+        &shadowTheme {
+            box-shadow: $shadow_small;
+            padding: 0.8rem;
+            background-color: $white;
+            color: $neutral_400;
+        }
+
+        &hoverShadowTheme {
+            border: 1px solid $neutral_200;
+            background: $white;
+            padding: 0.9rem;
+            color: $primary_600;
+        }
+
+        &backgroundTheme {
+            color: $primary_600;
+            padding: 0.9rem;
+            background-color: $primary_50;
+        }
+
+        &hoverBackgroundTheme {
+            color: $neutral_500;
+            padding: 0.4rem;
+        }
+
+        &hoverPrimaryTheme {
+            color: $neutral_400;
+        }
+
+        &neutralTheme {
+            color: $neutral_400;
+        }
+
+        &primaryTheme {
+            color: $primary_500;
+        }
+
+        &dangerTheme {
+            color: $danger_600;
+        }
+
+        &borderTheme {
+            padding: 0.4rem;
+            border: 1px solid $neutral_200;
+            color: $neutral_400;
+        }
+    }
+}
+
+.iconBtn_disabled {
+    cursor: not-allowed;
+
+    &.iconBtn_ {
+        &shadowTheme {
+            padding: 0.8rem;
+            background-color: $neutral_50;
+            color: $neutral_300;
+        }
+
+        &hoverShadowTheme {
+            border: 1px solid $neutral_300;
+            background-color: $neutral_50;
+            color: $neutral_300;
+            padding: 0.9rem;
+        }
+
+        &backgroundTheme {
+            background-color: $neutral_50;
+            color: $neutral_300;
+            padding: 0.9rem;
+        }
+
+        &hoverBackgroundTheme {
+            padding: 0.4rem;
+            color: $neutral_300;
+        }
+
+        &hoverPrimaryTheme {
+            color: $neutral_300;
+        }
+
+        &neutralTheme {
+            color: $neutral_300;
+        }
+
+        &primaryTheme {
+            color: $neutral_300;
+        }
+
+        &dangerTheme {
+            color: $neutral_300;
+        }
+
+        &borderTheme {
+            color: $neutral_300;
+            padding: 0.4rem;
+            border: 1px solid $neutral_300;
+        }
+    }
+}
+
+.iconBtn_loading {
+    &.iconBtn_ {
+        &shadowTheme {
+            .iconBtn_loadingIcon {
+                color: $neutral_400;
+            }
+        }
+
+        &hoverShadowTheme {
+            .iconBtn_loadingIcon {
+                color: $primary_600;
+            }
+        }
+
+        &backgroundTheme {
+            .iconBtn_loadingIcon {
+                color: $primary_600;
+            }
+        }
+
+        &hoverBackgroundTheme {
+            .iconBtn_loadingIcon {
+                color: $neutral_500;
+            }
+        }
+
+        &hoverPrimaryTheme {
+            .iconBtn_loadingIcon {
+                color: $neutral_400;
+            }
+        }
+
+        &neutralTheme {
+            .iconBtn_loadingIcon {
+                color: $neutral_400;
+            }
+        }
+
+        &primaryTheme {
+            .iconBtn_loadingIcon {
+                color: $primary_500;
+            }
+        }
+
+        &dangerTheme {
+            .iconBtn_loadingIcon {
+                color: $danger_600;
+            }
+        }
+
+        &borderTheme {
+            .iconBtn_loadingIcon {
+                color: $neutral_400;
+            }
+        }
+    }
+}
+
+.iconBtn_pending {
+    &:not(.iconBtn_disabled):not(.iconBtn_loading) {
+        &.iconBtn_ {
+            &shadowTheme {
+                color: $primary_700;
+            }
+
+            &hoverShadowTheme {
+                border-color: $white;
+                color: $primary_700;
+                box-shadow: $shadow_small;
+            }
+
+            &backgroundTheme {
+                color: $primary_700;
+            }
+
+            &hoverBackgroundTheme {
+                color: $neutral_300;
+                background-color: $neutral_100;
+            }
+
+            &hoverPrimaryTheme {
+                color: $primary_700;
+            }
+
+            &neutralTheme {
+                color: $neutral_500;
+            }
+
+            &primaryTheme {
+                color: $primary_700;
+            }
+
+            &dangerTheme {
+                color: $danger_700;
+            }
+
+            &borderTheme {
+                border-color: $white;
+                box-shadow: $shadow_small;
+                color: $neutral_500;
+            }
+        }
+    }
+}
+
+.iconBtn_hover {
+    &:not(.iconBtn_disabled):not(.iconBtn_loading):not(.iconBtn_pending) {
+        &.iconBtn_ {
+            &shadowTheme {
+                color: $primary_600;
+            }
+
+            &hoverShadowTheme {
+                border-color: $white;
+                box-shadow: $shadow_small;
+            }
+
+            &backgroundTheme {
+                color: $primary_400;
+            }
+
+            &hoverBackgroundTheme {
+                color: $neutral_300;
+                background-color: $neutral_50;
+            }
+
+            &hoverPrimaryTheme {
+                color: $primary_600;
+            }
+
+            &neutralTheme {
+                color: $neutral_300;
+            }
+
+            &primaryTheme {
+                color: $primary_400;
+            }
+
+            &dangerTheme {
+                color: $danger_400;
+            }
+
+            &borderTheme {
+                border-color: $white;
+                box-shadow: $shadow_small;
+            }
+        }
+    }
+}
+
+.iconBtn_text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

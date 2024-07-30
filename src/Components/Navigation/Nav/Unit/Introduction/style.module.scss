@@ -1,0 +1,185 @@
+/**
+* @file  *** styles
+* @date 2022-04-11
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-11
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+.introduction_wrap {
+    background: $bg;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.introduction_split {
+    flex: 0 0 auto;
+    width: 1px;
+    height: calc(100% - 4rem - 2rem);
+    margin-top: 4rem;
+    background-color: $neutral_200;
+    box-sizing: border-box;
+}
+
+.introduction_main {
+    width: 56.6rem;
+    padding: 4rem 6rem;
+    box-sizing: border-box;
+}
+
+.introduction_des {
+    width: 43.4rem;
+    width: calc(100% - 56.6rem - 1px);
+    padding: 4rem 3.2rem;
+    box-sizing: border-box;
+}
+
+.introduction_banner {
+    width: 22rem;
+    height: 10rem;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+.introduction_header {
+    font-family: $commonFamily;
+    line-height: 3.6rem;
+    letter-spacing: 0.18px;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: $neutral_700;
+    margin: 2.4rem 0;
+    box-sizing: border-box;
+}
+
+.introduction_subHeader {
+    font: $fs_r_14;
+    color: $neutral_400;
+    line-height: 2rem;
+    letter-spacing: 0.25px;
+    margin-bottom: 6rem;
+    box-sizing: border-box;
+}
+
+.introduction_btnMemo {
+    letter-spacing: 0.25px;
+    font: $fs_r_14;
+    color: $line_light;
+    line-height: 2rem;
+    box-sizing: border-box;
+}
+
+.introduction_btn {
+    cursor: pointer;
+    width: 8.5rem;
+    height: 3.2rem;
+    border-radius: 12px 1px;
+    border: 1px solid $primary_500;
+    box-sizing: border-box;
+    margin-top: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.5px;
+    color: $primary_600;
+}
+
+.introduction_text {
+    display: inline-flex;
+    font: $fs_r_14;
+    line-height: 2rem;
+    letter-spacing: 0.25px;
+    color: $neutral_400;
+    margin: 0 0 2.5rem 0;
+    box-sizing: border-box;
+}
+
+.introduction_tip {
+    margin-right: 0.8rem;
+}
+
+.introduction_indent {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 1441px) and (min-width: $desktop) {
+    .introduction_main {
+        width: 44.1rem;
+    }
+
+    .introduction_des {
+        width: calc(36.9rem - 1px);
+        padding: 4rem 3.2rem;
+    }
+}
+
+@media screen and (max-width: $desktop) {
+    .introduction_split {
+        display: none;
+    }
+    .introduction_des {
+        display: none;
+    }
+    .introduction_main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row nowrap;
+        padding: 0;
+        width: 100%;
+    }
+
+    .introduction_mainContext {
+        margin-left: 11.2rem;
+        flex: 0 0 auto;
+        overflow: hidden;
+        width: calc(100% - 11.2rem - 22rem);
+    }
+
+    .introduction_wrap {
+        background-color: transparent;
+    }
+
+    .introduction_header {
+        display: none;
+    }
+
+    .introduction_subHeader {
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (max-width: ($tablet)) {
+    .introduction_main {
+        display: block;
+    }
+
+    .introduction_banner {
+        display: inline-block;
+        margin: 0 0 2rem 0;
+    }
+
+    .introduction_mainContext {
+        margin: 0;
+        width: 100%;
+    }
+
+    .introduction_subHeader {
+        margin-bottom: 2.4rem;
+    }
+}

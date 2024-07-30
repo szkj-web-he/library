@@ -1,0 +1,31 @@
+/**
+* @file
+* @date 2022-11-21
+* @author
+* @lastModify  2022-11-21
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.mobile_calendar_tabs_confirm {
+    @include subtitle_2;
+    border: none;
+    color: $primary_600;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.mobile_calendar_icon {
+    color: $neutral_400;
+}
+
+.mobile_calendar_icon__disabled {
+    color: $neutral_300;
+}

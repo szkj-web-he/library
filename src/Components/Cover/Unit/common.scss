@@ -1,0 +1,38 @@
+/**
+* @file dialog通用的scss变量
+* @date 2023-02-06
+* @author xuejie.he
+* @lastModify xuejie.he 2023-02-06
+*/
+
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+@mixin Wrapper {
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
+    max-height: 90vh;
+}
+
+@mixin SmallDialog {
+    width: 41.4rem;
+    border-radius: 6px;
+    box-shadow: $shadow_regular;
+    @include Wrapper();
+}
+
+@mixin RegularDialog {
+    width: 60rem;
+    border-radius: 10px;
+    box-shadow: $shadow_medium;
+    @include Wrapper();
+}
+
+@mixin LargeDialog {
+    width: 80rem;
+    border-radius: 10px;
+    box-shadow: $shadow_medium;
+    @include Wrapper();
+}

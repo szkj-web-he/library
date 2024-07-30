@@ -1,0 +1,96 @@
+/**
+* @file
+* @date 2022-04-29
+* @author
+* @lastModify  2022-04-29
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@import "../../../Constant/breakPoint.scss";
+@import "../../../Constant/font.scss";
+@import "../../../Constant/color.scss";
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.progress_container {
+    width: 100%;
+    /*
+        line progress
+    */
+    .progress_line_outer {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+        padding-right: 0;
+        margin-right: 0;
+        .progress_line_inner {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            overflow: hidden;
+            vertical-align: middle;
+            background-color: $gray_4;
+            border-radius: 1rem;
+            .progress_line_bg {
+                position: relative;
+                transition: all 0.5s linear 0s;
+            }
+        }
+    }
+    .progress_show_info {
+        margin-right: -4rem;
+        padding-right: 4rem;
+    }
+    /*
+        pie progress
+    */
+    .progress_pie_wrapper {
+        position: relative;
+        background-color: var(--percentColor);
+        border: 0.2rem solid $background;
+        border-radius: 50%;
+        overflow: hidden;
+        box-sizing: border-box;
+        .progress_pie_value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .progress_pie_left,
+    .progress_pie_right {
+        width: 50%;
+        height: 100%;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .progress_pie_left::before,
+    .progress_pie_right::before,
+    .progress_pie_right::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--trailColor);
+    }
+    .progress_pie_left::before {
+        left: 100%;
+        transform-origin: left;
+        transform: rotate(calc(3.6deg * (var(--percent) - 50)));
+        opacity: calc(99999 * (var(--percent) - 50));
+    }
+    .progress_pie_right::before {
+        right: 100%;
+        transform-origin: right;
+        transform: rotate(calc(3.6deg * (var(--percent))));
+    }
+    .progress_pie_right::after {
+        opacity: calc(99999 * (var(--percent) - 50));
+    }
+}

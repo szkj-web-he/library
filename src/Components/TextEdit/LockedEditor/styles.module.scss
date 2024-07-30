@@ -1,0 +1,167 @@
+/**
+* @file  *** styles
+* @date 2022-03-07
+* @author xuejie.he
+* @lastModify xuejie.he 2022-03-07
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin icon {
+    color: $gray_1;
+    font-size: 1.5rem;
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+.lockedEditor_wrapper {
+    width: 113.4rem;
+    height: 35.7rem;
+    background: $background;
+    border: 1px solid $not_activated;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+
+.lockedEditor_tool {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    margin-bottom: 1.2rem;
+    padding: 0 1.4rem;
+    box-sizing: border-box;
+}
+
+.lockedEditor_markBtn.lockedEditor_repeat {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 1.8rem;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.lockedEditor_uIcon {
+    @include icon();
+}
+
+.lockedEditor_iIcon {
+    @include icon();
+}
+
+.lockedEditor_bIcon {
+    @include icon();
+}
+
+.lockedEditor_fIcon {
+    font-size: 1.3rem;
+    color: $neutral_700;
+}
+
+.lockedEditor_lIcon {
+    @include icon();
+}
+
+.lockedEditor_cIcon {
+    @include icon();
+}
+
+.lockedEditor_backgroundIcon {
+    @include icon();
+}
+
+.lockedEditor_leftIcon {
+    font-size: 1.2rem;
+    color: $neutral_700;
+}
+
+.lockedEditor_centerIcon {
+    font-size: 1.2rem;
+    color: $neutral_700;
+}
+
+.lockedEditor_rightIcon {
+    font-size: 1.2rem;
+    color: $neutral_700;
+}
+
+.lockedEditor_copyIcon {
+    @include icon();
+}
+
+.lockedEditor_markSplit {
+    width: 1px;
+    background-color: $line_dark;
+    height: 1.4rem;
+    margin-right: 2.4rem;
+}
+
+.lockedEditor_pIcon {
+    font-size: 1.75rem;
+    color: $gray_1;
+}
+
+.lockedEditor_editorCore {
+    font: $fs_r_14;
+    line-height: 2rem;
+    letter-spacing: 0.25px;
+
+    width: 100%;
+    height: 100%;
+
+    span[data-slate-placeholder] {
+        color: $neutral_400;
+        letter-spacing: 0.5px;
+        font: $fs_r_16;
+        line-height: 2.4rem;
+    }
+}
+
+.lockedEditor_textLength {
+    font: $fs_r_12;
+    text-align: right;
+    padding-right: 1.4rem;
+    color: $neutral_400;
+    line-height: 1.6rem;
+    letter-spacing: 0.4px;
+}
+
+.lockedEditor_active {
+    .lockedEditor_uIcon,
+    .lockedEditor_iIcon,
+    .lockedEditor_bIcon,
+    .lockedEditor_fIcon,
+    .lockedEditor_lIcon,
+    .lockedEditor_cIcon,
+    .lockedEditor_backgroundIcon,
+    .lockedEditor_leftIcon,
+    .lockedEditor_rightIcon,
+    .lockedEditor_fontSize,
+    .lockedEditor_centerIcon {
+        color: $primary_variant;
+    }
+}
+
+.lockedEditor_scrollComponent {
+    height: calc(100% - 2.2rem - 1.2rem);
+}
+
+.lockedEditor_total {
+    .lockedEditor_scrollComponent {
+        height: calc(100% - 2.2rem - 1.2rem - 1.6rem);
+    }
+}
+
+.lockedEditor_scrollBody {
+    padding: 0 1.4rem;
+    box-sizing: border-box;
+}

@@ -1,0 +1,99 @@
+/**
+* @file
+* @date 2022-07-27
+* @author mingzhou.zhang
+* @lastModify  2022-07-27
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin wrap {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 35rem;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    @media (max-width: $mobile) {
+        min-width: calc(100% - 2.5rem);
+    }
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.errorv2_wrap {
+    @include wrap;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $mobile) {
+        img {
+            transform: scale(0.9);
+        }
+    }
+}
+
+.errorv2_content {
+    margin-top: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errorv2_type {
+    @include h_1;
+    @media (max-width: $mobile) {
+        @include h_2;
+    }
+}
+
+.errorv2_desc,
+.errorv2_desc_sub {
+    @include body_1;
+    text-align: center;
+    color: $neutral_400;
+    @media (max-width: $mobile) {
+        @include body_2;
+    }
+}
+
+.errorv2_desc {
+    margin-top: 1rem;
+}
+
+.errorv2_btn {
+    @include body_1;
+    margin-top: 2rem;
+    padding: 0.8rem 1.2rem;
+    background-color: $primary_600;
+    border: none;
+    color: $background;
+    border-radius: 0.4rem;
+    box-shadow: 0px 2px 6px rgba(26, 26, 26, 0.06), 0px 3px 15px rgba(26, 26, 26, 0.1);
+    cursor: pointer;
+}
+
+// cn style
+.errorv2_cn {
+    .errorv2_type {
+        @include c_h_1(true);
+        @media (max-width: $mobile) {
+            @include c_h_2(true);
+        }
+    }
+    .errorv2_desc,
+    .errorv2_desc_sub {
+        @include c_body_1;
+        @media (max-width: $mobile) {
+            @include c_body_2;
+        }
+    }
+    .errorv2_btn {
+        @include c_body_1;
+    }
+}

@@ -1,0 +1,167 @@
+/**
+* @file 文字按钮的样式
+* @date 2023-08-16
+* @author xuejie.he
+* @lastModify xuejie.he 2023-08-16
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/***** icon的统一样式 ****/
+@mixin Icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.textBtn_wrapper {
+    transition: all 0.15s linear;
+    &:not(.textBtn_disabled):not(.textBtn_loading) {
+        cursor: pointer;
+    }
+}
+
+.textBtn_ {
+    &small {
+        padding: 0.4rem 1.2rem;
+        border-radius: 4px;
+        font: $fs_r_12;
+        line-height: 1.8rem;
+        letter-spacing: 0.5px;
+    }
+    &default {
+        padding: 0.6rem 1.6rem;
+        border-radius: 6px;
+        font: $fs_r_14;
+        line-height: 2rem;
+        letter-spacing: 0.2px;
+    }
+    &large {
+        padding: 0.6rem 1.6rem;
+        border-radius: 6px;
+        font: $fs_r_16;
+        line-height: 2.4rem;
+        letter-spacing: 0.2px;
+    }
+}
+
+.textBtn_ {
+    &primary {
+        color: $primary_600;
+    }
+    &auxiliary {
+        font-weight: 500;
+        color: $auxiliary_600;
+    }
+    &neutral {
+        color: $neutral_500;
+    }
+    &danger {
+        color: $danger_600;
+    }
+    &neutralDanger {
+        color: $neutral_500;
+    }
+    &neutralPrimary {
+        color: $neutral_500;
+    }
+}
+
+.textBtn_underline:not(.textBtn_loading) {
+    text-decoration: underline;
+}
+
+.textBtn_hover {
+    &:not(.textBtn_disabled):not(.textBtn_loading) {
+        &.textBtn_backgroundOnHover {
+            background-color: $neutral_50;
+        }
+        &.textBtn_underlineOnHover {
+            text-decoration: underline;
+        }
+
+        &.textBtn_ {
+            &primary {
+                color: $primary_400;
+            }
+            &auxiliary {
+                color: $auxiliary_400;
+            }
+            &neutral {
+                color: $neutral_300;
+            }
+            &danger {
+                color: $danger_400;
+            }
+            &neutralDanger {
+                color: $danger_600;
+            }
+            &neutralPrimary {
+                color: $primary_600;
+            }
+        }
+    }
+}
+
+.textBtn_pending {
+    &:not(.textBtn_disabled):not(.textBtn_loading) {
+        &.textBtn_backgroundOnHover {
+            background-color: $neutral_100;
+        }
+        &.textBtn_underlineOnHover {
+            text-decoration: underline;
+        }
+
+        &.textBtn_ {
+            &primary {
+                color: $primary_700;
+            }
+            &auxiliary {
+                color: $auxiliary_700;
+            }
+            &neutral {
+                color: $neutral_600;
+            }
+            &danger {
+                color: $danger_700;
+            }
+            &neutralDanger {
+                color: $danger_700;
+            }
+            &neutralPrimary {
+                color: $primary_700;
+            }
+        }
+    }
+}
+
+.textBtn_leftIcon {
+    margin-right: 0.4rem;
+}
+
+.textBtn_icon {
+    @include Icon();
+}
+
+.textBtn_rightIcon {
+    margin-left: 0.4rem;
+}
+
+.textBtn_disabled {
+    cursor: not-allowed;
+    color: $neutral_300;
+}
+
+.textBtn_loading {
+    color: $neutral_500;
+}
+
+.textBtn_loadingIcon {
+    color: $neutral_500;
+    margin-right: 0.4rem;
+}

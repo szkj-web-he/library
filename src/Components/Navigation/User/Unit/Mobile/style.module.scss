@@ -1,0 +1,192 @@
+/**
+* @file  *** styles
+* @date 2022-04-13
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+.navigationUserMob_wrap {
+    width: 100%;
+}
+
+.navigationUserMob_userContainer {
+    width: 100%;
+    border-bottom: 1px solid $neutral_200;
+    padding-bottom: 2.4rem;
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    box-sizing: border-box;
+}
+
+.navigationUserMob_userAvatar {
+    margin-right: 1.2rem;
+}
+
+.navigationUserMob_userName {
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.5px;
+    color: $neutral_600;
+}
+
+.navigationUserMob_userEmail {
+    font: $fs_r_14;
+    line-height: 2rem;
+    letter-spacing: 0.25px;
+    color: $neutral_400;
+}
+
+.navigationUserMob_menuItem {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.5px;
+    color: $neutral_600;
+}
+
+.navigationUserMob_profileContainer {
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid $neutral_200;
+    box-sizing: border-box;
+    margin-bottom: 2.4rem;
+}
+
+.navigationUserMob_openIcon {
+    font-size: 1.2rem;
+    color: $neutral_600;
+}
+
+.navigationUserMob_subItem {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-start;
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.5px;
+    color: $neutral_600;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid $neutral_200;
+    box-sizing: border-box;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.navigationUserMob_orgItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid $neutral_200;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.navigationUserMob_orgItemInfo {
+    display: inline-flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: calc(100% - 2.4rem);
+    overflow: hidden;
+}
+
+.navigationUserMob_orgAvatar {
+    margin-right: 0.8rem;
+    flex: 0 0 auto;
+    [class*="avatar_msgContent"] {
+        font-size: 1.2rem;
+        border-radius: 4px;
+    }
+}
+
+.navigationUserMob_orgName {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font: $fs_r_16;
+    letter-spacing: 0.5px;
+    line-height: 2.4rem;
+    margin-right: 0.8rem;
+}
+
+.navigationUserMob_orgRole {
+    flex: 0 0 auto;
+    padding: 0 0.4rem;
+    display: inline-flex;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    font: $fs_r_12;
+    transform: scale(0.83);
+    line-height: 1.8rem;
+}
+
+.navigationUserMob_icon {
+    font-size: 1.4rem;
+    color: $primary_600;
+}
+
+.navigationUserMob_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    margin-bottom: 1.2rem;
+}
+
+.navigationUserMob_des {
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.5px;
+    color: $neutral_600;
+}
+
+.navigationUserMob_selectedOrg {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    margin-bottom: 4rem;
+}
+
+.navigationUserMob_switch {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    font: $fs_m_14;
+    letter-spacing: 0.1px;
+    line-height: 2.4rem;
+    color: $neutral_600;
+    .navigationUserMob_openIcon {
+        margin-left: 1.5rem;
+    }
+}
+
+.navigationUserMob_list {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+}

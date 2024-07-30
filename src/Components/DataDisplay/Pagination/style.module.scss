@@ -1,0 +1,142 @@
+/**
+* @file pagination component styles
+* @date 2021-07-21
+* @author xuejie.he
+* @lastModify xuejie.he 2021-07-21
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+
+@mixin iconBtn($name) {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    transition: box-shadow 0.2s;
+    border-radius: 0.2rem;
+
+    &:not([class*="#{$name}__gray"]):hover {
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.pagination_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.pagination_preColumnBtn {
+    @include iconBtn("pagination_preColumnBtn");
+    margin-right: 1rem;
+    &.pagination_preColumnBtn__gray {
+        cursor: context-menu;
+        .pagination_icon {
+            color: $gray_4;
+        }
+    }
+    .pagination_icon {
+        font-size: 1.4rem;
+    }
+}
+
+.pagination_preBtn {
+    @include iconBtn("pagination_preBtn");
+
+    margin-right: 1rem;
+    &.pagination_preBtn__gray {
+        cursor: context-menu;
+        .pagination_icon {
+            color: $gray_4;
+        }
+    }
+    .pagination_icon {
+        font-size: 1.15rem;
+        transform: rotate(180deg);
+    }
+}
+
+.pagination_nextBtn {
+    @include iconBtn("pagination_nextBtn");
+    margin-left: 1rem;
+
+    &.pagination_nextBtn__gray {
+        cursor: context-menu;
+        .pagination_icon {
+            color: $gray_4;
+        }
+    }
+    .pagination_icon {
+        font-size: 1.15rem;
+    }
+}
+
+.pagination_nextColumnBtn {
+    @include iconBtn("pagination_nextColumnBtn");
+    margin-left: 1rem;
+    &.pagination_nextColumnBtn__gray {
+        cursor: context-menu;
+        .pagination_icon {
+            color: $gray_4;
+        }
+    }
+    .pagination_icon {
+        font-size: 1.4rem;
+    }
+}
+
+.pagination_listContainer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination_itemContainer {
+    color: $gray_2;
+    font: $fs_r_14;
+    height: 2.2rem;
+    padding: 0 0.5rem;
+    min-width: 2.2rem;
+    border: 1px solid transparent;
+    margin: 0 0.5rem;
+    box-sizing: border-box;
+    border-radius: 6px;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: box-shadow 0.2s;
+
+    &:hover {
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.pagination_itemActive {
+    border-color: $primary_variant;
+    color: $primary_variant;
+}
+
+.pagination_icon {
+    color: $primary_variant;
+}

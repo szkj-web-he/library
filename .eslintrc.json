@@ -1,0 +1,70 @@
+{
+    "root": true,
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "prettier",
+        "plugin:react/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "tsconfigRootDir": "./",
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "ignorePatterns": [
+        "*.scss",
+        "*.js",
+        "generated-stories-entry.js",
+        "storybook-init-framework-entry.js"
+    ],
+    "plugins": ["@typescript-eslint", "react-hooks", "prettier", "eslint-plugin-import", "react"],
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "react/jsx-filename-extension": [
+            "warn",
+            {
+                "extensions": [".jsx", ".tsx"]
+            }
+        ],
+        "react/prop-types": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "no-void": [
+            "error",
+            {
+                "allowAsStatement": true
+            }
+        ],
+        "no-loss-of-precision": "off",
+        "@typescript-eslint/no-loss-of-precision": ["error"]
+    },
+    "settings": {
+        "react": {
+            "version": "18.2.0"
+        },
+        "import/resolver": {
+            "alias": {
+                "map": [["~", "./src/"]],
+                "extensions": [".ts", ".js", ".tsx", ".jsx"]
+            }
+        }
+    }
+}

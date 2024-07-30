@@ -1,0 +1,349 @@
+/**
+* @file
+* @date 2022-11-16
+* @author mingzhou.zhang
+* @lastModify  2022-11-16
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+@function border($width) {
+    @return #{$width}rem solid $neutral_200;
+}
+/* <--------------------------- * SECTION1 * --------------------------- */
+.tabs_container {
+    box-sizing: border-box;
+    display: flex;
+}
+
+.tabs_container_top,
+.tabs_container_bottom {
+    flex-direction: column;
+}
+// top
+.tabs_container_top > .tabs_nav {
+    &::before {
+        bottom: 0;
+    }
+    margin-bottom: 2.4rem;
+}
+
+.tabs_card.tabs_container_top > .tabs_nav,
+.tabs_editable_card.tabs_container_top > .tabs_nav {
+    margin-bottom: 0;
+}
+
+.tabs_card.tabs_container_top > .tabs_content,
+.tabs_editable_card.tabs_container_top > .tabs_content {
+    margin-top: -0.1rem;
+    border-top: border(0.1);
+}
+
+.tabs_container_top > .tabs_nav .tabs_ink_bar {
+    bottom: 0;
+}
+
+.tabs_card.tabs_container_top > .tabs_nav .tabs_nav_item__active,
+.tabs_editable_card.tabs_container_top > .tabs_nav .tabs_nav_item__active {
+    border-bottom-color: $white;
+}
+// bottom
+.tabs_container_bottom > .tabs_nav {
+    &::before {
+        top: 0;
+    }
+    margin-top: 2.4rem;
+    order: 1;
+}
+
+.tabs_card.tabs_container_bottom > .tabs_nav,
+.tabs_editable_card.tabs_container_bottom > .tabs_nav {
+    margin-top: 0;
+}
+
+.tabs_card.tabs_container_bottom > .tabs_content,
+.tabs_editable_card.tabs_container_bottom > .tabs_content {
+    margin-bottom: -0.1rem;
+    border-bottom: border(0.1);
+    order: 0;
+}
+
+.tabs_container_bottom > .tabs_nav .tabs_ink_bar {
+    top: 0;
+}
+
+.tabs_card.tabs_container_bottom > .tabs_nav .tabs_nav_item__active,
+.tabs_editable_card.tabs_container_bottom > .tabs_nav .tabs_nav_item__active {
+    border-top-color: $white;
+}
+// top, bottom
+.tabs_container_bottom > .tabs_nav::before,
+.tabs_container_top > .tabs_nav::before {
+    position: absolute;
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
+    border-bottom: border(0.1);
+    content: "";
+}
+
+.tabs_container_bottom > .tabs_nav .tabs_nav_item,
+.tabs_container_top > .tabs_nav .tabs_nav_item {
+    padding: 0.6rem 1rem;
+    margin-left: 3.2rem;
+}
+
+.tabs_card.tabs_container_bottom > .tabs_nav .tabs_nav_item,
+.tabs_card.tabs_container_top > .tabs_nav .tabs_nav_item,
+.tabs_editable_card.tabs_container_bottom > .tabs_nav .tabs_nav_item,
+.tabs_editable_card.tabs_container_top > .tabs_nav .tabs_nav_item {
+    padding: 0.6rem 2.4rem;
+    margin-left: 0.2rem;
+}
+
+.tabs_container_bottom > .tabs_nav .tabs_nav_item:first-child,
+.tabs_container_top > .tabs_nav .tabs_nav_item:first-child,
+.tabs_card.tabs_container_bottom > .tabs_nav .tabs_nav_item:first-child,
+.tabs_card.tabs_container_top > .tabs_nav .tabs_nav_item:first-child,
+.tabs_editable_card.tabs_container_bottom > .tabs_nav .tabs_nav_item:first-child,
+.tabs_editable_card.tabs_container_top > .tabs_nav .tabs_nav_item:first-child {
+    margin-left: 0;
+}
+
+.tabs_container_bottom > .tabs_nav .tabs_nav_add,
+.tabs_container_top > .tabs_nav .tabs_nav_add {
+    margin-left: 0.2rem;
+}
+
+.tabs_container_bottom > .tabs_nav .tabs_ink_bar,
+.tabs_container_top > .tabs_nav .tabs_ink_bar {
+    height: 0.2rem;
+    transition: width 0.2s ease, transform 0.2s linear;
+}
+// right
+.tabs_container_right > .tabs_nav {
+    order: 1;
+}
+
+.tabs_container_right > .tabs_content {
+    order: 0;
+    margin-right: -0.1rem;
+    border-right: border(0.1);
+    padding-right: 2.4rem;
+}
+
+.tabs_container_right > .tabs_nav .tabs_ink_bar {
+    left: 0;
+}
+
+.tabs_card.tabs_container_right > .tabs_nav .tabs_nav_item__active,
+.tabs_editable_card.tabs_container_right > .tabs_nav .tabs_nav_item__active {
+    border-left-width: 0.1rem;
+    border-left-color: $white;
+}
+// left
+.tabs_container_left > .tabs_content {
+    margin-left: -0.1rem;
+    border-left: border(0.1);
+    padding-left: 2.4rem;
+}
+
+.tabs_container_left > .tabs_nav .tabs_ink_bar {
+    right: 0;
+}
+
+.tabs_card.tabs_container_left > .tabs_nav .tabs_nav_item__active,
+.tabs_editable_card.tabs_container_left > .tabs_nav .tabs_nav_item__active {
+    border-right-width: 0.1rem;
+    border-right-color: $white;
+}
+// right,left
+.tabs_container_left > .tabs_nav,
+.tabs_container_right > .tabs_nav {
+    flex-direction: column;
+    min-width: 5rem;
+}
+
+.tabs_container_left > .tabs_nav .tabs_nav_wrap,
+.tabs_container_right > .tabs_nav .tabs_nav_wrap {
+    flex-direction: column;
+}
+
+.tabs_container_left > .tabs_nav .tabs_nav_list,
+.tabs_container_right > .tabs_nav .tabs_nav_list {
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+.tabs_container_left > .tabs_nav .tabs_nav_item,
+.tabs_container_right > .tabs_nav .tabs_nav_item {
+    padding: 0.6rem 1rem;
+    margin-top: 1.2rem;
+}
+
+.tabs_card.tabs_container_left > .tabs_nav .tabs_nav_item,
+.tabs_card.tabs_container_right > .tabs_nav .tabs_nav_item,
+.tabs_editable_card.tabs_container_left > .tabs_nav .tabs_nav_item,
+.tabs_editable_card.tabs_container_right > .tabs_nav .tabs_nav_item {
+    padding: 0.6rem 2.4rem;
+    margin-top: 0.2rem;
+}
+
+.tabs_container_left > .tabs_nav .tabs_nav_item:first-child,
+.tabs_container_right > .tabs_nav .tabs_nav_item:first-child,
+.tabs_card.tabs_container_left > .tabs_nav .tabs_nav_item:first-child,
+.tabs_card.tabs_container_right > .tabs_nav .tabs_nav_item:first-child,
+.tabs_editable_card.tabs_container_left > .tabs_nav .tabs_nav_item:first-child,
+.tabs_editable_card.tabs_container_right > .tabs_nav .tabs_nav_item:first-child {
+    margin-top: 0;
+}
+
+.tabs_container_left > .tabs_nav .tabs_nav_add,
+.tabs_container_right > .tabs_nav .tabs_nav_add {
+    padding: 0.5rem 0;
+    margin-top: 0.2rem;
+}
+
+.tabs_container_left > .tabs_nav .tabs_ink_bar,
+.tabs_container_right > .tabs_nav .tabs_ink_bar {
+    width: 0.2rem;
+    transition: height 0.3s, top 0.3s;
+}
+// nav
+.tabs_nav {
+    position: relative;
+    display: flex;
+    flex: none;
+    align-items: center;
+}
+// nav add button
+.tabs_nav_add {
+    min-width: 4rem;
+    outline: none;
+    border: border(0.1);
+    background-color: $neutral_50;
+    cursor: pointer;
+    svg {
+        vertical-align: baseline;
+    }
+}
+// nav wrap extra content
+.tabs_nav_extra_content {
+    flex: none;
+    box-sizing: border-box;
+}
+// nav wrap
+.tabs_nav_wrap {
+    position: relative;
+    display: flex;
+    flex: auto;
+    overflow: hidden;
+    white-space: nowrap;
+}
+// nav wrap list
+.tabs_nav_list {
+    position: relative;
+    display: flex;
+    transition: transform 0.3s;
+}
+// nav item
+.tabs_card > .tabs_nav .tabs_nav_item,
+.tabs_editable_card > .tabs_nav .tabs_nav_item {
+    border: border(0.06);
+    margin: 0;
+    background-color: $neutral_50;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.tabs_card > .tabs_nav .tabs_nav_item__active,
+.tabs_editable_card > .tabs_nav .tabs_nav_item__active {
+    background-color: $white;
+}
+
+.tabs_nav_item {
+    @include body_1;
+    color: $neutral_600;
+    display: inline-flex;
+    &:hover {
+        cursor: pointer;
+        color: $primary_500;
+    }
+}
+
+.tabs_nav_list > .tabs_nav_item__disabled {
+    color: $neutral_300;
+    cursor: not-allowed;
+}
+
+.tabs_nav_item__active {
+    color: $primary_600;
+}
+
+// nav item btn / closeicon
+.tabs_nav_item_btn {
+    outline: none;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+}
+
+.tabs_nav_item_closeicon {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    transition: all 0.3s;
+    color: $neutral_300;
+    // svg {
+    //     vertical-align: baseline;
+    // }
+    &:hover {
+        color: $neutral_600;
+    }
+}
+// nav ink bar
+.tabs_card > .tabs_nav .tabs_ink_bar,
+.tabs_editable_card > .tabs_nav .tabs_ink_bar {
+    visibility: hidden;
+}
+
+.tabs_ink_bar {
+    position: absolute;
+    background-color: $primary_600;
+    pointer-events: none;
+    border-radius: 0.1rem;
+}
+// content
+.tabs_card.tabs_container > .tabs_content,
+.tabs_card.tabs_container > .tabs_content,
+.tabs_editable_card.tabs_container > .tabs_content,
+.tabs_editable_card.tabs_container > .tabs_content {
+    padding: 2.4rem;
+}
+
+.tabs_content {
+    flex: auto;
+}
+
+.tabs_content__border {
+    border: 0.06rem solid $neutral_200;
+}
+// content holder
+.tabs_content_holder {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+// content item
+.tabs_tabpane {
+    outline: none;
+    display: none;
+}
+
+.tabs_tabpane__active {
+    display: block;
+}

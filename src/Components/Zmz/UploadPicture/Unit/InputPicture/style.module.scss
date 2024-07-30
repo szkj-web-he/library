@@ -1,0 +1,104 @@
+/**
+* @file 选择图片
+* @date 2023-01-05
+* @author xuejie.he
+* @lastModify  2023-01-05
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+@mixin Btn($isCn: false) {
+    @include c_body_3($isCn);
+    color: $primary_600;
+    cursor: pointer;
+}
+
+@mixin Wrap() {
+    flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.inputPicture_wrapper {
+    @include Wrap();
+    .inputPicture_selectBtn {
+        @include Btn();
+    }
+}
+
+.inputPicture_wrapper__cn {
+    @include Wrap();
+    .inputPicture_selectBtn {
+        @include Btn(true);
+    }
+
+    .inputPicture_tips {
+        @include c_body_3(true);
+    }
+
+    .inputPicture_iptDesContent {
+        @include c_body_3(true);
+    }
+}
+
+.inputPicture_iptContainer {
+    width: 100%;
+    border: 1px dashed $gray_4;
+    border-radius: 6px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    background-color: $neutral_50;
+    transition: all 0.1s linear;
+    &.inputPicture_isDrag {
+        background-color: $primary_10;
+        border-color: $primary_600;
+    }
+}
+
+.inputPicture_ipt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.inputPicture_iptDesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.inputPicture_iptDesContent {
+    margin-top: 1.6rem;
+    text-align: center;
+    width: 100%;
+    color: $gray_4;
+    @include c_body_3();
+    margin-bottom: 3rem;
+}
+
+.inputPicture_iptDesContent__highlight {
+    color: $primary_600;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.inputPicture_tips {
+    width: 100%;
+    color: $gray_4;
+    @include c_body_3();
+}

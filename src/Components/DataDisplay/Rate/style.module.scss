@@ -1,0 +1,96 @@
+/**
+* @file  *** styles
+* @date 2021-11-16
+* @author xuejie.he
+* @lastModify xuejie.he 2021-11-16
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin icon {
+    font-size: 2rem;
+    transition: all 0.2s linear;
+    flex: 0 0 auto;
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.rate_wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.rate_wrapper__disabled {
+    .rate_hoverContainer__allowHalf,
+    .rate_hoverContainer {
+        cursor: auto;
+    }
+}
+
+.rate_star {
+    position: relative;
+    z-index: 0;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    &:first-of-type {
+        margin-left: 0;
+    }
+}
+
+.rate_hoverContainer__allowHalf {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    cursor: pointer;
+}
+
+.rate_hoverContainer {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.rate_halfHover {
+    width: 50%;
+    height: 100%;
+}
+
+.rate_fillStar__active {
+    color: #f2c94c;
+    @include icon();
+}
+
+.rate_stokeStar__active {
+    @include icon();
+    color: #f2c94c;
+}
+
+.rate_star__gray {
+    color: $line_light;
+    @include icon();
+}
+
+.rate_halfStar {
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    display: inline-flex;
+    .rate_stokeStar__active {
+        transform: translateX(-50%);
+    }
+}

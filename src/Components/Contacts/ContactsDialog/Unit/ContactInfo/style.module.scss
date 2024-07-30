@@ -1,0 +1,42 @@
+/**
+* @file 
+* @date 2023-06-15
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+@use "../../../../../Constant/mixin.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.contactsDialog_info {
+    width: 52%;
+    height: 100%;
+    background: $bg;
+}
+
+.contactsDialog_infoHead {
+    height: 8.8rem;
+    padding: 3.2rem 0 0 3rem;
+    box-sizing: border-box;
+    color: $neutral_600;
+    @include h_4();
+}
+
+.contactsDialog_infoBtn {
+    height: 9rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-flow: row nowrap;
+    padding: 0 3rem 1.6rem 0;
+    box-sizing: border-box;
+}
+
+.contactsDialog_infoMain {
+    width: calc(100% - 6rem);
+    margin: 0 auto;
+    height: calc(100% - 1.6rem - 3.2rem - 4.2rem - 8.8rem);
+}

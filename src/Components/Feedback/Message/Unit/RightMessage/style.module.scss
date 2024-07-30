@@ -1,0 +1,121 @@
+/**
+* @file  right message styles
+* @date 2022-02-25
+* @author xuejie.he
+* @lastModify xuejie.he 2022-02-25
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+.rightMessage_wrap {
+    position: relative;
+    width: 40rem;
+    border-radius: 6px;
+    background-color: $background;
+    height: auto;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    pointer-events: auto;
+    box-sizing: border-box;
+    text-align: left;
+    right: 1rem;
+    filter: drop-shadow(0px 2px 8px rgba(26, 26, 26, 0.08))
+        drop-shadow(0px 2px 4px rgba(26, 26, 26, 0.03));
+}
+
+.rightMessage_icon {
+    min-height: 2.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    margin-right: 0.8rem;
+    flex: 0 0 auto;
+}
+
+.rightMessage_errorIcon {
+    font-size: 1.6rem;
+    color: $danger_600;
+}
+
+.rightMessage_infoIcon {
+    font-size: 1.6rem;
+    color: $danger_600;
+}
+
+.rightMessage_successIcon {
+    font-size: 1.6rem;
+    color: $success_600;
+}
+
+.rightMessage_warnIcon {
+    color: $auxiliary_600;
+    font-size: 1.6rem;
+}
+
+.rightMessage_container {
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.rightMessage_top {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+.rightMessage_name {
+    flex: 1 1 auto;
+    color: $neutral_400;
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rightMessage_closeBtn {
+    flex: 0 0 auto;
+    cursor: pointer;
+
+    &:hover {
+        .rightMessage_closeIcon {
+            color: $gray_3;
+        }
+    }
+}
+
+.rightMessage_closeIcon {
+    font-size: 1rem;
+    color: $gray_4;
+    transition: color 0.2s ease;
+}
+
+.rightMessage_content {
+    width: 100%;
+    color: $neutral_400;
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    word-wrap: break-word;
+    letter-spacing: 0.05rem;
+    overflow-wrap: anywhere;
+    margin-top: 0.4rem;
+}
+
+.rightMessage_noneWrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

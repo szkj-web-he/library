@@ -1,0 +1,85 @@
+/**
+* @file 
+* @date 2023-06-14
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-14
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.mobileDatePicker_body {
+    height: 30vh;
+    min-height: 33.2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+}
+
+.mobileDatePicker_top {
+    height: 5.6rem;
+    border-bottom: 1px solid $neutral_200;
+    width: calc(100% - 2.4rem);
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+}
+
+.mobileDatePicker_date {
+    @include c_h_6();
+    color: $neutral_500;
+    padding: 0.8rem 1.2rem;
+    position: relative;
+}
+
+.mobileDatePicker_date::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.4rem;
+    border-radius: 4px;
+    background-color: $primary_600;
+    transform: translateY(2px);
+}
+
+.mobileDatePicker_main {
+    padding: 2.4rem;
+    position: relative;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.mobileDatePicker_flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.mobileDatePicker_selectBlock {
+    width: calc(100% - 2.4rem * 2);
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $primary_50;
+    border-radius: 6px;
+    height: 3.2rem;
+    z-index: 0;
+    pointer-events: none;
+}

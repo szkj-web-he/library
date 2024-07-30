@@ -1,0 +1,98 @@
+/**
+* @file style file of SearchInput component
+* @date 2020-09-04
+* @author Andy Jiang
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/*
+/*
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+/** The demo mixin is ..........*/
+
+@mixin searchIcon {
+    display: inline-block;
+    position: absolute;
+    font-size: 1.6rem;
+    color: $line_light;
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.searchInput_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    transition: width 0.5s ease;
+    &:not(.searchInput_containerOpen) {
+        width: 1.6rem !important;
+    }
+}
+
+.searchInput_input {
+    font: $fs_m_14;
+    border-radius: 0.4rem;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    transition: all 0.2s ease;
+    &::placeholder {
+        color: $not_activated;
+    }
+}
+
+.searchInput_icon {
+    font-size: 1.6rem;
+    color: $line_light;
+    transition: color 0.5s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+}
+
+.searchInput_containerOpen {
+    .searchInput_icon {
+        left: 0.5rem;
+    }
+    .searchInput_input {
+        padding: 0 0.5rem 0 2.6rem;
+        border-color: $line_light;
+        color: $gray_1;
+        &:hover {
+            border-color: rgba($color: $primary_variant, $alpha: 0.5);
+        }
+        &:focus {
+            border-color: $primary_variant;
+        }
+    }
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

@@ -1,0 +1,43 @@
+/**
+* @file SelectInput style
+* @date 2021-06-03
+* @author xuejie.he
+* @lastModify xuejie.he 2021-06-03
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+.selectInput_container {
+    padding: 0;
+    margin: 0;
+}
+
+.selectInput_item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.selectInput_icon {
+    margin-right: 1rem;
+    flex: 0 0 auto;
+    font-size: 1.8rem;
+    transition: color 0.2s ease;
+    color: $line_light;
+    user-select: none;
+}
+
+.selectInput_itemActive {
+    .selectInput_icon {
+        color: $primary_variant;
+    }
+    color: $primary_variant;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

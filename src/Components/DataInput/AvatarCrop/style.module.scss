@@ -1,0 +1,50 @@
+/**
+* @file style file of avatar crop component style
+* @date 2020-09-04
+* @author Frank
+* @lastModify Frank 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.avatarCrop_container {
+    user-select: none;
+    position: relative;
+    width: 31.5rem;
+    height: 41.5rem;
+    box-shadow: $shadow_04dp;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.avatarCrop_title {
+    font: $fs_r_24;
+    line-height: 2.4rem;
+    color: $neutral_700;
+    text-align: center;
+    margin-top: 3.2rem;
+    margin-bottom: 2.4rem;
+}
+
+.avatarCrop_loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* <--------------------------- * SECTION1 * --------------------------- */

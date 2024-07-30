@@ -1,0 +1,59 @@
+/**
+* @file  *** styles
+* @date 2021-12-21
+* @author xuejie.he
+* @lastModify xuejie.he 2021-12-21
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as breakPoint;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+:root {
+    --grid-mg-val: 2.4rem;
+    @media screen and (max-width: breakPoint.$mobile) {
+        --grid-mg-val: 1.2rem;
+    }
+}
+
+@function width($span) {
+    @return calc((100% - var(--grid-mg-val) * 11) / 12 * $span + var(--grid-mg-val) * ($span - 1));
+}
+
+@mixin colSpan($span) {
+    width: width($span);
+    margin-left: var(--grid-mg-val);
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    &:first-of-type {
+        margin-left: 0;
+    }
+}
+
+@mixin colMargin($i, $d) {
+    &.gridCol_#{$d}#{$i} {
+        margin-#{$d}: calc(width($i) + var(--grid-mg-val));
+    }
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.gridCol_wrap {
+    &0 {
+        display: none;
+    }
+    @for $i from 1 through 11 {
+        &#{$i} {
+            @include colSpan($i);
+            @for $j from 1 through 11 {
+                @include colMargin($j, "left");
+                @include colMargin($j, "right");
+            }
+        }
+    }
+    &12 {
+        width: 100%;
+    }
+}

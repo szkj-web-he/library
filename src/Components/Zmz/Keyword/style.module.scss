@@ -1,0 +1,109 @@
+/**
+* @file
+* @date 2022-05-20
+* @author
+* @lastModify  2022-05-20
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@import "../../../Constant/breakPoint.scss";
+@import "../../../Constant/font.scss";
+@import "../../../Constant/color.scss";
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.keyword_wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .keyword_button_wrap {
+        position: relative;
+        height: 3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .keyword_list_item {
+        position: relative;
+        justify-content: center;
+        height: 2rem;
+        line-height: 2rem;
+        margin: 0 0.8rem 0.8rem 0;
+        background-color: $primary_10;
+        border-radius: 1.5rem;
+        padding: 0.2rem 0.8rem;
+        color: $primary_500;
+    }
+
+    .keywrod_icon_del {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: translate(25%, -25%);
+        border-radius: 50%;
+        background-color: $danger_600;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            width: 0.6rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-top: 0.2rem solid $bg;
+            border-radius: 0.2rem;
+        }
+    }
+
+    .keyword_input_wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        width: 16rem;
+        height: 3rem;
+        background-color: $background;
+        box-sizing: border-box;
+        border: 0.06rem solid $neutral_200;
+        border-radius: 0.4rem;
+        box-shadow: 0 0.4rem 0.5rem -0.2rem rgba(26, 26, 26, 0.08),
+            0px 2px 3px rgba(26, 26, 26, 0.06);
+
+        .keyword_icon_confirm,
+        .keyword_icon_cancel {
+            margin-right: 0.8rem;
+            font-size: 1rem;
+            cursor: pointer;
+            color: $neutral_300;
+        }
+
+        .keyword_icon_confirm:hover {
+            color: $success_600;
+        }
+
+        .keyword_icon_cancel:hover {
+            color: $danger_600;
+        }
+    }
+
+    .keyword_input_hide {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.show {
+    opacity: 1;
+}
+.hide {
+    opacity: 0;
+}

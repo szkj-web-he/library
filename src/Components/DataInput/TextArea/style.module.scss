@@ -1,0 +1,70 @@
+/**
+* @file textarea style sheet
+* @date 2020-10-20
+* @author Andy Jiang
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.textArea_textarea {
+    font: $fs_r_14;
+    padding: 1rem;
+    border: 0;
+    box-sizing: border-box;
+    color: $type;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.textArea_textarea::placeholder {
+    color: $not_activated;
+}
+
+.textArea_textarea:focus {
+    outline: none;
+}
+
+.textArea_container {
+    position: relative;
+    display: inline-block;
+    transition: border 0.2s;
+    border-radius: 0.4rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $line_dark;
+    &:hover {
+        border-color: rgba($primary_variant, 0.5);
+    }
+    &[disabled]:hover {
+        border-color: $line_dark;
+    }
+}
+
+.textArea_puppet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+    padding: 1rem 1rem 0 1rem;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: calc(100% - 1rem);
+    font: $fs_r_14;
+    text-align: left;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

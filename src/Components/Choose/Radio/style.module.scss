@@ -1,0 +1,133 @@
+/**
+* @file  radio styles
+* @date 2022-01-17
+* @author xuejie.he
+* @lastModify xuejie.he 2022-01-17
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin transition {
+    transition: all 0.2s ease;
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.radio_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    height: 3.2rem;
+    margin-bottom: 1.6rem;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    &:not(.radio_iconDisabled) {
+        .radio_icon:hover::before {
+            opacity: 1;
+        }
+    }
+}
+
+/********** icon部分 start ************/
+
+.radio_icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    margin-right: 1rem;
+    cursor: pointer;
+    flex: 0 0 auto;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        border: 3px solid #f7feff;
+        position: absolute;
+        top: calc(50% - 1.1rem);
+        box-sizing: border-box;
+        left: calc(50% - 1.1rem);
+        transition: all 0.2s linear;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.radio_iconActive {
+    .radio_defaultIcon {
+        border-color: $primary_600;
+    }
+    .radio_checkIcon {
+        opacity: 1;
+    }
+}
+
+.radio_defaultIcon {
+    border: 1px solid $neutral_300;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+    @include transition();
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.radio_checkIcon {
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background-color: $primary_600;
+    margin: auto;
+    opacity: 0;
+}
+
+/********** icon部分 end ************/
+
+.radio_iconDisabled {
+    .radio_defaultIcon {
+        background-color: $neutral_100;
+    }
+    .radio_checkIcon {
+        background-color: $neutral_300;
+        &::after {
+            background-color: $neutral_300;
+        }
+    }
+
+    .radio_content {
+        color: $neutral_300;
+    }
+
+    .radio_defaultIcon {
+        border-color: $neutral_300;
+    }
+    .radio_icon,
+    .radio_content {
+        cursor: not-allowed;
+    }
+}
+
+.radio_content {
+    flex: 0 0 auto;
+    cursor: pointer;
+}

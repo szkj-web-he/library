@@ -1,0 +1,31 @@
+/**
+* @file loadingv2 styles
+* @date 2022-04-18
+* @author
+* @lastModify  2022-04-18
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@import "../../../Constant/breakPoint.scss";
+@import "../../../Constant/font.scss";
+@import "../../../Constant/color.scss";
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.loadingv2_wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer_fill_path {
+    fill: #c5ebef;
+}
+
+.layer_default_path {
+    fill: #22a6b3;
+}
+/* <--------------------------- * SECTION1 * --------------------------- */

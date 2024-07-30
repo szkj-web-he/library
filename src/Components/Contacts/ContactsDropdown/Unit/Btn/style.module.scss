@@ -1,0 +1,76 @@
+/**
+* @file 
+* @date 2023-06-17
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-17
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+@use "../../../../../Constant/mixin.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+@mixin Circle() {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.contactsBtn_wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    cursor: pointer;
+}
+
+.contactsBtn_contact {
+    @include body_2();
+    color: $white;
+    margin-right: 0.8rem;
+    @include Circle();
+    &0 {
+        background-color: $primary_500;
+    }
+    &1 {
+        background-color: $purple_600;
+    }
+    &2 {
+        background-color: $warning_400;
+    }
+    &3 {
+        background-color: $danger_400;
+    }
+    &4 {
+        background-color: $info_500;
+    }
+    &5 {
+        background-color: $yellow_600;
+    }
+}
+
+.contactsBtn_more {
+    @include Circle();
+    @include label();
+    color: $primary_600;
+    border: 1px solid $primary_600;
+    background-color: $primary_50;
+    box-sizing: border-box;
+}
+
+.contactsBtn_add {
+    @include Circle();
+    position: relative;
+}
+
+.contactsBtn_addIcon {
+    @include IconCenter();
+    color: $primary_600;
+    font-size: 2.4rem;
+}

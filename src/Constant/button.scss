@@ -1,0 +1,38 @@
+/**
+ * 通用的button样式
+ **/
+@use "./font.scss" as *;
+@use "./color.scss" as *;
+
+@mixin SmallFont() {
+    font: $fs_r_12;
+    line-height: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+@mixin DefaultFont() {
+    font: $fs_r_14;
+    line-height: 2rem;
+    letter-spacing: 0.2px;
+}
+
+@mixin LargeFont() {
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.2px;
+}
+
+@mixin SmallPadding() {
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+}
+
+@mixin DefaultPadding() {
+    padding: 0.6rem 1.6rem;
+    border-radius: 6px;
+}
+
+@mixin LargePadding() {
+    padding: 0.6rem 1.6rem;
+    border-radius: 6px;
+}

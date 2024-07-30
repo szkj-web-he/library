@@ -1,0 +1,30 @@
+/**
+* @file 
+* @date 2023-06-13
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.mobileDatePicker_confirmBtn {
+    @include c_h_6();
+    color: $primary_600;
+    padding: 0.8rem 0;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    transition: all 0.15s linear;
+    background-color: transparent;
+    border: 0;
+    &:hover {
+        color: $primary_400;
+    }
+}
+
+.mobileDatePicker_confirmBtn__isPending {
+    color: $primary_400;
+}

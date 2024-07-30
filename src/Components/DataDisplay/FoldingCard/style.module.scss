@@ -1,0 +1,62 @@
+/**
+* @file style file of FoldingCard component
+* @date 2020-09-07
+* @author Andy Jiang
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.foldingCard_container {
+    position: relative;
+    box-shadow: $shadow_04dp;
+    border-radius: 0.4rem;
+    background: $background;
+    overflow: hidden;
+}
+
+.foldingCard_titleContainer {
+    position: relative;
+    height: 8rem;
+    line-height: 8rem;
+    width: 100%;
+    background: $background;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.foldingCard_titleText {
+    font: $fs_r_20;
+    display: inline-block;
+    user-select: none;
+}
+
+.foldingCard_titleIcon {
+    font: $fs_r_16;
+    display: inline-block;
+    margin-right: 1rem;
+    margin-left: 5rem;
+    transition: 0.1s linear;
+    @media screen and (max-width: $xs_sm) {
+        margin-left: 2.3rem;
+    }
+}
+
+.foldingCard_contentContainer {
+    transition: 0.1s linear;
+    position: relative;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

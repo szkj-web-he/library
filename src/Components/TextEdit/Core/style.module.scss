@@ -1,0 +1,17 @@
+/**
+* @file Core styles
+* @date 2022-03-07
+* @author xuejie.he
+* @lastModify xuejie.he 2022-03-07
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.editor_wrap {
+    font: $fs_r_14;
+    line-height: 2rem;
+    letter-spacing: 0.25px;
+}

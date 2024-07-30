@@ -1,0 +1,75 @@
+/**
+* @file 区号的样式
+* @date 2023-06-15
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.mobileInputV2_areaCodeBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    padding-left: 1.2rem;
+    padding-right: 0.8rem;
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    box-sizing: content-box;
+
+    &[class*="dropdownBtn_disable"] {
+        cursor: auto;
+        background-color: $neutral_50;
+    }
+}
+
+.mobileInputV2_areaImg {
+    width: 2rem;
+}
+
+.mobileInputV2_areaCodeText {
+    @include body_2();
+    color: $neutral_500;
+    margin: 0 0.8rem;
+}
+
+.mobileInputV2_iconContainer {
+    width: 1.6rem;
+    height: 1.6rem;
+    position: relative;
+    transition: all 0.15s linear;
+    &.mobileInputV2_iconContainer__active {
+        transform: rotate(180deg);
+    }
+}
+
+.mobileInputV2_dropdownIcon {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: $neutral_500;
+    font-size: 1.2rem;
+}
+
+.mobileInputV2_areaCodeDropdown {
+    background-color: $white;
+    box-shadow: $shadow_regular;
+    border-radius: 6px;
+}
+
+.mobileInputV2_areaCodeListBody {
+    max-height: 25rem;
+    padding: 0.6rem 0;
+    box-sizing: border-box;
+}

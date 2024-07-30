@@ -1,0 +1,48 @@
+/**
+* @file 
+* @date 2023-06-15
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+@use "../../../../../Constant/mixin.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.contactsDialog_saveBtn {
+    width: 6.3rem;
+    height: 3.2rem;
+    border-radius: 6px;
+    color: $white;
+    @include body_2();
+    box-shadow: $shadow_regular;
+    background-color: $primary_600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    border: 0;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    @include Transition();
+}
+
+.contactsDialog_saveBtn__pending:not(.contactsDialog_saveBtn__disabled) {
+    box-shadow: none;
+    background-color: $primary_400;
+}
+
+.contactsDialog_saveBtn__disabled {
+    background-color: $neutral_300;
+    cursor: not-allowed;
+}
+
+.contactsDialog_saveBtn:not(.contactsDialog_saveBtn__pending):not(
+        .contactsDialog_saveBtn__disabled
+    ):hover {
+    background-color: $primary_400;
+}

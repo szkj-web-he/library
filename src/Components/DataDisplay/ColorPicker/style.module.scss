@@ -1,0 +1,92 @@
+/**
+* @file  *** styles
+* @date 2021-08-12
+* @author xuejie.he
+* @lastModify xuejie.he 2021-08-12
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+
+$name: "colorPicker_";
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.#{$name}wrap {
+    width: 17.2rem;
+    height: 22.3rem;
+    border-radius: 0.5rem;
+    box-shadow: $shadow_04dp;
+    padding-top: 0.5rem;
+}
+
+.#{$name}colorAttr {
+    width: calc(100% - 1rem);
+    margin: 0 auto 1.2rem auto;
+    position: relative;
+    height: 2.2rem;
+}
+
+.#{$name}colorBlank {
+    position: absolute;
+    width: 2.2rem;
+    border-radius: 2px;
+    height: 2.2rem;
+    top: 0;
+    left: 0;
+}
+
+.#{$name}colorAttrValue {
+    width: 100%;
+    border-radius: 2px;
+    height: 100%;
+    padding-left: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font: $fs_r_12;
+    color: $gray_2;
+    border: 1px solid $not_activated;
+    box-sizing: border-box;
+}
+
+.#{$name}colorCafeteria {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.#{$name}colorCafeteriaItem {
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+
+    &:nth-child(4n) {
+        margin-right: 0;
+    }
+    &:nth-child(n + 5) {
+        margin-top: 0.5rem;
+    }
+    &.#{$name}colorCafeteriaItem__active {
+        border-color: $gray_5;
+    }
+}
+
+.#{$name}colorCafeteriaItem__container {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 2px;
+    cursor: pointer;
+}

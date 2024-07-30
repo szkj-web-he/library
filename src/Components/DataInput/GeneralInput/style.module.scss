@@ -1,0 +1,44 @@
+/**
+* @file style file of General Input component
+* @date 2020-09-04
+* @author Andy Jiang
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.generalInput_inputContainer {
+    font: $fs_r_14;
+    display: inline-block;
+    border-radius: 0.4rem;
+    border: 0.1rem solid $line_light;
+    box-sizing: border-box;
+    text-indent: 1rem;
+    padding-right: 1rem;
+    transition: border 0.5s ease;
+    &::placeholder {
+        font: $fs_r_14;
+        color: $not_activated;
+    }
+    &:hover {
+        border-color: rgba($color: $primary_variant, $alpha: 0.5);
+    }
+    &[disabled]:hover {
+        border-color: $line_light;
+    }
+    &:focus {
+        outline: none;
+        border-color: rgba($color: $primary_variant, $alpha: 1);
+    }
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

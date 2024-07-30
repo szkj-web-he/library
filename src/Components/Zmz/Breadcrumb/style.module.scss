@@ -1,0 +1,129 @@
+/**
+* @file
+* @date 2023-01-04
+* @author mingzhou.zhang
+* @lastModify  2023-01-04
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.breadcrumb {
+    @include body_2;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: $neutral_300;
+
+    & > ol {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        align-items: center;
+    }
+
+    & a {
+        text-decoration: none;
+        color: $neutral_300;
+        transition: color 0.2s;
+    }
+
+    & a:hover {
+        color: $primary_400;
+    }
+}
+
+.breadcrumb li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.breadcrumb li:last-child {
+    & a {
+        color: $neutral_600;
+    }
+    color: $neutral_600;
+}
+
+.breadcrumb .breadcrumb_separator,
+.breadcrumb_item_tooltip .breadcrumb_separator {
+    margin-inline: 0.8rem;
+}
+
+.breadcrumb li:last-child > .breadcrumb_separator,
+.breadcrumb_item_tooltip li:last-child > .breadcrumb_separator {
+    display: none;
+}
+
+.breadcrumb li .breadcrumb_item_link__disabled {
+    & a {
+        color: $neutral_200;
+        cursor: not-allowed;
+    }
+    color: $neutral_200;
+    cursor: not-allowed;
+}
+
+.breadcrumb_expand {
+    @include body_2;
+    cursor: pointer;
+}
+
+.breadcrumb_item_tooltip {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    white-space: nowrap;
+    color: $neutral_300;
+    & a {
+        text-decoration: none;
+        color: $neutral_300;
+        cursor: pointer;
+    }
+    & svg {
+        margin-inline-end: 0.4rem;
+    }
+    & li {
+        list-style: none;
+        display: inline-flex;
+    }
+
+    & a:hover,
+    & span:hover {
+        color: $primary_400;
+    }
+
+    .breadcrumb_item_link {
+        & svg {
+            margin-inline-end: 0;
+        }
+    }
+}
+
+.breadcrumb_item_link {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    & > [class*="icon_wrap"] + span,
+    & > [class*="icon_wrap"] + a {
+        margin-inline-start: 0.4rem;
+    }
+}
+/* <--------------------------- * SECTION1 * --------------------------- */
+// cn style
+.breadcrumb_cn {
+    @include c_body_3;
+    .breadcrumb_item_tooltip {
+        @include c_label_1;
+    }
+}

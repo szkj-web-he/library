@@ -1,0 +1,124 @@
+/**
+* @file
+* @date 2022-05-24
+* @author
+* @lastModify  2022-05-24
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@import '../../../../../Constant/breakPoint.scss';
+@import '../../../../../Constant/font.scss';
+@import '../../../../../Constant/color.scss';
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+@keyframes slideOut {
+    from {
+        width: 2rem;
+        opacity: 1;
+    }
+    to {
+        width: 16rem;
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        width: 16rem;
+        opacity: 0;
+    }
+
+    to {
+        width: 2rem;
+        opacity: 1;
+    }
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.keyword_icon_add__wrap {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+}
+
+.keyword_container {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+}
+
+.keyword_wrap {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+    background-color: $primary_10;
+}
+
+.keyword_wrap__colorless {
+    background-color: transparent;
+}
+
+.keyword_wrap_animationOut {
+    animation: slideOut 1s cubic-bezier(0.33, 0, 0.33, 1);
+}
+
+.keyword_wrap_animationIn {
+    animation: slideIn .5s cubic-bezier(0.33, 0, 0.33, 1);
+}
+
+.keyword_icon_add {
+    display: inline-block;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    background-color: $primary_10;
+    cursor: pointer;
+
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
+
+    &::after {
+        height: 1rem;
+        border-left: 0.1rem solid var(--icon-color);
+    }
+
+    &::before {
+        width: 1rem;
+        border-top: 0.1rem solid var(--icon-color);
+    }
+}
+
+.keyword_icon_add__dashed {
+    border: 0.08rem dashed var(--icon-color);
+    background-color: transparent;
+}
+
+.keyword_placeholder {
+    @include body_2;
+    margin-left: .8rem;
+    color: $neutral_200;
+    transition: opacity .5s cubic-bezier(0.33, 0, 0.33, 1);
+}
+
+
+//cn styles
+.keyword_cn {
+    .keyword_placeholder {
+        @include c_body_3;
+    }
+}

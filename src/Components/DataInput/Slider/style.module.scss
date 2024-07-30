@@ -1,0 +1,55 @@
+/**
+* @file style file of slider component style
+* @date 2020-09-04
+* @author Frank
+* @lastModify Frank 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+.slider_container {
+    height: 0.4rem;
+    position: relative;
+    display: inline-block;
+    width: 22rem;
+}
+
+.slider_track {
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    cursor: pointer;
+}
+
+.slider_walked {
+    background-color: $info_600;
+    height: 100%;
+}
+
+.slider_bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: $gray_2;
+    transition: box-shadow 0.2s ease;
+    &:hover {
+        box-shadow: 0px 0px 7px $primary_variant;
+    }
+}
+/* <--------------------------- * SECTION1 * --------------------------- */

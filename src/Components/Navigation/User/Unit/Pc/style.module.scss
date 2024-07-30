@@ -1,0 +1,163 @@
+/**
+* @file  *** styles
+* @date 2022-04-13
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin padding {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    box-sizing: border-box;
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.navigationUser_wrapper {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: relative;
+}
+
+.navigationUser_kite {
+    position: absolute;
+    top: 100%;
+    right: -3rem;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+    pointer-events: none;
+    transition: all 0.2s linear;
+    width: 31.7rem;
+}
+
+.navigationUser_kiteActive {
+    opacity: 1;
+    pointer-events: inherit;
+    visibility: visible;
+}
+
+.navigationUser_triangle {
+    border-left: 0.8rem solid transparent;
+    border-right: 0.8rem solid transparent;
+    border-bottom: 0.8rem solid $background;
+    width: 0;
+    height: 0;
+    display: block;
+    margin-left: calc(100% - 3rem - 1.6rem - 0.8rem);
+    filter: drop-shadow(0px -2px 1px rgba(26, 26, 26, 0.06));
+}
+
+.navigationUser_main {
+    background-color: $background;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(26, 26, 26, 0.06), 0px 3px 15px rgba(26, 26, 26, 0.1);
+    padding-bottom: 2.4rem;
+    box-sizing: border-box;
+}
+
+.navigationUser_userContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @include padding();
+    padding-top: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $neutral_200;
+    margin-bottom: 3.2rem;
+}
+
+.navigationUser_userData {
+    margin-left: 1.2rem;
+    width: calc(100% - 3.6rem - 1.2rem);
+    overflow: hidden;
+}
+
+.navigationUser_userName {
+    font: $fs_r_16;
+    letter-spacing: 0.5px;
+    line-height: 2.4rem;
+    color: $neutral_600;
+}
+
+.navigationUser_userEmail {
+    font: $fs_r_14;
+    line-height: 2rem;
+    letter-spacing: 0.25px;
+    color: $neutral_400;
+}
+
+.navigationUser_menuItem {
+    @include padding();
+}
+
+.navigationUser_menuItemName {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    font: $fs_m_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.15px;
+    color: $neutral_600;
+    width: 100%;
+    cursor: pointer;
+}
+
+.navigationUser_subList {
+    margin-top: 1.6rem;
+}
+
+.navigationUser_subItemContent {
+    position: relative;
+    z-index: 1;
+}
+
+.navigationUser_subItem {
+    height: 3.4rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    font: $fs_r_16;
+    letter-spacing: 0.5px;
+    line-height: 2.4rem;
+    color: $neutral_500;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    &:hover {
+        &::after {
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: calc(100% + 2rem + 2rem);
+            left: -2rem;
+            background-color: $primary_50;
+            top: 0;
+            z-index: 0;
+        }
+    }
+}
+
+.navigationUser_openIcon {
+    font-size: 1.2rem;
+    color: $neutral_600;
+    transition: all 0.2s linear;
+}
+
+.navigationUser_menuItemNameActive {
+    .navigationUser_openIcon {
+        transform: rotate(90deg);
+    }
+}

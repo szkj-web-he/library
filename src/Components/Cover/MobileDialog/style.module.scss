@@ -1,0 +1,40 @@
+/**
+* @file 手机端的dialog样式
+* @date 2023-06-13
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.mobileDialog_wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+}
+
+.mobileDialog_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($black, 0.4);
+    z-index: 0;
+}
+
+.mobileDialog_body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: $white;
+    z-index: 2;
+    border-radius: 12px 12px 0 0;
+}

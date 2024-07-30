@@ -1,0 +1,39 @@
+/**
+* @file  *** styles
+* @date 2021-09-13
+* @author xuejie.he
+* @lastModify xuejie.he 2021-09-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ *
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.selectImage_uploadWrapper {
+    height: 25.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    user-select: none;
+
+    > label {
+        display: inline-block;
+        font: $fs_r_12;
+        color: $primary_variant;
+        text-align: center;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+}
+
+.selectImage_tips {
+    color: $line_dark;
+    font: $fs_r_12;
+    text-align: center;
+    span {
+        color: #eb5757;
+    }
+}

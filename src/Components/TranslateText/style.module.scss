@@ -1,0 +1,107 @@
+/**
+* @file Text
+* @date 2022-05-25
+* @author Chaman
+* @lastModify  2022-05-25
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@import "../../Constant/font.scss";
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+.text_container {
+    display: inline-block;
+}
+.text {
+    &_h1 {
+        @include h_1;
+    }
+    &_h2 {
+        @include h_2;
+    }
+    &_h3 {
+        @include h_3;
+    }
+    &_h4 {
+        @include h_4;
+    }
+    &_subtitle1 {
+        @include subtitle_1;
+    }
+    &_subtitle2 {
+        @include subtitle_2;
+    }
+    &_subtitle3 {
+        @include subtitle_3;
+    }
+    &_body1 {
+        @include body_1;
+    }
+    &_body2 {
+        @include body_2;
+    }
+    &_body3 {
+        @include body_3;
+    }
+    &_label {
+        @include label;
+    }
+    &_overline {
+        @include overline;
+    }
+    &_cH1 {
+        @include c_h_1;
+    }
+    &_cH2 {
+        @include c_h_2;
+    }
+    &_cH3 {
+        @include c_h_3;
+    }
+    &_cH4 {
+        @include c_h_4;
+    }
+    &_cH5 {
+        @include c_h_5;
+    }
+    &_cH6 {
+        @include c_h_6;
+    }
+    &_cH7 {
+        @include c_h_7;
+    }
+    &_cSubtitle1 {
+        @include c_subtitle_1;
+    }
+    &_cSubtitle2 {
+        @include c_subtitle_2;
+    }
+    &_cSubtitle3 {
+        @include c_subtitle_3;
+    }
+    &_cSubtitle4 {
+        @include c_subtitle_4;
+    }
+    &_cSubtitle5 {
+        @include c_subtitle_5;
+    }
+    &_cBody1 {
+        @include c_body_1;
+    }
+    &_cBody2 {
+        @include c_body_2;
+    }
+    &_cBody3 {
+        @include c_body_3;
+    }
+    &_cBody4 {
+        @include c_body_4;
+    }
+    &_cLabel1 {
+        @include c_label_1;
+    }
+    &_cLabel2 {
+        @include c_label_2;
+    }
+}

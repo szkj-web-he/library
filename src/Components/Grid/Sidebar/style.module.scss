@@ -1,0 +1,27 @@
+/**
+* @file  sidebar styles
+* @date 2022-01-05
+* @author xuejie.he
+* @lastModify xuejie.he 2022-01-05
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/color.scss" as *;
+@use "../../../Constant/breakPoint.scss" as breakPoint;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+.sidebar_wrap {
+    width: 26.6rem;
+    background-color: $background;
+    border-radius: 12px;
+    border: 1px solid $neutral_200;
+    margin-left: 3.2rem;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    @media screen and (max-width: breakPoint.$mobile) {
+        margin-left: 1.2rem;
+    }
+}

@@ -1,0 +1,26 @@
+export const languageConfig = {
+    CN: {
+        Reset: "重置",
+        Confirm: "确定",
+        "Upload Photoes": "上传图片",
+        Error: "上传失败",
+        "Sorry that this picture is so big": "上传文件体积过大",
+        "The uploaded file should be less than": "上传文件体积最大为",
+        "Upload Profile Image": "点击上传",
+        "Drop files here to upload or": "将文件拖拽至此区域或",
+        "choose file": "浏览文件",
+        // "upload avatar": "点击上传",
+    },
+    EN: {
+        Reset: "Reset",
+        Confirm: "Confirm",
+        "Upload Photoes": "Upload Photoes",
+        Error: "Error",
+        "Sorry that this picture is so big": "Sorry that this picture is so big",
+        "The uploaded file should be less than": "The uploaded file should be less than",
+        "Upload Profile Image": "Upload Profile Image",
+        "Drop files here to upload or": "Drop files here to upload or",
+        "choose file": "choose file",
+        // "upload avatar": "upload avatar",
+    },
+};

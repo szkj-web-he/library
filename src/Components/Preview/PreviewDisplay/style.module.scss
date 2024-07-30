@@ -1,0 +1,135 @@
+/**
+* @file style sheet of preview display
+* @date 2020-10-13
+* @author Andy Jiang
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/*
+/*
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+/** The demo mixin is ..........*/
+
+@mixin icon {
+    display: inline-block;
+    height: 5rem;
+    width: 5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    line-height: 5rem;
+    cursor: pointer;
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.previewDisplay_iconContainer {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.previewDisplay_iconButton {
+    @include icon();
+    background: $background;
+    color: $line_light;
+}
+
+.previewDisplay_iconButton__selected {
+    @include icon();
+    background: $line_light;
+    color: $line_dark;
+}
+
+.previewDisplay_iconButton:hover {
+    color: $primary_variant;
+}
+
+@mixin frameContainer {
+    position: relative;
+    text-align: center;
+    border: 0.1rem solid $line_light;
+    background: $background;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    border-radius: 5rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    box-shadow: $shadow_01dp;
+    transition: 0.8s;
+}
+
+.previewDisplay_frameContainer__phone {
+    @include frameContainer();
+}
+
+.previewDisplay_frameContainer__pad {
+    @include frameContainer();
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.previewDisplay_frameContainer__desktop {
+    @include frameContainer();
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@mixin frameContainerAdding {
+    content: "";
+    position: absolute;
+    background: $line_light;
+    border: 0.1rem solid $line_light;
+    left: 50%;
+    border-radius: 4rem;
+    transform: translateX(-50%);
+}
+
+.previewDisplay_frameContainer__phone::before {
+    @include frameContainerAdding();
+    top: 2.5rem;
+    width: 5rem;
+    height: 0.5rem;
+}
+
+.previewDisplay_frameContainer__phone::after {
+    @include frameContainerAdding();
+    width: 4rem;
+    height: 4rem;
+    bottom: 1rem;
+    background: $background;
+}
+
+.previewDisplay_frameContainer__pad::before {
+    @include frameContainerAdding();
+    top: 2.5rem;
+    width: 5rem;
+    height: 0.5rem;
+}
+
+.previewDisplay_frameContainer__pad::after {
+    @include frameContainerAdding();
+    width: 4rem;
+    height: 4rem;
+    bottom: 1rem;
+    background: $background;
+}
+
+.previewDisplay_errMsg {
+    font: $fs_r_24;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

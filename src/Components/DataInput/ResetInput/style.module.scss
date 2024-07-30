@@ -1,0 +1,66 @@
+/**
+* @file style file of ResetInput
+* @date 2021-01-27
+* @author Andy Jiang
+* @lastModify Andy Jiang 2021-01-27
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/color.scss" as *;
+@use "../../../Constant/font.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.resetInput_container {
+    border: 0.1rem solid $neutral_200;
+    border-radius: 0.6rem;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.1rem;
+    transition: all 0.5s ease;
+    &:hover {
+        border-color: $primary_500;
+    }
+}
+.resetInput_container__disabled {
+    border-color: $neutral_200 !important;
+    background-color: $bg !important;
+    > input {
+        pointer-events: none;
+        color: $neutral_200;
+    }
+}
+
+.resetInput_input {
+    width: calc(100% - 2.8rem);
+    outline: none;
+    font: $fs_r_14;
+    display: inline-block;
+    text-overflow: ellipsis;
+    border: 0;
+    background-color: transparent;
+    transition: border 0.5s ease;
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        font: $fs_r_14;
+        color: $not_activated;
+    }
+}
+
+.resetInput_reset {
+    cursor: pointer;
+    margin-left: 1rem;
+    font-size: 1.8rem;
+    color: $neutral_200;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

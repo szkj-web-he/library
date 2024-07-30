@@ -1,0 +1,56 @@
+/**
+ * @file
+ * @date 2020-12-04
+ * @author Jack zhu
+ * @lastModify Jack zhu 2021-3-13
+ */
+
+
+
+@mixin wrap {
+    position: fixed;
+    z-index: 101;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    pointer-events: none;
+    left: 0;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.pop_wrap__top {
+    @include wrap();
+    top: 6.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .pop_container {
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+.pop_wrap__right {
+    @include wrap();
+    top: 6.5rem;
+    align-items: flex-end;
+    justify-content: flex-start;
+    .pop_container {
+        display: inline-block;
+        margin-bottom: 2rem;
+    }
+}
+
+.pop_wrap__bottom {
+    @include wrap();
+    bottom: 3rem;
+    align-items: center;
+    justify-content: flex-end;
+    .pop_container {
+        display: inline-block;
+        margin-top: 2rem;
+    }
+}

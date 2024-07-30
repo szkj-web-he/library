@@ -1,0 +1,230 @@
+/**
+* @file  check styles
+* @date 2022-01-17
+* @author xuejie.he
+* @lastModify xuejie.he 2022-01-17
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+@mixin transition {
+    transition: all 0.1s ease;
+}
+
+@mixin checkBox($width, $height) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $width;
+    height: $height;
+    cursor: pointer;
+    overflow: hidden;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+}
+
+@mixin checkContent {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.check_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    height: 3.2rem;
+    margin-bottom: 1.6rem;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &:not(.check_iconDisabled) {
+        .check_iconBtn:hover,
+        .check_iconSolidBtn:hover {
+            .check_checkNoActiveIcon {
+                color: $primary_400;
+            }
+        }
+    }
+}
+
+.check_wrap__solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.7rem 0.8rem;
+    border: 0.06rem solid $neutral_200;
+    border-radius: 0.6rem;
+}
+
+/****************** 复选按钮 start ***************************/
+
+.check_iconBtn {
+    @include checkBox(1.6rem, 1.6rem);
+    margin-right: 1rem;
+    position: relative;
+
+    .check_checkActiveIcon {
+        color: $primary_600;
+        opacity: 0;
+        font-size: 1.6rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .check_checkNoActiveIcon {
+        color: $neutral_300;
+        opacity: 1;
+        font-size: 1.6rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &.check_iconBtnActive {
+        .check_checkActiveIcon {
+            opacity: 1;
+        }
+        .check_checkNoActiveIcon {
+            opacity: 0;
+        }
+    }
+}
+
+.check_iconSolidBtn {
+    @include checkBox(1.6rem, 1.6rem);
+    margin-right: 1.2rem;
+    position: relative;
+    &:not(.check_iconBtnActive):hover {
+        .check_solidDefaultIcon {
+            border-color: $primary_400;
+        }
+    }
+}
+/******************* 复选按钮 end *************************/
+
+.check_icon_solid__default {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: transparent;
+}
+
+.check_icon_solid__active {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 0.2rem;
+    background-color: $primary_600;
+    box-sizing: border-box;
+}
+
+.check_defaultIcon {
+    border: 1px solid $line_light;
+    box-sizing: border-box;
+    border-radius: 2px;
+    width: 1.6rem;
+    height: 1.6rem;
+    @include transition();
+}
+
+.check_defaultIconHover {
+    border-color: $primary_400;
+}
+
+.check_checkIcon {
+    color: $primary_600;
+    box-sizing: border-box;
+    transform-origin: center;
+    flex: 0 0 auto;
+    font-size: 1.6rem;
+}
+
+.check_content {
+    flex: 0 0 auto;
+    order: 1;
+    cursor: pointer;
+}
+
+.check_content_solid {
+    @include checkContent();
+    color: $neutral_500;
+}
+
+.check_content_solid__active {
+    @include checkContent();
+    color: $primary_600;
+}
+
+.check_solidDefaultIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    flex: 0 0 auto;
+    border: 1px solid $neutral_300;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    transition: border-radius 0.1s linear, border-color 0.1s linear;
+}
+
+.check_solidActiveIcon {
+    width: 1rem;
+    height: 1rem;
+    background: $primary_600;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+}
+
+.check_iconBtnActive {
+    .check_solidDefaultIcon {
+        border-radius: 3px;
+    }
+    .check_solidActiveIcon {
+        opacity: 1;
+    }
+}
+
+.check_iconDisabled {
+    .check_iconSolidBtn,
+    .check_iconBtn,
+    .check_content,
+    .check_content_solid {
+        cursor: not-allowed;
+    }
+
+    .check_defaultIcon,
+    .check_icon_solid {
+        background-color: $neutral_100;
+    }
+    .check_checkIcon,
+    .check_checkActiveIcon,
+    .check_checkNoActiveIcon,
+    .check_content,
+    .check_solidActiveIcon,
+    .check_content_solid {
+        color: $neutral_300;
+    }
+
+    .check_solidActiveIcon {
+        background-color: $neutral_300;
+    }
+
+    .check_iconSolidBtn:not(.check_iconBtnActive),
+    .check_iconBtn:not(.check_iconBtnActive) {
+        background-color: $neutral_100;
+    }
+}

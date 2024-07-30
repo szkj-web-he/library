@@ -1,0 +1,87 @@
+/**
+* @file  *** styles
+* @date 2022-04-13
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.navigationLinkMobile_item {
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    font: $fs_r_16;
+    letter-spacing: 0.5px;
+    color: $neutral_600;
+    line-height: 2.4rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.navigationLinkMobile_dropdownIcon {
+    font-size: 1.2rem;
+    color: $neutral_600;
+}
+
+.navigationLinkMobile_list {
+    height: calc(100% - 2.4rem - 2.4rem - 2.8rem - 2rem);
+    overflow: auto;
+    width: 100%;
+
+    margin-block-start: 0;
+    margin-block-end: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.navigationLinkMobile_subItem {
+    list-style: none;
+    border-bottom: 1px solid $neutral_200;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    width: 100%;
+}
+
+.navigationLinkMobile_subItemName {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    width: 100%;
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.5px;
+    color: $neutral_600;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    box-sizing: border-box;
+}
+
+.navigationLinkMobile_subItemIcon {
+    font-size: 1.2rem;
+    color: $neutral_600;
+    transition: all 0.2s linear;
+    box-sizing: border-box;
+}
+
+.navigationLinkMobile_subItemContent {
+    margin-top: 1.6rem;
+}
+
+.navigationLinkMobile_subItemNameActive {
+    letter-spacing: 0.15px;
+    font-weight: 500;
+    .navigationLinkMobile_subItemIcon {
+        transform: rotate(90deg);
+    }
+}

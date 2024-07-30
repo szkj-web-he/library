@@ -1,0 +1,23 @@
+/**
+* @file  contact name styles
+* @date 2021-11-01
+* @author xuejie.he
+* @lastModify xuejie.he 2021-11-01
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.contactsDialog_nameWrapper {
+    width: 100%;
+    margin-bottom: 2.4rem;
+}
+
+.contactsDialog_nameLabel {
+    @include body_2();
+    color: $neutral_600;
+    margin-bottom: 0.3rem;
+}

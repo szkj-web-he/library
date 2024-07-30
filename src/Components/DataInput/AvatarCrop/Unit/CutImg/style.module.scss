@@ -1,0 +1,87 @@
+/**
+* @file  *** styles
+* @date 2021-09-13
+* @author xuejie.he
+* @lastModify xuejie.he 2021-09-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin demo {
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.cutImg_sliderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 26rem;
+    margin: 2.4rem auto 0 auto;
+    height: 2rem;
+}
+
+.cutImg_zoomIn,
+.cutImg_zoomOut {
+    font: $fs_r_16;
+    color: $type;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    padding: 0 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 2.4rem;
+}
+.cutImg_sliderContent {
+    height: 2.4rem;
+    width: 21rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cutImg_btnList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.2rem;
+}
+
+.cutImg_confirmBtn {
+    margin-right: 2rem;
+}
+
+.cutImg_wrapper {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cutImg_content {
+    position: relative;
+    width: 26rem;
+    height: 18rem;
+    margin: 0 auto;
+}
+
+.cutImg_resetBtn {
+    font: $fs_r_14;
+    color: $primary_600;
+    height: 3.2rem;
+    width: 7.6rem;
+    margin-right: 0.8rem;
+    outline: none;
+    line-height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

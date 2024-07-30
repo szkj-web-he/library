@@ -1,0 +1,28 @@
+/**
+* @file 联系人样式
+* @date 2023-06-15
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.contactsDialog_contactsWrapper {
+    width: 48%;
+    height: 100%;
+}
+
+.contactsDialog_contactsHead {
+    @include h_2();
+    color: $neutral_700;
+    height: 7.6rem;
+    padding-bottom: 1.6rem;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}

@@ -1,0 +1,293 @@
+/**
+* @file 边框按钮的样式
+* @date 2023-08-17
+* @author xuejie.he
+* @lastModify xuejie.he 2023-08-17
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+@use "../../../Constant/button.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+@mixin Icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    transition: all 0.15s linear;
+}
+
+.borderBtn_wrapper {
+    transition: all 0.15s linear;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    border: none;
+    appearance: none;
+    outline: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    &:not(.borderBtn_disabled):not(.borderBtn_loading) {
+        cursor: pointer;
+    }
+    &.borderBtn_disabled {
+        background-color: $neutral_100;
+        border: 1px solid $neutral_300;
+        color: $neutral_300;
+        cursor: not-allowed;
+    }
+}
+
+.borderBtn_ {
+    &small {
+        @include SmallFont();
+        @include SmallPadding();
+    }
+
+    &default {
+        @include DefaultFont();
+        @include DefaultPadding();
+    }
+
+    &large {
+        @include LargeFont();
+        @include LargePadding();
+    }
+}
+:not(.borderBtn_disabled):not(.borderBtn_loading) {
+    &.borderBtn_theme {
+        &primary {
+            &.borderBtn_type {
+                &default {
+                    border: 1px solid $primary_600;
+                    color: $primary_600;
+                }
+                &invert {
+                    border: 1px solid $primary_600;
+                    color: $primary_600;
+                    background-color: $primary_50;
+                }
+                &diffuse {
+                    border: 1px solid $neutral_300;
+                    color: $primary_500;
+                    .borderBtn_icon {
+                        color: $primary_400;
+                    }
+                }
+            }
+        }
+
+        &auxiliary {
+            &.borderBtn_type {
+                &default {
+                    border: 1px solid $auxiliary_600;
+                    color: $auxiliary_600;
+                }
+                &invert {
+                    border: 1px solid $auxiliary_600;
+                    color: $auxiliary_600;
+                    background-color: $auxiliary_50;
+                }
+                &diffuse {
+                    border: 1px solid $neutral_300;
+                    color: $auxiliary_500;
+                    .borderBtn_icon {
+                        color: $auxiliary_400;
+                    }
+                }
+            }
+        }
+
+        &neutral {
+            &.borderBtn_type {
+                &default,
+                &invert,
+                &diffuse {
+                    border: 1px solid $neutral_300;
+                    color: $neutral_500;
+                    .borderBtn_icon {
+                        color: $neutral_400;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.borderBtn_pending {
+    &:not(.borderBtn_disabled):not(.borderBtn_loading) {
+        &.borderBtn_theme {
+            &primary {
+                &.borderBtn_type {
+                    &default {
+                        background-color: $primary_400;
+                    }
+                    &invert {
+                        background-color: $primary_700;
+                        border-color: $primary_700;
+                        color: $white;
+                    }
+                    &diffuse {
+                        border-color: $primary_600;
+                        box-shadow: 0 0 0 2px rgba($primary_500, 0.3);
+                        color: $primary_600;
+                        .borderBtn_icon {
+                            color: $primary_500;
+                        }
+                    }
+                }
+            }
+
+            &auxiliary {
+                &.borderBtn_type {
+                    &default {
+                        border-color: $auxiliary_700;
+                        color: $auxiliary_700;
+                        background-color: $auxiliary_200;
+                    }
+                    &invert {
+                        background-color: $auxiliary_700;
+                        border-color: $auxiliary_700;
+                        color: $white;
+                    }
+                    &diffuse {
+                        border-color: $auxiliary_600;
+                        box-shadow: 0 0 0 2px rgba($auxiliary_500, 0.3);
+                        color: $auxiliary_600;
+                        .borderBtn_icon {
+                            color: $auxiliary_500;
+                        }
+                    }
+                }
+            }
+
+            &neutral {
+                &.borderBtn_type {
+                    &default,
+                    &invert,
+                    &diffuse {
+                        border-color: $primary_600;
+                        box-shadow: 0 0 0 2px rgba($primary_500, 0.3);
+                        color: $neutral_500;
+                        .borderBtn_icon {
+                            color: $neutral_400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.borderBtn_hover {
+    &:not(.borderBtn_disabled):not(.borderBtn_loading) {
+        &.borderBtn_theme {
+            &primary {
+                &.borderBtn_type {
+                    &default {
+                        background-color: $primary_50;
+                    }
+                    &invert {
+                        background-color: $primary_600;
+                        color: $white;
+                    }
+                    &diffuse {
+                        border-color: $primary_400;
+                        color: $primary_600;
+                        .borderBtn_icon {
+                            color: $primary_500;
+                        }
+                    }
+                }
+            }
+
+            &auxiliary {
+                &.borderBtn_type {
+                    &default {
+                        background-color: $auxiliary_100;
+                    }
+                    &invert {
+                        background-color: $auxiliary_600;
+                        color: $white;
+                    }
+                    &diffuse {
+                        border-color: $auxiliary_400;
+                        color: $auxiliary_600;
+                        .borderBtn_icon {
+                            color: $auxiliary_500;
+                        }
+                    }
+                }
+            }
+
+            &neutral {
+                &.borderBtn_type {
+                    &default,
+                    &diffuse {
+                        border-color: $primary_400;
+                        color: $primary_600;
+                        .borderBtn_icon {
+                            color: $primary_500;
+                        }
+                    }
+                    &invert {
+                        border-color: $neutral_500;
+                        color: $neutral_300;
+                        .borderBtn_icon {
+                            color: $neutral_200;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.borderBtn_icon {
+    @include Icon();
+}
+
+.borderBtn_ {
+    &leftIcon {
+        margin-right: 0.4rem;
+    }
+
+    &rightIcon {
+        margin-left: 0.4rem;
+    }
+}
+
+.borderBtn_loadingIcon {
+    margin-right: 0.4rem;
+}
+
+.borderBtn_loading {
+    &.borderBtn_theme {
+        &primary {
+            color: $primary_600;
+            border: 1px solid $primary_600;
+            .borderBtn_loadingIcon {
+                color: $primary_600;
+            }
+        }
+        &auxiliary {
+            color: $auxiliary_600;
+            border: 1px solid $auxiliary_600;
+            .borderBtn_loadingIcon {
+                color: $auxiliary_600;
+            }
+        }
+
+        &neutral {
+            color: $neutral_500;
+            border: 1px solid $neutral_300;
+            .borderBtn_loadingIcon {
+                color: $neutral_500;
+            }
+        }
+    }
+}

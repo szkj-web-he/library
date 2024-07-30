@@ -1,0 +1,91 @@
+/**
+* @file style file of Cascade component
+* @date 2020-09-07
+* @author Andy Jiang
+* @lastModify Andy Jiang 2020-11-26
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.cascade_questionContainer {
+    border: 1px solid rgba($type, 0.32);
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    background: $background;
+    user-select: none;
+}
+
+.cascade_dotContainer {
+    box-shadow: $shadow_01dp;
+    border-radius: 0.5rem;
+    background: $background;
+    user-select: none;
+}
+
+.cascade_divider {
+    height: 0.1rem;
+    width: 100%;
+    background: rgba($type, 0.05);
+}
+
+.cascade_itemContainer {
+    width: 100%;
+    cursor: pointer;
+    padding: 1.45rem 1rem 1.45rem 2.4rem;
+    box-sizing: border-box;
+}
+
+.cascade_content {
+    font: $fs_r_12;
+    display: inline-block;
+    color: rgba($type, 0.89);
+}
+
+.cascade_itemContainer:hover > .cascade_content {
+    color: $primary_variant;
+    transition: 0.1s linear;
+}
+
+.cascade_contentDelete {
+    font: $fs_r_12;
+    display: inline-block;
+    color: rgba($error, 0.89);
+}
+
+.cascade_contentConvert {
+    font: $fs_r_12;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: rgba($type, 0.89);
+    position: relative;
+}
+
+.cascade_itemContainer:hover > .cascade_contentConvert {
+    color: $primary_variant;
+    transition: 0.1s linear;
+}
+
+.cascade_contentIcon {
+    font-size: 1rem;
+    color: $line_dark;
+    flex: 0 0 auto;
+}
+
+.cascade_contentAddition {
+    position: absolute;
+    top: 0;
+    left: 13rem;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

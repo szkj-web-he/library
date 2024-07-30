@@ -1,0 +1,123 @@
+/**
+* @file  *** styles
+* @date 2022-04-11
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-11
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+@mixin content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+
+    box-sizing: border-box;
+}
+
+.navigationLink_subNavWrapper {
+    top: 6.4rem;
+    position: absolute;
+    width: 126rem;
+    height: 46rem;
+    background: $bg;
+    border-radius: 0px 0px 10px 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    filter: drop-shadow(0px 2px 6px rgba(26, 26, 26, 0.06))
+        drop-shadow(0px 3px 15px rgba(26, 26, 26, 0.1));
+}
+
+.navigationLink_item {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    position: relative;
+    margin-left: 4.8rem;
+    height: 100%;
+    box-sizing: border-box;
+    width: 7rem;
+    &:first-of-type {
+        margin-left: 0;
+    }
+}
+
+.navigationLink_dropdownIcon {
+    font-size: 0.9rem;
+    color: $neutral_600;
+    margin-left: 0.9rem;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    transition: all 0.1s linear;
+}
+
+.navigationLink_itemContent {
+    @include content();
+    cursor: pointer;
+    color: $neutral_600;
+    @include body_2();
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    transition: color 0.1s linear, font-size 0.1s ease;
+}
+
+.navigationLink_itemActive {
+    position: relative;
+
+    .navigationLink_itemContent {
+        @include h_4();
+        color: $primary_700;
+    }
+    &::after {
+        content: "";
+        width: 1.4rem;
+        height: 0.3rem;
+        border-radius: 5px;
+        background-color: $primary_700;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 1.4rem;
+    }
+}
+
+.navigationLink_itemHover {
+    .navigationLink_itemContent {
+        @include h_4();
+        color: $primary_700;
+
+        .navigationLink_dropdownIcon {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.navigationLink_split {
+    width: 1px;
+    height: 1.6rem;
+    background-color: $neutral_200;
+    margin-left: 3.2rem;
+    margin-right: 0.2rem;
+}
+
+@media screen and (max-width: 1440px) {
+    .navigationLink_subNavWrapper {
+        width: 102.4rem;
+    }
+}

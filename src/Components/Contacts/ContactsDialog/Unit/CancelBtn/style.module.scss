@@ -1,0 +1,43 @@
+/**
+* @file 
+* @date 2023-06-15
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+@use "../../../../../Constant/mixin.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.contactsDialog_cancelBtn {
+    width: 7.6rem;
+    height: 3.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    cursor: pointer;
+    @include body_2();
+    color: $primary_600;
+    margin-right: 0.8rem;
+    @include Transition();
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    appearance: none;
+    &:not(.contactsDialog_cancelBtn__disabled):hover {
+        color: $primary_400;
+    }
+}
+
+:not(.contactsDialog_cancelBtn__disabled).contactsDialog_cancelBtn__pending {
+    color: $primary_400;
+}
+
+.contactsDialog_cancelBtn__disabled {
+    cursor: not-allowed;
+    color: $neutral_300;
+}

@@ -1,0 +1,163 @@
+/**
+* @file 
+* @date 2023-08-21
+* @author xuejie.he
+* @lastModify xuejie.he 2023-08-21
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.sidebar_assetsTypeWrapper {
+    padding: 2.4rem 0;
+    position: relative;
+}
+
+.sidebar_assetsType__item {
+    margin-bottom: 2.4rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    padding: 0 1.2rem 0 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.sidebar_assetsType__label {
+    flex: 1 1 auto;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.sidebar_assetsType__iconView {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+}
+
+.sidebar_assetsType__num {
+    border-radius: 4px;
+    color: $display_font;
+    @include body_2();
+    flex: 0 0 auto;
+    transition: all 0.15s linear;
+    min-width: 2.4rem;
+    height: 2.4rem;
+    padding: 0 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.sidebar_assetsType__icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: $display_font;
+    transition: all 0.15s linear;
+}
+
+.sidebar_assetsType__ {
+    &allIcon,
+    &bindIcon {
+        font-size: 1.8rem;
+    }
+
+    &starIcon {
+        font-size: 1.97rem;
+    }
+
+    &publishIcon {
+        font-size: 1.84rem;
+    }
+
+    &archivedIcon {
+        font-size: 2.3rem;
+    }
+
+    &projectRelatedIcon {
+        font-size: 1.53rem;
+    }
+
+    &notBoundIcon {
+        font-size: 1.88rem;
+    }
+
+    &completedIcon {
+        font-size: 1.8rem;
+    }
+
+    &transferIcon {
+        font-size: 1.8rem;
+    }
+
+    &previewIcon {
+        font-size: 2.2rem;
+    }
+}
+
+.sidebar_assetsType__text {
+    width: calc(100% - 2rem - 1.6rem - 1.6rem);
+    margin-left: 1.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @include body_2();
+    letter-spacing: 0.2px;
+    color: $display_font;
+    transition: all 0.15s linear;
+}
+
+.sidebar_assetsType__item {
+    &:not(.sidebar_assetsType__itemActive):hover {
+        .sidebar_assetsType__text {
+            color: $primary_400;
+        }
+
+        .sidebar_assetsType__icon {
+            color: $primary_400;
+        }
+
+        .sidebar_assetsType__num {
+            color: $primary_400;
+        }
+    }
+    &.sidebar_assetsType__itemActive {
+        .sidebar_assetsType__icon {
+            color: $primary_600;
+        }
+        .sidebar_assetsType__text {
+            color: $primary_600;
+        }
+        .sidebar_assetsType__num {
+            color: $primary_600;
+            background-color: $primary_50;
+        }
+    }
+}
+
+.sidebar_assetsType__slid {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 2px;
+    height: 3rem;
+    border-radius: 0 6rem 6rem 0;
+    background-color: $primary_600;
+    transition: all 0.15s linear;
+}

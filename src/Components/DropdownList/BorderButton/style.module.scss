@@ -1,0 +1,102 @@
+/**
+* @file 
+* @date 2023-02-28
+* @author xuejie.he
+* @lastModify xuejie.he 2023-02-28
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.borderButtonForDropdown_wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    &:not(.borderButtonForDropdown_active):not(.borderButtonForDropdown_disable):hover {
+        .borderButtonForDropdown_main {
+            border-color: $primary_400;
+        }
+    }
+    cursor: pointer;
+    &.borderButtonForDropdown_disable {
+        cursor: not-allowed;
+        .borderButtonForDropdown_main {
+            background-color: $neutral_50;
+            border-color: $neutral_200;
+            color: $neutral_300;
+        }
+        .borderButtonForDropdown_icon {
+            color: $neutral_300;
+        }
+    }
+}
+
+.borderButtonForDropdown_main {
+    transition: all 0.1s linear;
+    border: 1px solid $neutral_200;
+    padding: 0.6rem 1.2rem;
+    @include c_body_3();
+    border-radius: 6px;
+    background-color: $background;
+    position: relative;
+    z-index: 2;
+    color: $neutral_500;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+.borderButtonForDropdown_active {
+    .borderButtonForDropdown_border {
+        background-color: rgba($primary_500, 0.3);
+    }
+
+    .borderButtonForDropdown_main {
+        border-color: $primary_600;
+    }
+
+    .borderButtonForDropdown_iconContainer {
+        transform: rotate(180deg);
+    }
+}
+
+.borderButtonForDropdown_placeholder {
+    color: $neutral_300;
+}
+
+.borderButtonForDropdown_border {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background-color: transparent;
+    border-radius: 6px;
+    transition: all 0.1s linear;
+    z-index: 0;
+}
+
+.borderButtonForDropdown_iconContainer {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 0.8rem;
+    flex: 0 0 auto;
+    position: relative;
+    transition: all 0.1s linear;
+}
+
+.borderButtonForDropdown_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $neutral_500;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,128 @@
+/**
+* @file 
+* @date 2023-06-16
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-16
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+@use "../../../../../Constant/mixin.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.contactsDialog_itemWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    height: 5.6rem;
+    padding: 0 1.6rem;
+    box-sizing: border-box;
+    @include Transition();
+}
+
+.contactsDialog_itemActive {
+    background-color: $bg;
+}
+
+.contactsDialog_itemAvatar {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    margin-right: 1.6rem;
+    position: relative;
+}
+
+.contactsDialog_itemAvatarCircle {
+    @include label();
+    color: $white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    @include Transition();
+}
+
+.contactsDialog_itemCol {
+    width: calc(100% - 1.6rem - 2.4rem);
+    height: 100%;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+.contactsDialog_itemName {
+    @include body_2();
+    color: $neutral_600;
+    margin-bottom: 0.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    min-height: 2rem;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.contactsDialog_itemEmail {
+    @include label();
+    color: $neutral_400;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+    min-height: 1.6rem;
+}
+
+.contactsDialog_item__ {
+    &0 {
+        .contactsDialog_itemAvatarCircle {
+            background-color: $primary_500;
+        }
+    }
+    &1 {
+        .contactsDialog_itemAvatarCircle {
+            background-color: $purple_600;
+        }
+    }
+    &2 {
+        .contactsDialog_itemAvatarCircle {
+            background-color: $warning_400;
+        }
+    }
+    &3 {
+        .contactsDialog_itemAvatarCircle {
+            background-color: $danger_400;
+        }
+    }
+    &4 {
+        .contactsDialog_itemAvatarCircle {
+            background-color: $info_500;
+        }
+    }
+    &5 {
+        .contactsDialog_itemAvatarCircle {
+            background-color: $yellow_600;
+        }
+    }
+}
+
+.contactsDialog_itemDelBtn {
+    font-size: 2.4rem;
+    color: #eb5757;
+    cursor: pointer;
+    @include Transition();
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+}

@@ -1,0 +1,42 @@
+/**
+* @file drop down item
+* @date 2023-02-28
+* @author xuejie.he
+* @lastModify xuejie.he 2023-02-28
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.dropdownItem_wrapper {
+    display: block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    color: $neutral_400;
+    transition: all 0.1s linear;
+    @include c_body_3();
+    cursor: pointer;
+    width: 100%;
+    margin: 0.8rem 0 0 -0.8rem;
+    box-sizing: content-box;
+    &:first-child {
+        margin-top: 0;
+    }
+    &.dropdownItem_active {
+        color: $primary_600;
+    }
+    &:not(.dropdownItem_disable):hover {
+        background: $primary_50;
+    }
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdownItem_disable {
+    color: #bdbdbd;
+    cursor: not-allowed;
+}

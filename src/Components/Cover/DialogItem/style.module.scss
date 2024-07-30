@@ -1,0 +1,47 @@
+/**
+* @file dialog item的样式
+* @date 2023-02-06
+* @author xuejie.he
+* @lastModify xuejie.he 2023-02-06
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.dialogItem_transitionActive {
+    position: absolute;
+    transition: all 0.2s linear;
+    left: 0;
+    top: 0;
+}
+
+.dialogItem_rightInTo,
+.dialogItem_leaveLeftFrom {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.dialogItem_leaveLeftTo {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.dialogItem_rightInFrom {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.dialogItem_wrapper {
+    display: inline-flex;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.dialogItem_body {
+    display: block;
+}

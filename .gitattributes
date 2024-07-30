@@ -1,0 +1,10 @@
+* text=auto
+src/* eol=lf
+*.svg eol=lf
+*.css eol=lf
+*.js eol=lf
+*.html eol=lf
+*.tsx eol=lf
+*.ts eol=lf
+*.jsx eol=lf
+

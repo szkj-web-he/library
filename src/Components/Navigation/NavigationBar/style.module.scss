@@ -1,0 +1,176 @@
+/**
+* @file  *** styles
+* @date 2022-04-11
+* @author xuejie.he
+* @lastModify xuejie.he 2022-04-11
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.navigationBar_wrapper {
+    width: 100%;
+    height: 6.4rem;
+    background-color: $background;
+    border-radius: 1px 1px 0px 0px;
+    border-bottom: 1px solid $neutral_200;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 99;
+}
+
+.navigationBar_main,
+.navigationBar_managementMain {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.navigationBar_managementMain {
+    [class*="navigationDashboard_wrap"] {
+        margin-left: 4rem;
+    }
+}
+
+.navigationBar_toggleBtn {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.navigationBar_openIcon {
+    font-size: 1.6rem;
+    color: $primary_700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navigationBar_cloneIcon {
+    font-size: 1.4rem;
+    color: $primary_700;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navigationBar_menu {
+    z-index: 2;
+    position: absolute;
+    top: calc(6.4rem - 1px);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 6.4rem);
+    background-color: rgba($type, 0.3);
+    overflow: hidden;
+    display: none;
+}
+
+.navigationBar_menuMain {
+    background-color: $background;
+    box-shadow: 0px 2px 6px rgba(26, 26, 26, 0.06), 0px 3px 15px rgba(26, 26, 26, 0.1);
+    border-radius: 0 0 1px 1px;
+    height: 54rem;
+    position: relative;
+    box-sizing: border-box;
+    max-height: calc(100vh - 6.4rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.navigationBar_menuContainer {
+    padding: 2.4rem 4.8rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+.navigationBar_menuTop {
+    width: 100%;
+}
+
+.navigationBar_hr {
+    width: 100%;
+    height: 1px;
+    background-color: $neutral_200;
+    margin: 4.8rem 0 2.4rem 0;
+}
+
+.navigationBar_logout {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    box-sizing: border-box;
+    font: $fs_r_16;
+    line-height: 2.4rem;
+    letter-spacing: 0.5px;
+    color: $auxiliary_600;
+    cursor: pointer;
+    margin-top: 2.4rem;
+}
+
+.navigationBar_menuTop {
+    .navigationBar_logout {
+        padding: 0;
+    }
+}
+
+.navigationBar_on {
+    .navigationBar_menuMain {
+        height: 60rem;
+    }
+    .navigationBar_hr {
+        margin-top: 2.4rem;
+    }
+}
+
+@media screen and (max-width: $desktop) {
+    .navigationBar_main {
+        display: none;
+    }
+
+    .navigationBar_toggleBtn {
+        display: block;
+    }
+
+    .navigationBar_menu {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.2s linear;
+    }
+
+    .navigationBar_menuActive {
+        opacity: 1;
+        pointer-events: inherit;
+        visibility: visible;
+    }
+
+    .navigationBar_menuContainer {
+        padding: 2rem;
+    }
+
+    .navigationBar_wrapper {
+        padding: 0 1rem;
+    }
+}

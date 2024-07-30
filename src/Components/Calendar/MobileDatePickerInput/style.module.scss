@@ -1,0 +1,78 @@
+/**
+* @file  *** styles
+* @date 2021-12-14
+* @author xuejie.he
+* @lastModify xuejie.he 2021-12-14
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.mobileDatePickerInput_wrapper {
+    width: 100%;
+    height: 4rem;
+    background: $white;
+    border: 1px solid $neutral_200;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding-left: 1.6rem;
+    padding-right: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    transition: all 0.15s linear;
+}
+
+.mobileDatePickerInput_placeholder {
+    flex: 1 1 auto;
+    color: $neutral_300;
+    @include c_body_3();
+}
+
+.mobileDatePickerInput_content {
+    flex: 1 1 auto;
+    color: $neutral_600;
+    @include body_2();
+}
+
+.mobileDatePickerInput_calendarIcon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    font-size: 2rem;
+    color: $neutral_400;
+    right: 1.6rem;
+    pointer-events: none;
+}
+
+.mobileDatePickerInput_disabled {
+    background-color: $neutral_50;
+    cursor: not-allowed;
+    .mobileDatePickerInput_calendarIcon {
+        color: $neutral_300;
+    }
+}
+
+.mobileDatePickerInput_active {
+    border-color: $primary_600;
+    box-shadow: 0 0 0 2px rgba($primary_500, 0.3);
+}
+
+.mobileDatePickerInput_clearIcon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    font-size: 2rem;
+    color: $neutral_300;
+    right: 1.6rem;
+}

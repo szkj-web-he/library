@@ -1,0 +1,52 @@
+/**
+* @file 
+* @date 2023-08-23
+* @author xuejie.he
+* @lastModify xuejie.he 2023-08-23
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.sidebarSelectedOrg_wrapper {
+    padding: 0.8rem 1.6rem 0.4rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    transition: all 0.15s linear;
+    &:not(.sidebarSelectedOrg_wrapper__loading) {
+        cursor: pointer;
+        &:hover {
+            background-color: $primary_50;
+        }
+    }
+}
+
+.sidebarSelectedOrg_name {
+    width: calc(100% - 1.2rem * 2 - 2.8rem - 1.6rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 1.2rem;
+    color: $neutral_600;
+    @include subtitle_3();
+}
+
+.sidebarSelectedOrg_openView {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.sidebarSelectedOrg_openIcon {
+    font-size: 1.4rem;
+    color: $neutral_600;
+
+    transition: all 0.15s linear;
+}

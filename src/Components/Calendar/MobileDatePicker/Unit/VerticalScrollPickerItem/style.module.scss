@@ -1,0 +1,29 @@
+/**
+* @file 
+* @date 2023-06-0/
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-07
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.verticalScrollPicker_item {
+    width: 100%;
+    color: $neutral_400;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s linear;
+    transform: scale(0.8);
+    opacity: 0.6;
+}
+
+.verticalScrollPicker_itemActive.verticalScrollPicker_item {
+    color: $primary_600;
+    transform: scale(1);
+    opacity: 1;
+}

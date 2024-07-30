@@ -1,0 +1,43 @@
+/**
+* @file 
+* @date 2023-06-15
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+@use "../../../../../Constant/mixin.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.contactsDialog_searchWrapper {
+    padding: 0 1.6rem;
+    box-sizing: border-box;
+}
+
+.contactsDialog_searchIconContainer {
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1.6rem;
+    margin: auto 0;
+    pointer-events: none;
+}
+
+.contactsDialog_searchIcon {
+    font-size: 1.6rem;
+    color: $primary_600;
+    @include IconCenter();
+}
+
+.contactsDialog_searchIpt[class*="input_wrapper"] {
+    width: 100%;
+    height: 3.6rem;
+    border-radius: 50px;
+    [class*="input_main"] {
+        padding-right: 4rem;
+    }
+}

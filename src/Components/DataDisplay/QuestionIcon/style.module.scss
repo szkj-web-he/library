@@ -1,0 +1,53 @@
+/**
+* @file QuestionIcon
+* @date 2021-01-27
+* @author Andy Jiang
+* @lastModify Andy Jiang 2021-01-27
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/*
+/*
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.questionIcon_container {
+    position: relative;
+    display: inline-block;
+}
+
+.questionIcon_hintContainer {
+    font: $fs_r_14;
+    color: $type;
+    border-radius: 0.6rem;
+    box-shadow: $shadow_04dp;
+    line-height: 2rem;
+    padding: 1.5rem 0;
+    background: $background;
+}
+
+.questionIcon_icon {
+    font-size: 2rem;
+    color: $line_light;
+}
+
+.questionIcon_hintContent {
+    position: relative;
+    background: $background;
+    padding: 0 1.5rem;
+    z-index: 3;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

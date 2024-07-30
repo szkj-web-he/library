@@ -1,0 +1,118 @@
+/**
+* @file listRetrieval styles
+* @date 2021-08-09
+* @author xuejie.he
+* @lastModify xuejie.he 2021-08-09
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin wrap {
+    width: 18.5rem;
+    background-color: $background;
+    border-radius: 4px;
+    padding: 1.2rem 0;
+    box-sizing: border-box;
+    box-shadow: $shadow_06dp;
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.listRetrieval_wrap {
+    width: 18.5rem;
+    height: 3.5rem;
+    display: inline-block;
+}
+
+.listRetrieval_inputWrap {
+    display: inline-block;
+    border: 1px solid $line_light;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    border-radius: 0.4rem;
+    transition: border-color 0.3s ease;
+    position: relative;
+    &:hover {
+        border-color: rgba($primary_variant, 0.5);
+    }
+}
+
+.listRetrieval_container {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    height: 100%;
+    padding: 0 3rem 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.listRetrieval_clearIcon {
+    color: $line_light;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 1rem;
+    z-index: -1;
+}
+
+.listRetrieval_clearIcon__active {
+    opacity: 1;
+    z-index: auto;
+}
+
+.listRetrieval_listWrap[class*="scroll_scrollContainer"] {
+    background-color: $background;
+    border-radius: 4px;
+    box-shadow: $shadow_06dp;
+    overflow: hidden;
+    width: 18.5rem;
+    .listRetrieval_listBody {
+        padding: 1.2rem 0;
+        box-sizing: border-box;
+        box-shadow: $shadow_06dp;
+        max-height: 25rem;
+    }
+}
+
+.listRetrieval_item {
+    cursor: pointer;
+    height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &:hover {
+        background-color: rgba($primary_variant, 0.15);
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.listRetrieval_itemContent {
+    padding-left: 2rem;
+    font: $fs_r_14;
+    color: $gray_1;
+    em {
+        color: $primary_variant;
+        font-style: normal;
+    }
+}
+
+.listRetrieval_listNull {
+    @include wrap();
+    font: $fs_r_14;
+    padding-left: 2rem;
+}

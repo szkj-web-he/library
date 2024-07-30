@@ -1,0 +1,94 @@
+/**
+* @file 
+* @date 2023-08-16
+* @author xuejie.he
+* @lastModify xuejie.he 2023-08-16
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+@use "../../../Constant/button.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.normalBtn_disabled {
+    background-color: $neutral_300;
+    cursor: not-allowed;
+}
+
+@mixin Icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.normalBtn_wrapper {
+    color: $white;
+    transition: all 0.15s linear;
+    &:not(.normalBtn_disabled):not(.normalBtn_loading) {
+        cursor: pointer;
+    }
+    &:not(.normalBtn_danger):not(.normalBtn_disabled) {
+        background-color: $primary_600;
+    }
+}
+
+.normalBtn_ {
+    &small {
+        @include SmallFont();
+        @include SmallPadding();
+    }
+    &default {
+        @include DefaultFont();
+        @include DefaultPadding();
+    }
+    &large {
+        @include LargeFont();
+        @include LargePadding();
+    }
+}
+
+.normalBtn_danger {
+    background-color: $danger_600;
+}
+
+.normalBtn_hover {
+    &:not(.normalBtn_loading):not(.normalBtn_disabled):not(.normalBtn_pending) {
+        &.normalBtn_danger {
+            background-color: $danger_400;
+        }
+        &:not(.normalBtn_danger) {
+            background-color: $primary_400;
+        }
+    }
+}
+
+.normalBtn_pending {
+    &:not(.normalBtn_loading):not(.normalBtn_disabled):not(.normalBtn_pending) {
+        &.normalBtn_danger {
+            background-color: #cf343f;
+        }
+        &:not(.normalBtn_danger) {
+            background-color: $primary_700;
+        }
+    }
+}
+
+.normalBtn_icon {
+    @include Icon();
+}
+
+.normalBtn_leftIcon {
+    margin-right: 0.4rem;
+}
+
+.normalBtn_rightIcon {
+    margin-left: 0.4rem;
+}
+
+.normalBtn_loadingIcon {
+    margin-right: 0.4rem;
+}

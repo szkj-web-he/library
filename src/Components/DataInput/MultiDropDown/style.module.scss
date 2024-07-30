@@ -1,0 +1,132 @@
+/**
+* @file MultiDropDown
+* @date 2021-02-05
+* @author Andy Jiang
+* @lastModify Andy Jiang 2021-02-05
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/*
+/*
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+/** The demo mixin is ..........*/
+
+@mixin noListStyle {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.multiDropDown_container {
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    &:hover {
+        border-color: rgba($color: $primary_variant, $alpha: 0.5);
+    }
+}
+
+.multiDropDown_drop {
+    flex: 0 0 auto;
+    position: absolute;
+    right: 1.1rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transition: all 0.2s ease;
+    color: $line_light;
+    font-size: 0.8rem;
+}
+
+.multiDropDown_input {
+    padding: 1rem 3rem 1rem 1.5rem;
+}
+
+.multiDropDown_placeholder {
+    color: $not_activated;
+    font: $fs_r_14;
+}
+
+.multiDropDown_selectList {
+    display: flex;
+    @include noListStyle();
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+}
+
+.multiDropDown_selectListItem {
+    color: $gray_2;
+    list-style: none;
+    font: $fs_r_14;
+}
+
+.multiDropDown_list {
+    @include noListStyle();
+    background-color: $background;
+    box-shadow: $shadow_06dp;
+    border-radius: 4px;
+    max-height: 25.6rem;
+}
+
+.multiDropDown_Item {
+    list-style: none;
+    padding: 1.5rem 1rem;
+    color: $line_dark;
+    font: $fs_r_14;
+    cursor: pointer;
+    &:hover {
+        background-color: $hover;
+    }
+}
+
+.multiDropDown_check {
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    user-select: none;
+    color: $line_light;
+}
+
+.multiDropDown_ItemActive {
+    color: $primary_variant;
+}
+
+.multiDropDown_nowrap {
+    .multiDropDown_selectListItem,
+    .multiDropDown_Item {
+        white-space: nowrap;
+    }
+}
+
+.multiDropDown_placeholder {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba($color: $background, $alpha: 0.7);
+}
+
+.buttonDropDown_container {
+    background-color: $primary_variant;
+    border: 0;
+
+    .multiDropDown_selectListItem {
+        color: $background;
+    }
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

@@ -1,0 +1,71 @@
+/**
+* @file Switch styles
+* @date 2021-06-09
+* @author xuejie.he
+* @lastModify xuejie.he 2021-06-09
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.switch_container {
+    display: inline-block;
+    background-color: $line_light;
+    border-radius: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: $shadow_03dp;
+}
+.switch_bar {
+    height: 100%;
+    border-radius: 50%;
+    background-color: $background;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0%);
+    bottom: 0;
+    margin: auto 0;
+    z-index: 2;
+    transition: left 0.2s ease, transform 0.2s linear;
+}
+
+.switch_box {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.switch_container__active {
+    .switch_box {
+        width: 100%;
+        background-color: $primary_variant;
+    }
+    .switch_bar {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    .switch_subContent {
+        left: 0;
+        right: auto;
+    }
+}
+
+.switch_subContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
+}

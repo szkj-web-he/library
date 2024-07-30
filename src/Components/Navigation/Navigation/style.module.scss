@@ -1,0 +1,160 @@
+/**
+* @file layout style sheet
+* @date 2020-10-22
+* @author Andy
+* @lastModify Andy 2020-10-22
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.navigationBar_menuBtn {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    i {
+        width: calc(100% - 0.4rem);
+        margin: 0;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $type;
+    }
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.navigationBar_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigationBar_leftContainer {
+    display: none;
+    @media screen and (min-width: 1024px) {
+        display: block;
+    }
+}
+
+.navigationBar_headerItem {
+    display: inline-block;
+    font: $fs_m_14;
+    color: $background;
+    height: 4rem;
+    line-height: 4rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.navigationBar_headerItem:hover {
+    color: $secondary;
+    transition: 0.2s;
+}
+
+.navigationBar_headerRight {
+    height: 4rem;
+    padding-right: 3.8rem;
+    text-align: right;
+}
+
+.navigationBar_headerAvatar {
+    display: inline-block;
+    font: $fs_r_16;
+    color: $background;
+    text-align: center;
+    background: $primary_variant;
+    user-select: none;
+    cursor: pointer;
+    vertical-align: top;
+    height: 2.2rem;
+    width: 2.2rem;
+    border-radius: 2.2rem;
+    line-height: 2.2rem;
+    margin-top: 0.9rem;
+    font-size: 1.4rem;
+}
+
+.navigationBar_headerShare {
+    display: inline-block;
+    background: $secondary;
+    color: $background;
+    font: $fs_m_14;
+    border-radius: 0.4rem;
+    text-align: center;
+    margin-left: 1.7rem;
+    user-select: none;
+    cursor: pointer;
+    vertical-align: top;
+    width: 7.5rem;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    margin-top: 0.7rem;
+}
+
+.navigationBar_headerShare:hover {
+    background: $secondary_variant;
+}
+
+.navigationBar_headerBars {
+    font: $fs_r_16;
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    margin-left: 6rem;
+    color: $background;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+    display: block;
+    @media screen and (min-width: $desktop) {
+        display: none;
+    }
+}
+
+.navigationBar_headerMenuContainer {
+    position: absolute;
+    background: $primary;
+    top: 4rem;
+    left: -4rem;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 25;
+}
+
+.navigationBar_headerMenuItem {
+    font: $fs_m_14;
+    height: 5rem;
+    width: 12rem;
+    line-height: 5rem;
+    text-align: center;
+    user-select: none;
+}
+
+.navigationBar_headerBars:hover {
+    transition: 0.2s;
+    .navigationBar_headerMenuContainer {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.2s;
+    }
+}
+
+.navigationBar_headerMenuItem:hover {
+    background: $primary;
+    color: $secondary;
+    transition: 0.2s;
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */

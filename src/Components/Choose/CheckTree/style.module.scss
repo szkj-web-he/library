@@ -1,0 +1,139 @@
+/**
+* @file 复选树的样式
+* @date 2023-03-06
+* @author xuejie.he
+* @lastModify xuejie.he 2023-03-06
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.checkTreeItem_main {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.checkTreeItem_openBtn {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    cursor: pointer;
+    margin-right: 0.4rem;
+    transition: all 0.2s linear;
+    &.checkTreeItem_openBtnActive {
+        transform: rotate(90deg);
+    }
+}
+
+.checkTreeItem_openIcon {
+    font-size: 1.085rem;
+    color: $neutral_500;
+}
+
+.checkTreeItem_wrapper {
+    color: $neutral_400;
+    font-family: $CNCommonFamily;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 0.8rem;
+    letter-spacing: 0.2px;
+    &:first-of-type {
+        margin-top: 0;
+    }
+}
+
+.checkTreeItem_subItems {
+    margin-top: 1.2rem;
+}
+
+/******************* 复选按钮 start ****************************/
+
+.checkTreeItem_checkBtn {
+    cursor: pointer;
+    width: 1.4rem;
+    height: 1.4rem;
+    position: relative;
+    margin-right: 0.8rem;
+    flex: 0 0 auto;
+    &:hover {
+        .checkTreeItem_noActiveIcon {
+            color: $primary_400;
+        }
+    }
+}
+
+.checkTreeItem_noActiveIcon {
+    position: absolute;
+    font-size: 1.4rem;
+    top: 0;
+    left: 0;
+    color: $neutral_300;
+}
+
+.checkTreeItem_activeIcon {
+    position: absolute;
+    font-size: 1.4rem;
+    top: 0;
+    left: 0;
+    color: $primary_600;
+    opacity: 0;
+}
+
+.checkTreeItem_halfActiveIcon {
+    position: absolute;
+    font-size: 1rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    color: $primary_600;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+.checkTreeItem_checkBtnActive {
+    .checkTreeItem_activeIcon {
+        opacity: 1;
+    }
+}
+
+.checkTreeItem_checkBtnActive__half {
+    .checkTreeItem_halfActiveIcon {
+        opacity: 1;
+    }
+}
+
+/******************* 复选按钮 end ****************************/
+
+.checkTreeItem_content {
+    display: block;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+@keyframes checkZoomFade {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

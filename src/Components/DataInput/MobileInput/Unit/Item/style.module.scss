@@ -1,0 +1,49 @@
+/**
+* @file 
+* @date 2023-06-15
+* @author xuejie.he
+* @lastModify xuejie.he 2023-06-15
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+.mobileInputV2_areaCodeItem {
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    position: relative;
+
+    &:hover {
+        .mobileInputV2_areaCodeItemContent {
+            background-color: $primary_50;
+        }
+    }
+}
+
+.mobileInputV2_areaCodeItemActive .mobileInputV2_areaCodeItemContent {
+    color: $primary_600;
+}
+
+.mobileInputV2_areaCodeItemImg {
+    width: 2rem;
+    margin-right: 0.8rem;
+}
+
+.mobileInputV2_areaCodeItemContent {
+    @include body_2();
+    color: $neutral_500;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    height: 3.2rem;
+    width: calc(100% - 8px);
+    margin: 0 auto;
+    padding: 0 6px;
+    border-radius: 4px;
+    transition: all 0.15s linear;
+    box-sizing: border-box;
+}

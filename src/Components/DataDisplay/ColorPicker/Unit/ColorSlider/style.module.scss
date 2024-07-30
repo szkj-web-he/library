@@ -1,0 +1,57 @@
+/**
+* @file  *** styles
+* @date 2021-08-12
+* @author xuejie.he
+* @lastModify xuejie.he 2021-08-12
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+
+$name: "colorSlider_";
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.#{$name}colorContainer {
+    width: calc(100% - 1rem);
+    margin: 0.5rem auto;
+    height: 1.1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.#{$name}colorContent {
+    background: linear-gradient(
+        to right,
+        hsl(0, 100%, 50%),
+        hsl(60, 100%, 50%),
+        hsl(120, 100%, 50%),
+        hsl(180, 100%, 50%),
+        hsl(240, 100%, 50%),
+        hsl(300, 100%, 50%),
+        hsl(360, 100%, 50%)
+    );
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 2.5px;
+}
+
+.#{$name}colorBar {
+    border: 1px solid $not_activated;
+    box-sizing: border-box;
+    border-radius: 2px;
+    position: absolute;
+    width: 0.4rem;
+    height: 1.1rem;
+    top: 0;
+    transform: translateX(-50%);
+    user-select: none;
+    cursor: pointer;
+}

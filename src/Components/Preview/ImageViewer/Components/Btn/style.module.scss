@@ -1,0 +1,41 @@
+/**
+* @file 
+* @date 2023-12-13
+* @author xuejie.he
+* @lastModify xuejie.he 2023-12-13
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+.imageViewer_btn {
+    color: $neutral_600;
+    font-size: 2rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    margin: 0 1.2rem;
+    border-radius: 4px;
+    transition: all 0.2s linear;
+
+    &:not(.imageViewer_btn__disabled) {
+        cursor: pointer;
+        &:hover {
+            background-color: $neutral_100;
+        }
+    }
+    &.imageViewer_btn__active {
+        color: $primary_600;
+    }
+}
+
+.imageViewer_btn__disabled {
+    cursor: not-allowed;
+    color: $neutral_400;
+}

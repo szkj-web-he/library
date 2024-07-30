@@ -1,0 +1,55 @@
+/**
+* @file
+* @date 2022-08-24
+* @author
+* @lastModify  2022-08-24
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../../../Constant/breakPoint.scss" as *;
+@use "../../../../../Constant/font.scss" as *;
+@use "../../../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin demo {
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+.picker_time_column {
+    box-sizing: border-box;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &::after {
+        display: block;
+        height: 19.6rem;
+        content: "";
+        box-sizing: border-box;
+    }
+}
+
+.picker_time_cell {
+    box-sizing: border-box;
+}
+
+.picker_time_cell__selected {
+    color: $primary_600;
+}
+
+.picker_time_cell_inner {
+    @include subtitle_3;
+    text-align: center;
+    display: block;
+    margin: 0 0.8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    font-weight: normal;
+    cursor: pointer;
+    &:hover {
+        background-color: $primary_100;
+        border-radius: 0.4rem;
+    }
+}

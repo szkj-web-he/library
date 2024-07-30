@@ -1,0 +1,184 @@
+/**
+* @file
+* @date 2022-05-27
+* @author
+* @lastModify  2022-05-27
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@import "../../../Constant/breakPoint.scss";
+@import "../../../Constant/font.scss";
+@import "../../../Constant/color.scss";
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+@keyframes scale {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fontScale {
+    from {
+        transform: translate(15%, 15%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@mixin animateScale($bezier: cubic-bezier(0.57, 0.01, 0.02, 0.99)) {
+    animation: scale 1s $bezier;
+}
+
+@mixin animateFontScale($bezier: cubic-bezier(0.57, 0.01, 0.02, 0.99)) {
+    animation: fontScale 0.4s $bezier;
+}
+/* <--------------------------- * SECTION1 * --------------------------- */
+.criteria_wrap {
+    display: flex;
+    flex-direction: column;
+    width: 22.2rem;
+    height: 16rem;
+}
+
+.criteria_titleWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.criteria_title {
+    @include subtitle_2;
+}
+
+.criteria_title__scale {
+    @include animateFontScale;
+    @include h_2;
+    margin-bottom: 0.4rem;
+}
+
+.criteria_subtitle__scale {
+    @include animateFontScale;
+    @include body_1;
+    color: $neutral_300;
+}
+
+.criteria_contentWrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.criteria_content {
+    font: $fs_r_14 !important;
+    word-break: break-all;
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 1rem auto 0;
+    width: 19rem;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    color: $neutral_400;
+}
+.criteria_content__scale {
+    @include animateScale;
+    @include body_1;
+    padding: 1.2rem 1.6rem;
+    margin-top: 3.2rem;
+    margin-bottom: 4rem;
+    height: 32.6rem !important;
+    border-radius: 1rem;
+    background-color: $bg;
+    border: 0.1rem solid $neutral_200;
+    box-sizing: border-box;
+    &:hover,
+    &:focus {
+        border-color: $primary_600;
+    }
+    textarea {
+        @include animateFontScale;
+    }
+}
+
+.criteria_content__borderless {
+    border: none;
+}
+
+.criteria_operation {
+    @include animateScale;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.criteria_operation_tooltip {
+    @include c_label_1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 2rem;
+    color: $neutral_300;
+    span {
+        margin-left: 0.6rem;
+    }
+}
+
+.criteria_operation_tooltip__disable {
+    display: none;
+}
+
+.criteria_operation_cancel {
+    @include body_2;
+    color: $primary_600 !important;
+    &__disable {
+        color: $neutral_300 !important;
+        cursor: not-allowed !important;
+    }
+}
+
+.criteria_operation_save {
+    @include body_2;
+    margin-left: 1rem;
+    color: $background;
+    background-color: $primary_600;
+    box-shadow: 0px 2px 6px rgba(26, 26, 26, 0.06), 0px 3px 15px rgba(26, 26, 26, 0.1);
+}
+
+.criteria_operation_save__disable {
+    background-color: $neutral_300 !important;
+    cursor: not-allowed !important;
+}
+
+// cn style
+.criteria_cn {
+    .criteria_edit_font {
+        span[data-slate-placeholder] {
+            @include c_body_3;
+            color: $neutral_300;
+        }
+    }
+    .criteria_operation_save {
+        @include c_body_3;
+    }
+    .criteria_title {
+        @include c_h_7;
+    }
+    .criteria_title__scale {
+        @include c_h_5;
+    }
+    .criteria_subtitle__scale {
+        @include c_body_1;
+    }
+    .criteria_contentWrap {
+        @include c_body_3;
+    }
+}

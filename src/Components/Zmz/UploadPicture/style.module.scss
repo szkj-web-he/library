@@ -1,0 +1,174 @@
+/**
+* @file
+* @date 2022-11-29
+* @author
+* @lastModify  2022-11-29
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+@mixin Wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    padding: 2.4rem 0;
+    box-sizing: border-box;
+}
+
+.uploadPicture_wrapper {
+    width: 48rem;
+    height: 52.4rem;
+    @include Wrapper();
+}
+
+.uploadAvatar_wrapper {
+    width: 48rem;
+    height: 53.4rem;
+    @include Wrapper();
+}
+
+.uploadPicture_head {
+    @include c_h_5(false);
+    color: $neutral_700;
+    text-align: center;
+    margin-bottom: 3.2rem;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.uploadPicture_cn {
+    .uploadPicture_head {
+        @include c_h_5(true);
+    }
+    .inputPicture_tips {
+        @include c_body_3(true);
+    }
+    .uploadPicture_cancelBtn {
+        @include c_body_3(true);
+    }
+    .uploadPicture_confirmBtn {
+        @include c_body_3(true);
+    }
+    .uploadPicture_chooseLoadingText {
+        @include c_body_3(true);
+    }
+}
+
+.inputPicture_tips {
+    @include c_body_3(false);
+    color: $gray_4;
+    margin-top: 1.6rem;
+    flex: 0 0 auto;
+    &.inputPicture_errorTips {
+        color: $danger_600;
+    }
+}
+
+.uploadPicture_main {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.uploadPicture_container {
+    width: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.uploadPicture_chooseNode {
+    height: 100%;
+    flex: 1 1 auto;
+    position: relative;
+}
+
+.uploadPicture_hr {
+    margin-top: 3.1rem;
+    margin-bottom: 2.4rem;
+    width: 100%;
+    background-color: $neutral_200;
+    height: 1px;
+}
+
+.uploadPicture_btnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.uploadPicture_cancelBtn {
+    color: $primary_600;
+    @include c_body_3(false);
+    cursor: pointer;
+    width: 6rem;
+    height: 3.2rem;
+    margin-right: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.uploadPicture_confirmBtn {
+    background: $gray_4;
+    border-radius: 6px;
+    padding: 0.6rem 1.6rem;
+    color: $white;
+    @include c_body_3(false);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    transition: all 0.1s linear;
+    &.uploadPicture_confirmActive {
+        cursor: pointer;
+        background: $primary_600;
+    }
+    &.uploadPicture_confirmLoading {
+        cursor: auto;
+        background: $primary_400;
+    }
+}
+
+.uploadPicture_loadingIcon {
+    margin-right: 4px;
+}
+
+/******* 图片加载中 start *********/
+.uploadPicture_chooseLoading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 55;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+.uploadPicture_chooseLoadingText {
+    @include c_body_3(false);
+    color: $white;
+    margin-top: 1.1rem;
+}
+
+/******* 图片加载中 end *********/

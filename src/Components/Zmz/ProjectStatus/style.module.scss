@@ -1,0 +1,37 @@
+/**
+* @file
+* @date 2022-04-27
+* @author
+* @lastModify  2022-04-27
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@import '../../../Constant/breakPoint.scss';
+@import '../../../Constant/font.scss';
+@import '../../../Constant/color.scss';
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.projectstatus_warpper {
+    display: flex;
+    align-items: center;
+    .projectstatus_Icon {
+        width: 1.387rem;
+        height: 1.2rem;
+        margin-right: 0.713rem;
+    }
+    .projectstatus_button {
+        font: $fs_r_12;
+        margin-left: 2.4rem;
+        width: 8.9rem;
+        height: 2.4rem;
+        border: 0.06rem $primary_400 solid;
+        border-radius: 0.6rem;
+        background-color: transparent;
+        color: $primary_600;
+        cursor: pointer;
+    }
+}
+/* <--------------------------- * SECTION1 * --------------------------- */

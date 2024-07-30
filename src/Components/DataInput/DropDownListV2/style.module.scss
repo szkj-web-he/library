@@ -1,0 +1,268 @@
+/**
+* @file  *** styles
+* @date 2021-08-18
+* @author xuejie.he
+* @lastModify xuejie.he 2021-08-18
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin floatingWrap {
+    background-color: $background;
+    border-radius: 4px;
+    box-shadow: $shadow_06dp;
+    box-sizing: border-box;
+    [class*="scroll_scrollBody"] {
+        max-height: 30rem;
+    }
+    [class*="scroll_scrollBar__vertical"] {
+        right: 1.5px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+@mixin ellipseText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+$name: "dropDownListV2_";
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.#{$name}floatingWrap__small {
+    @include floatingWrap();
+    .#{$name}labelContainer {
+        padding: 0 1.2rem;
+    }
+    .#{$name}labelContent {
+        font: $fs_r_12;
+        color: $gray_1;
+        line-height: 3.2rem;
+    }
+    .#{$name}floatingLabels {
+        .#{$name}labelHr {
+            margin: 0;
+        }
+    }
+}
+
+.#{$name}floatingWrap__normal {
+    @include floatingWrap();
+    .#{$name}labelContainer {
+        padding: 0 1rem;
+    }
+    .#{$name}floatingLabels {
+        .#{$name}labelHr {
+            margin: 0;
+        }
+    }
+    .#{$name}labelContent {
+        font: $fs_r_14;
+        color: $gray_1;
+        line-height: 3.2rem;
+    }
+}
+
+.#{$name}floatingWrap__large {
+    @include floatingWrap();
+    [class*="scroll_scrollBody"] {
+        padding: 0.5rem 0;
+    }
+    .#{$name}labelContainer {
+        padding: 0 1rem;
+    }
+    .#{$name}labelContent {
+        font: $fs_r_14;
+        color: $gray_1;
+        line-height: 3.2rem;
+    }
+}
+
+.#{$name}floatingWrap__extraLarge {
+    [class*="scroll_scrollBody"] {
+        padding: 1rem 0;
+    }
+    @include floatingWrap();
+    .#{$name}floatingLabel {
+        margin-bottom: 0.6rem;
+    }
+    .#{$name}labelContainer {
+        padding: 0 2rem;
+    }
+    .#{$name}labelContent {
+        font: $fs_l_18;
+        color: $gray_2;
+        line-height: 3.2rem;
+    }
+    .#{$name}floatingLabelLast {
+        margin-bottom: 0;
+    }
+}
+
+.#{$name}labelContent {
+    width: 100%;
+    height: 3.2rem;
+    @include ellipseText();
+    &.#{$name}labelSibling {
+        width: calc(100% - 1.1rem);
+    }
+}
+
+.#{$name}floatingLabel__error {
+    .#{$name}labelContent {
+        color: $error;
+    }
+}
+.#{$name}floatingLabels {
+    .#{$name}labelHr {
+        width: 100%;
+        height: 1px;
+        margin: 0.5rem 0;
+        background-color: $not_activated;
+    }
+}
+
+.#{$name}labelContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    cursor: pointer;
+}
+
+.#{$name}labelIcon {
+    font-size: 1rem;
+    color: $gray_2;
+}
+
+.#{$name}container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid $line_light;
+    border-radius: 4px;
+    transition: all 0.2s linear;
+    padding: 0 1rem;
+    outline: none;
+    &:hover {
+        border-color: rgba($primary_variant, 0.5);
+    }
+    &:focus {
+        border-color: $primary;
+    }
+}
+
+.#{$name}wrap {
+    display: inline-flex;
+    &__disabled {
+        border: 1px solid $line_light !important;
+    }
+}
+
+.#{$name}placeholder {
+    color: $line_light;
+}
+
+.#{$name}content {
+    @include ellipseText();
+    box-sizing: border-box;
+    color: $gray_1;
+    width: calc(100% - 1.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.#{$name}placeholder,
+.#{$name}content {
+    font: $fs_r_14;
+}
+
+.#{$name}subFloatingWrap {
+    @include floatingWrap();
+    .#{$name}subFloatingLabel {
+        padding: 0 1rem;
+    }
+}
+
+.#{$name}subFloatingLabel {
+    width: 100%;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &:hover {
+        background-color: rgba($primary_variant, 0.15);
+    }
+}
+
+.#{$name}subFloatingIcon {
+    color: $primary_variant;
+    font-size: 0.8rem;
+    margin-right: 0.85rem;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.#{$name}subFloatingLabel__active {
+    .#{$name}subFloatingIcon {
+        opacity: 1;
+    }
+}
+
+.#{$name}subFloatingContent {
+    width: calc(100% - 2rem);
+    @include ellipseText();
+    font: $fs_r_14;
+    color: $gray_1;
+}
+
+.#{$name}floatingLabel,
+.#{$name}floatingLabelLast {
+    &:hover {
+        background-color: rgba($primary_variant, 0.15);
+    }
+}
+
+.#{$name}floatingLabelActive {
+    .#{$name}labelContent {
+        color: $primary_variant;
+    }
+}
+
+.#{$name}floatingLabel__hoverActive {
+    background-color: rgba($primary_variant, 0.15);
+}
+
+.#{$name}dropdownIcon {
+    font-size: 0.67rem;
+    color: rgba($color: $type, $alpha: 0.85);
+    transition: all 0.2s ease;
+}
+
+.#{$name}cutLine {
+    margin: 0 0.5rem;
+}

@@ -1,0 +1,84 @@
+/**
+* @file
+* @date 2022-11-08
+* @author
+* @lastModify  2022-11-08
+*/
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+/** Import all the reference constant after this line */
+@use "../../../Constant/breakPoint.scss" as *;
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+/** The demo mixin is ..........*/
+@mixin demo {
+}
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+/* <--------------------------- * SECTION1 * --------------------------- */
+.picker_container {
+    width: 100%;
+    box-sizing: border-box;
+
+    .picker_inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        mask: linear-gradient(
+            to top,
+            transparent,
+            transparent 10%,
+            white 20%,
+            white 80%,
+            transparent 90%,
+            transparent
+        );
+
+        .picker_highlight {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: rgba($color: $primary_300, $alpha: 0.3);
+            border-radius: 0.6rem;
+            // opacity: 0.5;
+            pointer-events: none;
+            &:before,
+            &:after {
+                content: "";
+                width: 100%;
+                position: absolute;
+                left: 0;
+                display: block;
+                height: 0.1rem;
+
+                transform: scaleY(0.5);
+            }
+            &:before {
+                top: 0;
+            }
+            &::after {
+                bottom: 0;
+            }
+        }
+    }
+
+    .picker_column {
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        text-align: center;
+        .picker_scroller {
+            transition: all 0.3s ease-out;
+            .picker_item {
+                user-select: none;
+            }
+            .picker_item_selected {
+                color: $primary_700;
+            }
+        }
+    }
+}
+/* <--------------------------- * SECTION1 * --------------------------- */

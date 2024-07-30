@@ -1,0 +1,930 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Version Update Information" />
+
+# Component Library update information
+
+## 0.4.17
+
+### update
+
+1. Input 组件，修复了在 type ='number'的情况下，可以输入特殊字符的问题
+
+## 0.4.16
+
+### update
+
+1. 重写 useTransitionStatus;
+   from : 过渡状态的回调
+   to: getTransitionProgress 的方法
+
+## 0.4.15
+
+### update
+
+1. Icon 新增类型
+2. OIDC 移除 isAliyun 的属性 新增了项目"data-assets-table"(数据资产如表)
+3. NavigationBar 新增了 hiddenLang 属性
+4. SingleDropdownList.BorderBtn 移除了最大宽度的限制，可以自定义尺寸
+5. useHoverTips 修改浮动框出现的时候位置不正确的问题
+6. 优化 Choose 下所有子组件(Check,Radio)的动画
+7. 修复 NavTool 在新的打包环境下会保存的问题
+
+### remove
+
+1. 移除了 MergeInput
+2. 移除了 Counter 并将 CounterV2 更名为 Counter
+3. 移除了 Divider
+4. 移除了 steps
+5. 移除了 Labels
+6. 移除了 HideList
+7. 移除了 MobileInput 并将 MobileInputV2 更名为 MobileInput
+8. 移除了 CheckTreeDropdown
+9. 移除了 DropDownInput
+10. 移除了 Pagination 并将 PaginationV2 更名为 Pagination
+11. 移除了 dr_position 依赖项
+12. icon 移除了部分没有使用的类型
+    为什么移除
+    原因:
+    a. @datareachable/dr_front_componentlibrary 太大了，现在下载会提示网络超时
+    b. 没有任何项目在使用这些包
+
+## 0.4.14
+
+### update
+
+1. 用 useGetSet 来替换 useRefState
+2. 更新 iconList 的 icon 对应列表
+3. 修改 useUpdate hook
+4. 修改 Image 的名称为 ImageComponent(命名冲突 与 new Image)
+5. useStateCallback 移除了返回的 ref
+
+### Add
+
+1. 新增 useGetSet
+
+### Remove
+
+1. 移除 useRefState
+
+## 0.4.13
+
+### update
+
+1. 优化 doropdown 的 portal 部分的逻辑。在获取 dropdown portal 的宽高时，会导致的不必要的 class 操作
+
+2. 修改匹配 日期输入框的逻辑
+
+3. DialogGroup 新增 返回按钮
+
+4. Sidebar 修改
+   a.移除插件系统下的 "已完成" 选项
+   b.修改插件系统下的文字: "全部"-> "已绑定","移交中" -> "移交记录"
+
+5. 修改 useRemoveOnHidden 的逻辑
+   (原因: 在导航栏回退时，会出现不该 加载的子组件被加载了 )
+
+6. 移除不必要的重置 ref 数据的代码
+
+7. 修改 useHoverTips 再 onMouseEnter 的时候不展示提示内容的问题
+
+## 0.4.12
+
+### update
+
+1. 更新 DatePicker 在输入框输入时间的时候，设置的 minTime 或 maxTime 无效的问题
+
+## 0.4.11
+
+### update
+
+1. 更新 Image 的 index 无效的问题
+
+## 0.4.10
+
+### update
+
+1. Charts 新增了 maxLimit 属性来控制最多可展示的 labels。默认是 undefined(即为全部展示)
+
+## 0.4.9
+
+### update
+
+1. 重构了 Image 组件
+
+2. 修改了 useHoverTips
+   a. 新增了 options 字段 进行控制
+
+    a.1. delayShow(延时展示)
+
+    a.2. delayHidden(延时隐藏)
+
+    a.3. whenOverflow(是否 当触摸的 dom 溢出时，再展示浮动文字)
+
+    a.4. offsetX(x 轴偏移属性)
+
+    a.5. offsetY(y 轴偏移属性)
+
+3. ListRetrieval 新增翻译
+
+4. 联系人组件(ContactsDialog、ContactsDropdown)
+   a. 姓名限制 30 个字符以内
+   b. 邮箱限制 72 个字符以内
+   c. 电话限制 30 个字符以内
+
+### Add
+
+1. 新增了 ImageViewer 组件
+
+### Remove
+
+1. 移除了 PreviewGroup
+2. 移除了 PreviewImage
+3. 移除了 FullImage
+
+## 0.4.8
+
+### update
+
+1. Transition 修改了底层逻辑
+   from: 从 原生 dom 操作
+   to: setState 控制
+   更改原因: 当存在多处的并发更改 state 的时候，会导致 原生 dom 的 class 属性操作无法持续执行
+
+2. Footer 修改文字 “表单数据收集系统”为"表单数据处理系统"
+
+3. Footer 修改"表单数据处理系统"的跳转链接
+
+4. 修复 Popover 的 root 为 svg 时就无 hover 的功能的问题
+
+5. 修复 Popover 参数合并有误的问题
+
+### Add
+
+1. 新增了 hook useStateCallback ，class 版的 this.setState(state,callback);
+
+## 0.4.7
+
+### update
+
+1. Dropdown,Kite,Popover 解决了在创建节点时，会抖动的问题
+
+2. 修复 Transition 暴露的 useTransitionStatus，在多个组件同时调用此 hook 时，只会执行一次的问题
+
+3. 修复了 Message 组件，在频繁调用时，界面会卡顿的问题
+
+## 0.4.6
+
+### Update
+
+1. Footer 新增跳转功能(除：“数据与安全”和“客户端管理设置”外)
+
+2. 修复 AvatarCrop 获取图片时，参数丢失的问题
+
+3. AvatarCrop 新增 isDisabledCache 属性，用来 禁用图片缓存
+
+## 0.4.5
+
+### Update
+
+1. 下拉列表组件新增缓存位置的功能(底层逻辑，使用无影响)
+
+2. CalendarInput 新增了 hiddenClear(隐藏清空按钮)的属性
+
+## 0.4.4
+
+1. 修复 createHash 此方法会出现随机字符重复的问题
+
+2. 修复 borderBtn 的 disabled 状态的样式无效的问题
+
+## 0.4.3
+
+1. 修改 SingleDropdownList.Item 当 uuid=0 的时候，无法被选中的问题
+
+2. 修复下拉列表组件，在父节点存在位移动画时，存在计算位置有误的问题
+
+3. 暴露组件库的 classNames 的方法
+
+## 0.4.2
+
+### Update
+
+1. 修改了 Sidebar
+   a. 会多次发送获取偏好组织请求的 bug
+   b. 取消了转发事件
+   c. 新增了 useSidebarDispatch 的 hook
+
+2. 修改了 Popover
+   a. 限制了 在 autoSize 的状态下的最大宽高
+   b. 修复了 delayShow 设置无效的 bug
+
+3. 修改了 Kite,Dialog,DialogGroup,Dropdown 等等用了 mountElement 这个方法的组件<br/>
+   mountElemet 修改了逻辑，<br/>
+   a. from class='r_portal' ==> to 移除<br/>
+   b. from 没有 style ==> to style='height:0'<br/>
+   影响: from 挂载在 .r_portal 上的元素，文字或许会出现一个字一行的问题 ==> to 不会出现
+
+## 0.4.1
+
+### Update
+
+1. 重写了 Sidebar
+   将功能进行了统一的封装
+
+2. 修复了 Kite 在贴边时无法展开的问题
+
+3. 消除了 FixedSizeText 的警告
+
+4. createHash 新增了 upperChar 属性用来控制是否拥有大写字母
+
+## 0.4.0
+
+### Add
+
+1. 新增了 Btn,NormalBtn,TextBtn,BorderBtn 组件
+   1.1 Btn ==> 自定义按钮，给与了 hover 和 mousedown 的控制属性
+   1.2 NormalBtn ==> 常用的色块按钮，由 Btn 衍生，有 BtnEvents 类型事件转发
+   1.3 TextBtn ==> 文本按钮，由 Btn 衍生，有 BtnEvents 类型事件转发
+   1.4 BorderBtn ==> 边框按钮，由 Btn 衍生，有 BtnEvents 类型事件转发
+   1.5 IconBtn ==> 图标按钮，由 Btn 衍生，有 BtnEvents 类型事件转发
+
+2. 暴露了 Btn 的转发事件类型 BtnEvents
+
+3. Popover 新增了 autoSize 属性，可以自适应宽高
+
+### Update
+
+1. Dropdown,kite 组件修复了在切换视口的时候，下拉框会飘到左上方的问题
+2. 重构了 Tabs 组件的逻辑，修复了
+   2.1 选项卡选中后，样式不正确的问题
+   2.2 选项卡的参数不能正常传递的问题
+
+## 0.3.6
+
+### Update
+
+1. SingleDropdownList 组件 placement 书信新增 rb 选项
+2. MobileDatePickerInput 修改在 disbale 的情况下输入框依旧会展示清空按钮的 bug
+3. ListRetrieval 修改搜索?等特殊字符时会报错的 bug
+
+## 0.3.5
+
+### Update
+
+1. 消除警告
+2. 修复 Input 的类型为 number 时，依旧可以输入特殊字符的问题
+
+## 0.3.4
+
+### Update
+
+1. 修改转发事件允许默认值为 null 的行为
+2. 修改 Please upload 翻译丢失的问题
+3. 修复 build 失败的问题
+4. 修改日期选择组件无法选中 1970 年之前的时间
+
+## 0.3.3
+
+### Update
+
+1. 修改 useDrag 的逻辑
+2. 修改弹窗的关闭按钮的 z-index
+3. 修改头像的 object-fit 属性
+
+## 0.3.2
+
+### Add
+
+1. 新增 icon
+2. 单选下拉新增了 readonly 共功能(给单挑 item 新增此属性点击不会关闭)
+
+### Update
+
+1. 新增联系人的模糊匹配功能做了调整,将模糊匹配提出做了组件公用
+2. Input 新增阻止中文特殊字符的输入在 number 类型下
+3. UploadPicture 组件修复了动态获取预览视口大小的问题
+4. Transition 修改样式丢失的问题
+
+### Add
+
+1. 新增了 ContactsDialog 组件
+2. 新增了 ContactsDropdown 组件
+
+## 0.3.1
+
+### Add
+
+1. 新增了 ContactsDialog 组件
+2. 新增了 ContactsDropdown 组件
+
+### Remove
+
+1. 移除了 Contacts 组件
+2. 移除了 ContactsV2 组件
+3. 移除了 useServerContext、useCompressionImage Hooks
+4. 移除了 getUniqueId 方法
+
+## 0.3.0
+
+### Add
+
+1. 新增了 MobileDatePicker、MobileDatePickerInput 组件
+2. 新增了 Input 组件
+3. 暴露了 MobileDatePickerEvents 的转发事件
+4. 新增了 hooks
+   a. useDomDisplay 监听 dom 是否可见
+   b. useDomResizeLayout 监听 dom 尺寸变化 及时
+   c. useDomResize 监听 dom 尺寸变化 延时
+
+### Update
+
+1. 修复了遮罩层无法关闭的 bug
+2. NavigationBar 新增了手机端点击空白区域也会关闭的功能
+
+## v0.2.18
+
+### Update
+
+1. NavigationBar 修改 market、cmty、官网的导航
+   a. 移除了 "语言切换"
+   b. 移除了 "关于我们"
+   c. 新增了 "专家委员会"
+   d. 新增了 "报价"
+
+2. 官网的跳转新增了 2 个环境(dev、test)
+
+## v0.2.17
+
+### Update
+
+1. 修改 NavTool 组件
+   a. 新增了事件转发 toOpen 方法，用来打开客服系统
+   b. 新增属性 handleFinally,用来获取客服系统的静态资源加载状态
+   c. 修改 target 的类型为 HTMLElement
+
+2. NavigationLink 类型新增 active 属性，用来自定义设置 NavigationBar 的活跃导航
+
+3. 修复 Dropdown，在过多 state 的情况下，会出现无动画的情况
+
+## v0.2.16
+
+### Update
+
+1. 修复 Attachment 的 文字溢出的问题
+
+2. 修复 Attachment 的 文件名无后缀的时候的 bug
+
+## v0.2.15
+
+### Update
+
+1. 修复 MagneticEditor 的 readOnly 无效的问题
+
+2. 修复 Tabs 在 dialog 里初始化无法读取宽高的问题
+
+3. 修复 Dropdown 组件的 hover 延时的 bug
+
+4. 修复 TetAreaV2 的 autoHeight 不准确的 bug
+
+5. 修复 Dialog Group 在关闭再打开时，状态没有清除的 bug
+
+## v0.2.14
+
+### Update
+
+1. 修改富文本在火狐上无法展示文字问题
+
+2. 修复 Scroll 组件在火狐上无法拖拽的问题
+
+3. 优化监听下拉框的尺寸变化
+
+4. 优化下拉框动画
+
+## v0.2.13
+
+### Update
+
+1. NavigationBar 新增 production 的跳转环境
+
+2. OIDC 新增 production 环境
+
+3. 新增 Icon 的一些 type
+
+4. Popover 修改 disable 无效的问题
+
+5. Dialog 新增 esc 退出的功能
+
+## v0.2.12
+
+### Update
+
+1. Popup: 添加 removeOnHidden 属性 - 组件在不展示时同时不渲染子组件
+
+## v0.2.11
+
+### Update
+
+1. 修复富文本的多图片上传的问题
+
+2. 修复滚动条在在拖拽时会跳跃的问题
+
+3. 更新 Check 的 UI
+
+4. 更新 Radio 的 UI
+
+## v0.2.10
+
+### Update
+
+1. 修复 popover 在滚动的时候不跟随的问题
+2. 更新官网链接
+
+## v0.2.9
+
+1. 修复了 filterDescendant 方法过滤 slate 数据时的问题
+2. 修复了 Avatar 的 loading 问题
+
+### Update
+
+1. 修复 popover 在滚动的时候不跟随的问题
+2. 更新官网链接
+
+## v0.2.8
+
+### Update
+
+1. 更新了 Grid 的规范
+2. 修改 ScrollComponent 在 children 为大数据时的卡顿问题
+3. 修复单选的动画问题
+4. Table: 新增 三个属性：
+   rowClassName 表格行的类名
+   onHeaderRow 设置头部行属性
+   onRow 设置行属性
+
+## v0.2.7
+
+### Update
+
+1. Popover 移除了的 delay 属性
+2. 优化富文本
+3. 富文本新增了 setContent 回调函数用来改变内容(在 editorValue 无变化时可以使用)
+4. 单选下拉组件继承了 原生 div 标签 的属性(可以用 className 用来覆盖样式了,没有 style 属性)
+5. 修复了 activeUUid 有值时 btn 不展示的问题
+
+## v0.2.6
+
+### Remove
+
+1. 移除了 DropdownList
+2. 移除了 IconDropDownList
+
+### Add
+
+1. Icon 新增了 type
+
+2. (开发中的 CheckTreeDropDown)
+
+### Update
+
+1. 修改 CheckTree 的通讯逻辑
+   from: 从点击位置分别发送消息给子级和父级
+   to :从点击位置只发送消息给子级，到了最后一级后，再一层层的告知父级
+
+2. Footer 更新许可证图片
+
+3. SingleDropdown 新增了 changeVisibleFn 的属性来控制下拉框的打开和关闭
+
+4. DropdownContent 的 changeVisibleFn 新增了 function 的属性
+
+## v0.2.5
+
+1. 更新手机端的判断方式
+
+2. 更新 footer 的 UI ( market 和 cmty 的主体色替换)
+
+## v0.2.4
+
+1. 更新了 navigation bar 的官网链接
+
+2. 修复了 dropdown 自定义 show 状态时无法生效的问题
+
+## v0.2.3
+
+### Add
+
+1. 新增了 useTransitionStatus 的 Hook
+   Transition 子组件可以用来读取 transition 的过渡状态
+
+2. 新增了 CheckTree 组件
+
+3. SingleDropdownList.Item 新增了 disable 和 tipsOnDisable 属性
+
+4. SingleDropdownList.BorderBtn，SingleDropdownList.IconBtn 新增了 tipsOnDisable 属性
+
+### Update
+
+1. 更新 Dropdown 的 disabled 时无法选中的问题
+
+2. Input：调整组合样式
+
+3. Contacts：修复新增联系人渲染 key 值重复问题
+
+4. Tabs：解决 setActive 高亮错误问题
+
+5. 更新了 Footer 的 ui
+
+### Remove
+
+1. 移除了 FooterV2
+
+## v0.2.2
+
+### Update
+
+更新了 NavigationBar 的 UI
+
+### Add
+
+新增了 SingleDropdown 的子组件 SingleDropdownList.Hr
+新增了属性 maxLength 的属性
+
+## v0.2.1
+
+### Update
+
+1. 重写了 DialogGroup
+
+## v0.2.0
+
+### Update
+
+1. 重构了 Avatar
+   在尽量保持原有此段的基础上,做了改变。
+   但因为有了规范，所以从 0.2.0 之前的版本升级过来的时候需要做些相应的调整
+
+### Add
+
+1. 新增了 AvatarGroup
+
+2. 新增了 SingleDropdownList
+   DropdownList 的类型比较多
+   所以无法统一归类为 DropdownList
+   目前展示只做了 单选(非树形结构)的有，无边框的 dropdownList
+
+## v0.1.75
+
+1. 修改 NavigationBar 在阿里上的跳转链接
+
+2. 修改 Table,DialogGroup,Breadcrumb 读取 children 的方式
+   (会自动过滤子的 Fragment,读取下一层的 children 是否符合要求)
+
+3. 修复 Contacts 在 issue log 上提出的 bug
+   第一次传入的联系人会在第一次被打开的时候被清空的问题
+
+## v0.1.74
+
+1. 修复 Dropdown 在苹果手机上收起时会闪烁的问题
+
+2. 修改 FooterV2 , NavigationBar 的文本内容(问卷=>表单)
+
+3. 修改 Transition 的底层逻辑
+   from => 从操作 dom
+   to => useState 控制
+
+4. 修改 Popover 的参数
+   a. 废弃了 delay
+   b. 新增了 delayShow,delayHidden
+   c. 新增了 disable
+
+## v0.1.73
+
+### update
+
+修改 OIDC 的游客逻辑
+
+## v0.1.72
+
+### update
+
+1. OIDC 修改底层逻辑  
+   from: `<Router><OIDC/> </Router>`  
+   to: OIDC 放在最外层
+
+2. NavigationBar 修改 market 和 cmty 的跳转链接 在没有登录的时候跳转到 tourist 路径
+
+## v0.1.71
+
+1. OIDC 新增 trade 类型
+
+2. NavigationBar 根据 OIDC 做出新增类型的判断
+
+3. DatePicker 修复滑动点击输入框无法展开的问题
+
+4. Dropdown,Kite,DatePicker 移除了 handlePositionChange 属性（死代码）
+
+5. Dropdown,Kite 修改内部逻辑，不再等待内部图片加载好后再展开
+
+## v0.1.70
+
+### Update
+
+1. OIDC 修改重定向到登录界面的时候遗漏 lang 参数的问题
+
+## v0.1.69
+
+### Update
+
+1. ScrollComponent 的滚动条展示触发条件
+   from: react 的 dom 树 的鼠标移入移出
+   to: 原生的 dom 树 的鼠标移入移出
+
+2. MobileInputV2 的 value 新增了监听 value 的功能
+
+3. OIDC 组件在没有传入环境语言的时候,默认会获取浏览器语言
+
+4. RadioGroup 新增了 required（是否必须有一个被选中）的属性
+
+5. Dialog 新增了 buttons 属性
+
+6. MobileInputV2 输入框新增了只能输入数字的限制
+
+7. CounterV2 现在只能输入数字.-这些字符
+
+8. OIDC 新增 DataProcessing 环境，移除 survey-anlys 环境
+
+### add
+
+1. DialogGroup 组件
+
+2. DialogItem 组件
+   这两个为组合使用的组件(不能单独使用)
+
+## v0.1.68
+
+### Update
+
+1. 统一管理 RemoveOnHidden 属性
+2. 修复 notice 的 class 选择语句多个[的问题
+
+## v0.1.67
+
+### Add
+
+1. 新增 Dialog (公开测试阶段，将取代 Alert)
+
+### Move
+
+1. 移动了 Kite、Dropdown、Transition 组件到了 Common 下
+
+### Remove
+
+1.移除 OIDCLoginForAli,仍使用 OIDC ,如果是国内的部署只需 传递 isAliYun 这个字段
+
+### Tips
+
+后面会移除 Alert 组件 由 Dialog 替代
+
+## v0.1.66
+
+### Add
+
+1. 新增 OIDCLoginForAli (OIDC 阿里域名)
+
+### Update
+
+1. Attachment 新增失败交互并调整修改组件逻辑
+
+## v0.1.64
+
+### Add
+
+#### Function
+
+<ol>
+    <li>mathSum(加)</li>
+    <li>mathSub(减)</li>
+    <li>mathMul(乘)</li>
+    <li>mathDiv(除)</li>
+</ol>
+
+用以解决 IEEE754 的精度丢失的问题
+
+#### Hooks
+
+1. useEventListener (useEffect 的绑定事件 )
+2. useLayoutEventListener (useLayoutEffect 的绑定事件 )
+   用以来绑定事件
+
+### Update
+
+1. 重构 UploadPicture
+
+<br />
+<hr />
+<br />
+## v0.1.63
+
+### Add
+
+1. 新增 Introduction 组件 (插画说明引导组件)
+
+2. 新增 Breadcrumb 组件 (面包屑)
+
+### 以下 hook 观察使用率 在 0.1.70 之之前会一直存在，0.1.71 后 如果使用率过低，将被移除
+
+3. 新增 useScroll 组件
+   说明: 可以监听 dom 的滚动事件
+
+4. 新增 useMemoizedFn 组件
+   说明 : 等价于 useCallback 区别在于不需要依赖项
+
+5. 新增 useUpdate 组件
+   说明 : 可以强制刷新当前组件
+
+6. useUnmount
+   说明 : 卸载钩子
+
+7. useEffectWithTarget
+   说明: 监听 dom 和依赖项的 useEffect
+
+8. useLayoutEffectWithTarget
+   说明: 监听 dom 和依赖项的 useLayoutEffect
+
+9. useRafState
+
+10. useRafTimeout
+    说明: 延时执行 回调 生命周期结束时会自动清楚定时器
+
+11. useRafInterval
+    说明: 轮询执行 回调 生命周期结束时会自动清楚定时器
+
+12. useUpdateEffect
+    说明: 当依赖项改变时触发的 useEffect 和 useEffect 不同的是在声明依赖项时不会触发
+
+13. useUpdateLayoutEffect
+    说明: 当依赖项改变时触发的 useLayoutEffect 和 useLayoutEffect 不同的是在声明依赖项时不会触发
+
+14. useControllableValue
+    说明: 可以自行摸索一下
+    以上 hooks 均可在https://ahooks.js.org/里进行相关
+
+### Update
+
+15. 更新 Check 和 Radio 组件 首次不再有动画 点击后才会存在动画
+
+16. FixedSizeText(固定容器溢出变点组件) 组件重写 不再有动画,
+
+<br />
+<hr />
+<br />
+
+## v0.1.62
+
+### Update
+
+1. upload 组件新增多选功能
+2. loadingV2 动画循环方法修改
+3. 修复 contacts 新增联系错误 与 keywords 翻译问题
+4. 调整 uploadpicture 样式
+5. 修复 tabs card 模式下新增删除 tab 时报错问题
+6. 同步 Iconfont 图标
+
+### Add
+
+1. Image ( 预览图片组件 )
+2. 自定义 hook useRafTimeout( 延时执行 )、 useRafInterval( 循环延时执行 )
+
+<br />
+<br />
+## v0.1.45
+
+### remove
+
+-   ErrorAlrt --> Popover
+
+#### update
+
+-   icon: add type
+-   errorV2
+
+## v0.1.4
+
+### DATA DISPLAY
+
+#### update
+
+-   Alert: Refactor
+-   ErrorAlert: Always visible
+
+#### add
+
+-   Scroll: custom scroll ,Compatible with all major browsers
+
+### DATA INPUT
+
+#### update
+
+-   MultiDropDown: Refactor
+-   TextArea: add noScroll API , Too much content becomes...
+
+#### add
+
+-   SelectInput: Support single selection, multiple selection
+-   Switch: switch component
+
+#### remove
+
+-   checkInput
+
+### Feedback
+
+#### update
+
+-   Message:API display bug
+
+### Navigation
+
+#### update
+
+-   Steps:Too much content and messy layout bug
+
+### Transition
+
+#### add
+
+Animation: Transition
+
+## v0.1.3
+
+### DATA DISPLAY
+
+#### update
+
+-   Calendar: Adapt to mobile phone
+
+### add
+
+-   Cover: mask layer
+
+### DATA INPUT
+
+#### update
+
+-   DropDownList: input focus style
+
+### add
+
+-   MergeInput: select merge with input
+
+## v0.1.0
+
+### BUTTON
+
+#### remove
+
+-   DashBorderButton
+
+### DATA DISPLAY
+
+#### update
+
+-   Avatar: add imgUrl parameter, now can display image by an url
+
+#### Add
+
+-   Labels: use to display specific label with colorful background.
+
+#### remove
+
+-   SurveyCard
+-   ScriptItem
+-   AvatarList
+-   TreeItem
+-   CommentItem
+
+### DATA INPUT
+
+#### update
+
+-   Counter: adjust position of buttons, remove handleOnChangeEvent parameter
+-   GeneralInput: remove onFocus style.
+-   PasswordInput:remove onFocus style.
+-   ResetInput: adjust border style.
+-   SearchInput: add placeholder parameter and remove onFocus style.
+-   TextArea: enable resize and can hide border now, adjust the color of placeholder and remove onFocus style.
+-   DropDownList: add defaultValue parameter.
+
+#### Add
+
+-   DropDownInput: input component with a DropDownList in the front.
+
+#### remove
+
+-   IconInput
+
+### Feedback
+
+#### update
+
+-   message: remove container from DOM tree when it is empty.
+-   notice: remove container from DOM tree when it is empty.

@@ -1,0 +1,80 @@
+/**
+* @file
+* @date 2021-05-18
+* @author Andy Jiang
+* @lastModify Andy Jiang 2021-05-18
+*/
+
+/* <------------------------------------ **** CONSTANT IMPORT START **** ------------------------------------ */
+
+/** Import all the reference constant after this line */
+
+@use "../../../Constant/font.scss" as *;
+@use "../../../Constant/color.scss" as *;
+
+/* <------------------------------------ **** CONSTANT IMPORT END **** ------------------------------------ */
+
+/*
+/*
+/* <------------------------------------ **** SECTION1 MIXIN START **** ------------------------------------ */
+
+/** The demo mixin is ..........*/
+
+@mixin demo {
+}
+
+/* <------------------------------------ **** SECTION1 MIXIN END **** ------------------------------------ */
+
+.popup_container {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    background: rgba($color: $type, $alpha: 0.2);
+}
+
+.popup_window {
+    background: $background;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35rem;
+    transform: translate(-50%, -50%);
+}
+
+.popup_title {
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 2.3rem;
+    color: $secondary_variant;
+    > span {
+        margin-left: 1rem;
+        font: $fs_m_14;
+        color: $type;
+    }
+}
+
+.popup_content {
+    font: $fs_r_12;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    margin-right: 5rem;
+}
+
+.popup_button {
+    text-align: right;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    > span {
+        margin-left: 1rem;
+        margin-right: 2.5rem;
+    }
+}
+
+/* <--------------------------- * SECTION1 * --------------------------- */
+
+/* <--------------------------- * SECTION1 * --------------------------- */
