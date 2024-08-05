@@ -78,9 +78,6 @@ import { PreviewDisplay } from "../Components/Preview/PreviewDisplay/index";
 import { ImageComponent } from "../Components/Preview/ImageComponent";
 import { ImageViewer } from "../Components/Preview/ImageViewer";
 
-// GoogleMap Import
-import { GoogleMap } from "../Components/GoogleMap";
-
 //Feedback
 import message from "../Components/Feedback/Message";
 import notice from "../Components/Feedback/notice";
@@ -217,7 +214,6 @@ export {
     QuestionIcon,
     Loading,
     Pagination,
-    GoogleMap,
     ToolTips,
     Avatar,
     AvatarCrop,
